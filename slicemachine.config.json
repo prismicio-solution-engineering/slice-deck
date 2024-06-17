@@ -1,0 +1,6 @@
+{
+  "repositoryName": "slice-deck",
+  "adapter": "@slicemachine/adapter-next",
+  "libraries": ["./slices/slides", "./slices/marketing"],
+  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
+}

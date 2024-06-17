@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { PrismicPreview } from "@prismicio/next";
+import { repositoryName } from "@/prismicio";
+import clsx from "clsx";
+import { headingsFont, copyFont, monoFont } from "@/assets/fonts";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +17,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={clsx(
+          "font-copy font-medium antialiased",
+          `${headingsFont.variable} ${copyFont.variable} ${monoFont.variable}`
+        )}
+      >
+        {children}
+        <PrismicPreview repositoryName={repositoryName} />
+      </body>
     </html>
   );
 }

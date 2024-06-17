@@ -1,0 +1,27 @@
+{
+  "format": "custom",
+  "id": "settings",
+  "label": "Settings",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "prismic_logo": {
+        "type": "Image",
+        "config": {
+          "label": "Prismic logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "prismic_icon": {
+        "type": "Image",
+        "config": {
+          "label": "Prismic icon",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}
