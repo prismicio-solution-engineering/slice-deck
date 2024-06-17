@@ -18,6 +18,7 @@ import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
 import Scaler from "@/components/Slides/Scaler";
 import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
 import { Card } from "@/components/Card";
+import { SliderControls } from "@/components/Slides/SliderControls";
 
 type Params = { uid: string };
 
@@ -52,13 +53,17 @@ export default async function Page({ params }: { params: Params }) {
         <h2 className="mb-16 font-semibold text-3xl">Frames</h2>
         <h3 className="mb-10 font-semibold text-2xl"> Full</h3>
         <Scaler>
-          <Container page={page.data} settings={settings.data}>
-            <SlideFullWidth>
-              <p className="font-copy text-2xl text-gray-base break-words font-normal">
-                Text component or Image component
-              </p>
-            </SlideFullWidth>
-          </Container>
+          <div className="relative">
+            <SliderControls>
+              <Container page={page.data} settings={settings.data}>
+                <SlideFullWidth>
+                  <p className="font-copy text-2xl text-gray-base break-words font-normal">
+                    Text component or Image component
+                  </p>
+                </SlideFullWidth>
+              </Container>
+            </SliderControls>
+          </div>
         </Scaler>
 
         <h3 className="mb-10 font-semibold text-2xl"> Half</h3>

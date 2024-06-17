@@ -1,5 +1,4 @@
 import { DeckDocumentData, SettingsDocumentData } from "@/prismicio-types";
-import { PrismicNextImage } from "@prismicio/next";
 import { Header } from "./Header";
 
 export const Container = ({
