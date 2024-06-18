@@ -1,16 +1,12 @@
 "use client";
+import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
-export const SliderControls = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
+export const SliderControls = ({ children }: { children: React.ReactNode }) => {
   const sliderContainerRef = React.useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = React.Children.count(children);
 
-  const goToSlide = (index:number) => {
+  const goToSlide = (index: number) => {
     setCurrentSlide(index);
     const slideWidth = sliderContainerRef.current.scrollWidth / totalSlides;
     const newScrollLeft = slideWidth * index;
@@ -35,22 +31,22 @@ export const SliderControls = ({
   // Effect to add and remove keyboard event listeners
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === 'ArrowRight') {
+      if (event.key === "ArrowRight") {
         nextSlide();
-      } else if (event.key === 'ArrowLeft') {
+      } else if (event.key === "ArrowLeft") {
         prevSlide();
       }
     };
 
     // Add event listener
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
 
     // Remove event listener on cleanup
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [currentSlide, totalSlides]); // Dependencies
-  
+
   return (
     <div className="relative w-full">
       <div className="px-8 overflow-hidden">

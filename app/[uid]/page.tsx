@@ -19,6 +19,7 @@ import Scaler from "@/components/Slides/Scaler";
 import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
 import { Card } from "@/components/Card";
 import { SliderControls } from "@/components/Slides/SliderControls";
+import { LeftCol, RightCol } from "@/components/Slides/Columns";
 
 type Params = { uid: string };
 
@@ -69,25 +70,69 @@ export default async function Page({ params }: { params: Params }) {
         <h3 className="mb-10 font-semibold text-2xl"> Half</h3>
         <Scaler>
           <Container page={page.data} settings={settings.data}>
-            <SlideTwoCols />
+            <SlideTwoCols>
+              <LeftCol>
+                <p className="font-copy text-2xl text-gray-base break-words font-normal">
+                  Text component
+                </p>
+              </LeftCol>
+              <RightCol>
+                <p className="font-copy text-2xl text-gray-base break-words font-normal">
+                  Text or Image component
+                </p>
+              </RightCol>
+            </SlideTwoCols>
           </Container>
         </Scaler>
         <h3 className="mb-10 font-semibold text-2xl"> 40/60</h3>
         <Scaler>
           <Container page={page.data} settings={settings.data}>
-            <SlideTwoCols larger={"right"} />
+            <SlideTwoCols larger={"right"}>
+              <LeftCol>
+                <p className="font-copy text-2xl text-gray-base break-words font-normal">
+                  Text component
+                </p>
+              </LeftCol>
+              <RightCol>
+                <p className="font-copy text-2xl text-gray-base break-words font-normal">
+                  Text or Image component
+                </p>
+              </RightCol>
+            </SlideTwoCols>
           </Container>
         </Scaler>
         <h3 className="mb-10 font-semibold text-2xl"> 60/40</h3>
         <Scaler>
           <Container page={page.data} settings={settings.data}>
-            <SlideTwoCols larger={"left"} />
+            <SlideTwoCols larger={"left"}>
+              <LeftCol>
+                <p className="font-copy text-2xl text-gray-base break-words font-normal">
+                  Text component
+                </p>
+              </LeftCol>
+              <RightCol>
+                <p className="font-copy text-2xl text-gray-base break-words font-normal">
+                  Text or Image component
+                </p>
+              </RightCol>
+            </SlideTwoCols>
           </Container>
         </Scaler>
         <h3 className="mb-10 font-semibold text-2xl"> 60/40 with overflow</h3>
         <Scaler>
           <Container page={page.data} settings={settings.data}>
-            <SlideTwoCols larger={"right"} overflowRight />
+            <SlideTwoCols overflowRight larger={"left"}>
+              <LeftCol>
+                <p className="font-copy text-2xl text-gray-base break-words font-normal">
+                  Text component
+                </p>
+              </LeftCol>
+              <RightCol>
+                <p className="font-copy text-2xl text-gray-base break-words font-normal">
+                  Text or Image component
+                </p>
+              </RightCol>
+            </SlideTwoCols>
           </Container>
         </Scaler>
 
