@@ -11,8 +11,6 @@ import {
   SettingsDocument,
 } from "@/prismicio-types";
 import { Calendar } from "./components/Calendar";
-import { PrismicNextImage } from "@prismicio/next";
-import { Header } from "@/components/Slides/Header";
 import { Container } from "@/components/Slides/Container";
 import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
 import Scaler from "@/components/Slides/Scaler";
@@ -142,10 +140,38 @@ export default async function Page({ params }: { params: Params }) {
             <SlideFullWidth>
               {/* 4 columns */}
               <div className="h-full w-full flex flex-row gap-x-10 gap-y-4">
-                <Card alternateAlignment />
-                <Card alternateAlignment />
-                <Card alternateAlignment />
-                <Card alternateAlignment />
+                <Card alternateAlignment>
+                  <p className="font-headings text-xl text-gray-base break-words font-normal">
+                    Title
+                  </p>
+                  <p className="font-copy text-lg text-gray-base break-words font-normal">
+                    Text component
+                  </p>
+                </Card>
+                <Card alternateAlignment>
+                  <p className="font-headings text-xl text-gray-base break-words font-normal">
+                    Title
+                  </p>
+                  <p className="font-copy text-lg text-gray-base break-words font-normal">
+                    Text component
+                  </p>
+                </Card>
+                <Card alternateAlignment>
+                  <p className="font-headings text-xl text-gray-base break-words font-normal">
+                    Title
+                  </p>
+                  <p className="font-copy text-lg text-gray-base break-words font-normal">
+                    Text component
+                  </p>
+                </Card>
+                <Card alternateAlignment>
+                  <p className="font-headings text-xl text-gray-base break-words font-normal">
+                    Title
+                  </p>
+                  <p className="font-copy text-lg text-gray-base break-words font-normal">
+                    Text component
+                  </p>
+                </Card>
               </div>
             </SlideFullWidth>
           </Container>
