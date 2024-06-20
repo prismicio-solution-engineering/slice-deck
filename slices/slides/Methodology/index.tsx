@@ -1,0 +1,30 @@
+import { Content } from "@prismicio/client";
+import { SliceComponentProps } from "@prismicio/react";
+import Intro from "./Intro";
+import { DeckDocumentData, MethodologySlice } from "@/prismicio-types";
+import User from "./User";
+
+/**
+ * Props for `Methodology`.
+ */
+export type MethodologyProps = SliceComponentProps<Content.MethodologySlice>;
+
+/**
+ * Component for "Methodology" Slices.
+ */
+const Methodology = ({
+  slice,
+  context,
+}: {
+  slice: MethodologySlice;
+  context: DeckDocumentData;
+}) => {
+  switch (slice.variation) {
+    case "default":
+      return <Intro slice={slice} context={context} />;
+    case "user":
+      return <User slice={slice} context={context} />;
+  }
+};
+
+export default Methodology;

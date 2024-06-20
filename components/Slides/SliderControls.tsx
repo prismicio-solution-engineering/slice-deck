@@ -60,7 +60,7 @@ export const SliderControls = ({ children }: { children: React.ReactNode }) => {
         </button>
         <div
           ref={sliderContainerRef}
-          className="flex overflow-x-hidden overflow-y-clip scroll-smooth scrollbar-hide no-scrollbar max-w-screen-xl mx-auto"
+          className="flex overflow-x-hidden overflow-y-clip scroll-smooth scrollbar-hide no-scrollbar max-w-[1520px] mx-auto"
         >
           {children}
         </div>
@@ -77,7 +77,7 @@ export const SliderControls = ({ children }: { children: React.ReactNode }) => {
         {Array.from({ length: totalSlides }).map((_, index) => (
           <button
             key={index}
-            className={`h-3 w-3 mx-1 rounded-full ${index === currentSlide ? "bg-silver-darker" : "bg-white"} focus:outline-none`}
+            className={`h-3 w-3 mx-1 rounded-full ${index === currentSlide ? "bg-silver-darker" : "bg-silver-base"} focus:outline-none`}
             onClick={() => goToSlide(index)}
           ></button>
         ))}

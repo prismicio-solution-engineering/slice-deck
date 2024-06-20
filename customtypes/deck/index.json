@@ -26,6 +26,21 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "value_proposition": {
+              "type": "SharedSlice"
+            },
+            "test": {
+              "type": "SharedSlice"
+            },
+            "product": {
+              "type": "SharedSlice"
+            },
+            "methodology": {
+              "type": "SharedSlice"
+            },
+            "leads_goals": {
+              "type": "SharedSlice"
+            },
             "intro_slide": {
               "type": "SharedSlice"
             }

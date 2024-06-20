@@ -4,4 +4,8 @@ import dynamic from "next/dynamic";
 
 export const components = {
   intro_slide: dynamic(() => import("./IntroSlide")),
+  leads_goals: dynamic(() => import("./LeadsGoals")),
+  methodology: dynamic(() => import("./Methodology")),
+  product: dynamic(() => import("./Product")),
+  value_proposition: dynamic(() => import("./ValueProposition")),
 };

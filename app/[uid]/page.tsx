@@ -43,12 +43,18 @@ export default async function Page({ params }: { params: Params }) {
       <p>Last updated : {new Date(page.last_publication_date).toUTCString()}</p>
 
       {/* <Calendar author={author} /> */}
-
-      {/* <SliceZone
-        slices={page.data.slices}
-        components={{ ...marketingComponents, ...slidesComponents }}
-      /> */}
-      <div className="w-full mx-auto">
+      <Scaler>
+        <div className="relative">
+          <SliderControls>
+              <SliceZone
+                slices={page.data.slices}
+                components={{ ...marketingComponents, ...slidesComponents }}
+                context={{ page: page.data, settings: settings.data }}
+              />
+          </SliderControls>
+        </div>
+      </Scaler>
+      {/* <div className="w-full mx-auto">
         <h2 className="mb-16 font-semibold text-3xl">Frames</h2>
         <h3 className="mb-10 font-semibold text-2xl"> Full</h3>
         <Scaler>
@@ -119,7 +125,7 @@ export default async function Page({ params }: { params: Params }) {
         <h3 className="mb-10 font-semibold text-2xl"> 60/40 with overflow</h3>
         <Scaler>
           <Container page={page.data} settings={settings.data}>
-            <SlideTwoCols overflowRight larger={"left"}>
+            <SlideTwoCols overflowRight larger="left">
               <LeftCol>
                 <p className="font-copy text-2xl text-gray-base break-words font-normal">
                   Text component
@@ -138,7 +144,6 @@ export default async function Page({ params }: { params: Params }) {
         <Scaler>
           <Container page={page.data} settings={settings.data}>
             <SlideFullWidth>
-              {/* 4 columns */}
               <div className="h-full w-full flex flex-row gap-x-10 gap-y-4">
                 <Card alternateAlignment>
                   <p className="font-headings text-xl text-gray-base break-words font-normal">
@@ -176,7 +181,7 @@ export default async function Page({ params }: { params: Params }) {
             </SlideFullWidth>
           </Container>
         </Scaler>
-      </div>
+      </div> */}
     </div>
   );
 }

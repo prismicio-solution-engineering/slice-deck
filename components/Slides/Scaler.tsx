@@ -26,7 +26,7 @@ const Scaler = ({ children }: { children: React.ReactNode }) => {
       style={{ paddingTop: "56.25%" }}
     >
       <div
-        className="absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center"
+        className="absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center"
         style={{ transform: `scale(${scale})` }}
       >
         {children}

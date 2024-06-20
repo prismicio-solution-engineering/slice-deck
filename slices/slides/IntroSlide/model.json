@@ -6,11 +6,156 @@
   "variations": [
     {
       "id": "default",
-      "name": "Default",
+      "name": "3 groups",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
-      "imageUrl": ""
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1,strong,em"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "logos": {
+          "type": "Group",
+          "config": {
+            "label": "Logos",
+            "repeat": true,
+            "fields": {
+              "group_name": {
+                "type": "Text",
+                "config": {
+                  "label": "Group Name",
+                  "placeholder": ""
+                }
+              },
+              "logo_1": {
+                "type": "Image",
+                "config": {
+                  "label": "Logo 1",
+                  "constraint": {
+                    "height": 40
+                  },
+                  "thumbnails": []
+                }
+              },
+              "logo_2": {
+                "type": "Image",
+                "config": {
+                  "label": "Logo 2",
+                  "constraint": {
+                    "height": 40
+                  },
+                  "thumbnails": []
+                }
+              },
+              "logo_3": {
+                "type": "Image",
+                "config": {
+                  "label": "Logo 3",
+                  "constraint": {
+                    "height": 40
+                  },
+                  "thumbnails": []
+                }
+              },
+              "logo_4": {
+                "type": "Image",
+                "config": {
+                  "label": "Logo 4",
+                  "constraint": {
+                    "height": 40
+                  },
+                  "thumbnails": []
+                }
+              },
+              "logo_5": {
+                "type": "Image",
+                "config": {
+                  "label": "Logo 5",
+                  "constraint": {
+                    "height": 40
+                  },
+                  "thumbnails": []
+                }
+              },
+              "logo_6": {
+                "type": "Image",
+                "config": {
+                  "label": "Logo 6",
+                  "constraint": {
+                    "height": 40
+                  },
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "singleGroup",
+      "name": "Single Group of logos",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1,strong,em"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "logos": {
+          "type": "Group",
+          "config": {
+            "label": "Logos",
+            "repeat": true,
+            "fields": {
+              "logo": {
+                "type": "Image",
+                "config": {
+                  "label": "Logo",
+                  "constraint": {
+                    "height": 80
+                  },
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

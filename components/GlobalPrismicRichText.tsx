@@ -7,11 +7,18 @@ import type * as prismic from "@prismicio/client";
 
 /** @type {import("@prismicio/react").JSXMapSerializer} */
 
-// Color to add as prop
+// TODO : Color to add as prop and specific alignment so we don't have to create a component
 const defaultComponents: JSXMapSerializer = {
+  heading1: ({ children }) => (
+    <h2
+      className={`text-8xl font-headings font-medium text-gray-darker break-words`}
+    >
+      {children}
+    </h2>
+  ),
   heading2: ({ children }) => (
     <h2
-      className={`text-4xl font-headings font-medium text-gray-darker break-words`}
+      className={`text-4xl mb-4 font-headings font-medium text-gray-darker break-words`}
     >
       {children}
     </h2>
@@ -32,7 +39,7 @@ const defaultComponents: JSXMapSerializer = {
     </pre>
   ),
   paragraph: ({ children }) => (
-    <p className="font-copy text-lg pb-1 text-gray-darker break-words font-normal">{children}</p>
+    <p className="font-copy text-lg pb-2 text-gray-darker break-words font-normal">{children}</p>
   ),
   list: ({ children }) => (
     <ul className="my-2 break-words font-copy text-lg font-normal">
