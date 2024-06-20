@@ -10,14 +10,8 @@ import {
   DeckDocument,
   SettingsDocument,
 } from "@/prismicio-types";
-import { Calendar } from "./components/Calendar";
-import { Container } from "@/components/Slides/Container";
-import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
 import Scaler from "@/components/Slides/Scaler";
-import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
-import { Card } from "@/components/Card";
 import { SliderControls } from "@/components/Slides/SliderControls";
-import { LeftCol, RightCol } from "@/components/Slides/Columns";
 
 type Params = { uid: string };
 
@@ -54,134 +48,6 @@ export default async function Page({ params }: { params: Params }) {
           </SliderControls>
         </div>
       </Scaler>
-      {/* <div className="w-full mx-auto">
-        <h2 className="mb-16 font-semibold text-3xl">Frames</h2>
-        <h3 className="mb-10 font-semibold text-2xl"> Full</h3>
-        <Scaler>
-          <div className="relative">
-            <SliderControls>
-              <Container page={page.data} settings={settings.data}>
-                <SlideFullWidth>
-                  <p className="font-copy text-2xl text-gray-base break-words font-normal">
-                    Text component or Image component
-                  </p>
-                </SlideFullWidth>
-              </Container>
-            </SliderControls>
-          </div>
-        </Scaler>
-
-        <h3 className="mb-10 font-semibold text-2xl"> Half</h3>
-        <Scaler>
-          <Container page={page.data} settings={settings.data}>
-            <SlideTwoCols>
-              <LeftCol>
-                <p className="font-copy text-2xl text-gray-base break-words font-normal">
-                  Text component
-                </p>
-              </LeftCol>
-              <RightCol>
-                <p className="font-copy text-2xl text-gray-base break-words font-normal">
-                  Text or Image component
-                </p>
-              </RightCol>
-            </SlideTwoCols>
-          </Container>
-        </Scaler>
-        <h3 className="mb-10 font-semibold text-2xl"> 40/60</h3>
-        <Scaler>
-          <Container page={page.data} settings={settings.data}>
-            <SlideTwoCols larger={"right"}>
-              <LeftCol>
-                <p className="font-copy text-2xl text-gray-base break-words font-normal">
-                  Text component
-                </p>
-              </LeftCol>
-              <RightCol>
-                <p className="font-copy text-2xl text-gray-base break-words font-normal">
-                  Text or Image component
-                </p>
-              </RightCol>
-            </SlideTwoCols>
-          </Container>
-        </Scaler>
-        <h3 className="mb-10 font-semibold text-2xl"> 60/40</h3>
-        <Scaler>
-          <Container page={page.data} settings={settings.data}>
-            <SlideTwoCols larger={"left"}>
-              <LeftCol>
-                <p className="font-copy text-2xl text-gray-base break-words font-normal">
-                  Text component
-                </p>
-              </LeftCol>
-              <RightCol>
-                <p className="font-copy text-2xl text-gray-base break-words font-normal">
-                  Text or Image component
-                </p>
-              </RightCol>
-            </SlideTwoCols>
-          </Container>
-        </Scaler>
-        <h3 className="mb-10 font-semibold text-2xl"> 60/40 with overflow</h3>
-        <Scaler>
-          <Container page={page.data} settings={settings.data}>
-            <SlideTwoCols overflowRight larger="left">
-              <LeftCol>
-                <p className="font-copy text-2xl text-gray-base break-words font-normal">
-                  Text component
-                </p>
-              </LeftCol>
-              <RightCol>
-                <p className="font-copy text-2xl text-gray-base break-words font-normal">
-                  Text or Image component
-                </p>
-              </RightCol>
-            </SlideTwoCols>
-          </Container>
-        </Scaler>
-
-        <h3 className="mb-10 font-semibold text-2xl"> Cards </h3>
-        <Scaler>
-          <Container page={page.data} settings={settings.data}>
-            <SlideFullWidth>
-              <div className="h-full w-full flex flex-row gap-x-10 gap-y-4">
-                <Card alternateAlignment>
-                  <p className="font-headings text-xl text-gray-base break-words font-normal">
-                    Title
-                  </p>
-                  <p className="font-copy text-lg text-gray-base break-words font-normal">
-                    Text component
-                  </p>
-                </Card>
-                <Card alternateAlignment>
-                  <p className="font-headings text-xl text-gray-base break-words font-normal">
-                    Title
-                  </p>
-                  <p className="font-copy text-lg text-gray-base break-words font-normal">
-                    Text component
-                  </p>
-                </Card>
-                <Card alternateAlignment>
-                  <p className="font-headings text-xl text-gray-base break-words font-normal">
-                    Title
-                  </p>
-                  <p className="font-copy text-lg text-gray-base break-words font-normal">
-                    Text component
-                  </p>
-                </Card>
-                <Card alternateAlignment>
-                  <p className="font-headings text-xl text-gray-base break-words font-normal">
-                    Title
-                  </p>
-                  <p className="font-copy text-lg text-gray-base break-words font-normal">
-                    Text component
-                  </p>
-                </Card>
-              </div>
-            </SlideFullWidth>
-          </Container>
-        </Scaler>
-      </div> */}
     </div>
   );
 }
