@@ -16,14 +16,14 @@ const Intro = ({
   return (
     <Container page={context.page} settings={context.settings}>
       <SlideTwoCols overflowRight className="items-center">
-        <LeftCol className="flex flex-col object-contain">
+        <LeftCol>
           <PrismicNextImage field={slice.primary.image} />
         </LeftCol>
-        <RightCol className="flex flex-col gap-y-8 justify-center">
+        <RightCol>
           <GlobalPrismicRichText field={slice.primary.title} />
           <GlobalPrismicRichText field={slice.primary.description} components={{
             paragraph: ({ children }) => (
-              <p className="font-copy text-3xl pb-2 text-gray-darker break-words font-normal">{children}</p>
+              <p className="font-copy text-3xl mt-8 mb-2 text-gray-darker break-words font-normal">{children}</p>
             ),
           }}/>
         </RightCol>

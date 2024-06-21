@@ -16,15 +16,15 @@ const User = ({
   return (
     <Container page={context.page} settings={context.settings}>
       <SlideTwoCols overflowRight className="items-center">
-        <LeftCol className="flex flex-col gap-y-8 justify-center">
+        <LeftCol>
           <GlobalPrismicRichText field={slice.primary.title} />
           <GlobalPrismicRichText field={slice.primary.description} components={{
             paragraph: ({ children }) => (
-              <p className="font-copy text-3xl pb-2 text-gray-darker break-words font-normal">{children}</p>
+              <p className="font-copy text-3xl mt-8 mb-2 text-gray-darker break-words font-normal">{children}</p>
             ),
           }}/>
         </LeftCol>
-        <RightCol className="flex flex-col justify-center items-end object-contain">
+        <RightCol>
           <PrismicNextImage field={slice.primary.image} />
         </RightCol>
       </SlideTwoCols>

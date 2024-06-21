@@ -35,7 +35,7 @@ const List = ({
                 field={item.list_item}
                 components={{
                   paragraph: ({ children }) => (
-                    <p className="font-copy text-2xl pb-1 text-gray-darker break-words font-normal">
+                    <p className="font-copy text-3xl pb-1 text-gray-darker break-words font-normal">
                       {children}
                     </p>
                   ),
