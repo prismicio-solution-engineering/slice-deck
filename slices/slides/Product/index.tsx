@@ -1,17 +1,16 @@
-import { LeftCol, RightCol } from "@/components/Slides/Columns";
 import { Container } from "@/components/Slides/Container";
-import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
 import { ProductSlice } from "@/prismicio-types";
-import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { Context } from "../IntroSlide";
-import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
 import { PrismicNextImage } from "@prismicio/next";
+import { LeftCol, RightCol } from "@/components/Slides/Columns";
+import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
+import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
 
 /**
  * Props for `Product`.
  */
-export type ProductProps = SliceComponentProps<Content.ProductSlice>;
+export type ProductProps = SliceComponentProps<ProductSlice>;
 
 /**
  * Component for "Product" Slices.

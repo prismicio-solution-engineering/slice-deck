@@ -1,6 +1,5 @@
 import { ValuePropositionSliceWithList } from "@/prismicio-types";
 import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
-import { PrismicRichText } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import { Container } from "@/components/Slides/Container";
 import { Context } from "../IntroSlide";
@@ -16,15 +15,18 @@ const List = ({
   return (
     <Container page={context.page} settings={context.settings}>
       <SlideFullWidth className="items-center justify-evenly">
-        <GlobalPrismicRichText field={slice.primary.title} components={{
-          heading2: ({ children }) => (
-            <h2
-              className={`text-4xl font-headings font-medium text-gray-darker break-words text-center w-8/12`}
-            >
-              {children}
-            </h2>
-          ),
-        }}/>
+        <GlobalPrismicRichText
+          field={slice.primary.title}
+          components={{
+            heading2: ({ children }) => (
+              <h2
+                className={`text-4xl font-headings font-medium text-gray-darker break-words text-center w-8/12`}
+              >
+                {children}
+              </h2>
+            ),
+          }}
+        />
         <div className="flex flex-col gap-y-4">
           {slice.primary.list.map((item, idx) => (
             <div key={idx} className="flex flex-row gap-x-8">

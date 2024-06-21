@@ -39,7 +39,7 @@ const defaultComponents: JSXMapSerializer = {
     </pre>
   ),
   paragraph: ({ children }) => (
-    <p className="font-copy text-lg pb-2 text-gray-darker break-words font-normal">{children}</p>
+    <p className="font-copy text-lg mb-2 text-gray-darker break-words font-normal">{children}</p>
   ),
   list: ({ children }) => (
     <ul className="my-2 break-words font-copy text-lg font-normal">

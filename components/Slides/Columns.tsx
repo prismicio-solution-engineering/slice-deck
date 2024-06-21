@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-const baseClassNames = "h-full"
+const baseClassNames = "h-full flex flex-col justify-center";
 
 export const LeftCol = ({
   larger,
