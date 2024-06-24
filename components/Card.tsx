@@ -1,17 +1,21 @@
+import clsx from "clsx";
+
+const baseClassNames = "w-3/12 p-6 border flex flex-col items-center";
+
 export const Card = ({
   alternateAlignment = false,
   children,
+  className,
 }: {
   alternateAlignment?: boolean;
-  children: React.ReactNode
+  children: React.ReactNode;
+  className?: string;
 }) => {
-  return (
-    <div
-      className={`h-[62.5%] w-3/12 p-6 border-2 border-primary-blue bg-tertiary-green ${alternateAlignment && "even:self-center"}`}
-    >
-      <div className="h-full flex flex-col justify-center">
-        {children}
-      </div>
-    </div>
+  className = clsx(
+    baseClassNames,
+    alternateAlignment && "even:self-center",
+    className
   );
+
+  return <div className={className}>{children}</div>;
 };

@@ -37,13 +37,14 @@ export const Header = ({
 */}
 
       {/* V3 */}
-      <div className="flex justify-start items-center h-20">
-        {/* Can be icon or icon with title */}
+      <div className="flex justify-between items-center h-20">
         <PrismicNextImage
           field={settings.prismic_icon}
           height={40}
           className="h-full object-contain rounded-xl"
         />
+      <p className="text-center text-gray-base mb-12">Copyright Prismic · All Rights Reserved</p>
+
       </div>
     </div>
   );

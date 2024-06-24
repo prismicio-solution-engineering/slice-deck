@@ -3,9 +3,14 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  agenda: dynamic(() => import("./Agenda")),
+  features: dynamic(() => import("./Features")),
   intro_slide: dynamic(() => import("./IntroSlide")),
   leads_goals: dynamic(() => import("./LeadsGoals")),
   methodology: dynamic(() => import("./Methodology")),
   product: dynamic(() => import("./Product")),
+  references: dynamic(() => import("./References")),
+  resources: dynamic(() => import("./Resources")),
+  testimonials: dynamic(() => import("./Testimonials")),
   value_proposition: dynamic(() => import("./ValueProposition")),
 };

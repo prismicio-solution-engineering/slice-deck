@@ -1,9 +1,7 @@
-"use client";
-
-import { AuthorDocument } from "@/prismicio-types";
+import { AuthorDocumentData } from "@/prismicio-types";
 import { asLink } from "@prismicio/client";
 
-export const Calendar = ({ author }: { author: AuthorDocument }) => {
+export const Calendar = ({ author }: { author: AuthorDocumentData }) => {
   return (
     <>
       {/* Start of Meetings Embed Script */}
@@ -13,7 +11,7 @@ export const Calendar = ({ author }: { author: AuthorDocument }) => {
           width: "100%",
           height: "690px",
         }}
-        src={`${asLink(author.data.calendar_link)}?embed=true`}
+        src={`${asLink(author.calendar_link)}?embed=true`}
       />
       {/* End of Meetings Embed Script */}
     </>

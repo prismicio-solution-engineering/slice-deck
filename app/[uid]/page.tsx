@@ -5,11 +5,7 @@ import { createClient } from "@/prismicio";
 import { components as marketingComponents } from "@/slices/marketing";
 import { components as slidesComponents } from "@/slices/slides";
 import { asText } from "@prismicio/client";
-import {
-  AuthorDocument,
-  DeckDocument,
-  SettingsDocument,
-} from "@/prismicio-types";
+import { DeckDocument, SettingsDocument } from "@/prismicio-types";
 import Scaler from "@/components/Slides/Scaler";
 import { SliderControls } from "@/components/Slides/SliderControls";
 
@@ -26,11 +22,6 @@ export default async function Page({ params }: { params: Params }) {
     .getSingle<SettingsDocument>("settings")
     .catch(() => notFound());
 
-  const author = await client.getByUID<AuthorDocument>(
-    "author",
-    page.data.author.uid
-  );
-
   return (
     <div className="max-w-screen-3xl mx-auto">
       <PrismicRichText field={page.data.title} />
@@ -40,11 +31,11 @@ export default async function Page({ params }: { params: Params }) {
       <Scaler>
         <div className="relative">
           <SliderControls>
-              <SliceZone
-                slices={page.data.slices}
-                components={{ ...marketingComponents, ...slidesComponents }}
-                context={{ page: page.data, settings: settings.data }}
-              />
+            <SliceZone
+              slices={page.data.slices}
+              components={{ ...marketingComponents, ...slidesComponents }}
+              context={{ page: page.data, settings: settings.data }}
+            />
           </SliderControls>
         </div>
       </Scaler>

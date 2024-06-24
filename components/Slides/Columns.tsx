@@ -13,8 +13,8 @@ export const LeftCol = ({
 }) => {
   className = clsx(
     baseClassNames,
-    className,
-    larger === "left" ? "w-7/12" : larger === "right" ? "w-5/12" : "w-1/2"
+    larger === "left" ? "w-7/12" : larger === "right" ? "w-5/12" : "w-1/2",
+    className
   );
 
   return <div className={className}>{children}</div>;
@@ -31,8 +31,8 @@ export const RightCol = ({
 }) => {
   className = clsx(
     baseClassNames,
-    className,
-    larger === "left" ? "w-5/12" : larger === "right" ? "w-7/12" : "w-1/2"
+    larger === "left" ? "w-5/12" : larger === "right" ? "w-7/12" : "w-1/2",
+    className
   );
 
   return <div className={className}>{children}</div>;

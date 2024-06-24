@@ -26,6 +26,17 @@
           "placeholder": ""
         }
       },
+      "profile_picture": {
+        "type": "Image",
+        "config": {
+          "label": "Profile picture",
+          "constraint": {
+            "width": 100,
+            "height": 100
+          },
+          "thumbnails": []
+        }
+      },
       "email": {
         "type": "Text",
         "config": {
@@ -33,12 +44,18 @@
           "placeholder": ""
         }
       },
-      "profile_picture": {
-        "type": "Image",
+      "phone_number": {
+        "type": "Text",
         "config": {
-          "label": "Profile picture",
-          "constraint": {},
-          "thumbnails": []
+          "label": "Phone Number",
+          "placeholder": ""
+        }
+      },
+      "linkedin_link": {
+        "type": "Text",
+        "config": {
+          "label": "LinkedIn Link",
+          "placeholder": ""
         }
       },
       "calendar_link": {

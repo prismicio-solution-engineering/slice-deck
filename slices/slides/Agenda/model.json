@@ -1,0 +1,56 @@
+{
+  "id": "agenda",
+  "type": "SharedSlice",
+  "name": "Agenda",
+  "description": "Agenda",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2,strong,em"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {
+              "width": 664
+            },
+            "thumbnails": []
+          }
+        },
+        "summary_items": {
+          "type": "Group",
+          "config": {
+            "label": "Summary items",
+            "repeat": true,
+            "fields": {
+              "summary_item_name": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Summary item name",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "single": "paragraph,strong,em,hyperlink"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

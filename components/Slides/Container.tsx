@@ -16,7 +16,6 @@ export const Container = ({
     >
       {page && settings && <Header page={page} settings={settings} />}
       {children}
-      <p className="text-center mb-12">Copyright Prismic · All Rights Reserved</p>
     </section>
   );
 };
