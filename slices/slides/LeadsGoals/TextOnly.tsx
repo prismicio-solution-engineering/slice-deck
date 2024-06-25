@@ -14,8 +14,14 @@ const TextOnly = ({
   return (
     <Container page={context.page} settings={context.settings}>
       <SlideFullWidth className="flex flex-col justify-center">
-        <GlobalPrismicRichText field={slice.primary.title} />
-        <GlobalPrismicRichText field={slice.primary.description} />
+        <GlobalPrismicRichText
+          field={slice.primary.title}
+          companyName={context.page?.company_name!}
+        />
+        <GlobalPrismicRichText
+          field={slice.primary.description}
+          companyName={context.page?.company_name!}
+        />
       </SlideFullWidth>
     </Container>
   );

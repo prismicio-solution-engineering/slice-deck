@@ -18,7 +18,8 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading2,strong,em,hyperlink"
+            "single": "heading2,strong,em,hyperlink",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "description": {
@@ -27,7 +28,8 @@
             "label": "Description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "image": {
@@ -58,7 +60,8 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading2,strong,em,hyperlink"
+            "single": "heading2,strong,em,hyperlink",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "description": {
@@ -67,7 +70,8 @@
             "label": "Description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "diagram": {
@@ -108,7 +112,8 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading2,strong,em,hyperlink"
+            "single": "heading2,strong,em,hyperlink",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "description": {
@@ -117,7 +122,8 @@
             "label": "Description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "image": {
@@ -167,7 +173,8 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading2,strong,em,hyperlink"
+            "single": "heading2,strong,em,hyperlink",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "list": {
@@ -182,7 +189,8 @@
                   "label": "List item",
                   "placeholder": "",
                   "allowTargetBlank": true,
-                  "single": "paragraph,strong,em,hyperlink"
+                  "single": "paragraph,strong,em,hyperlink",
+                  "labels": ["highlight", "Company Name"]
                 }
               },
               "list_icon": {

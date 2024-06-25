@@ -18,7 +18,8 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading2,strong,em"
+            "single": "heading2,strong,em",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "description": {
@@ -27,7 +28,8 @@
             "label": "Description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,strong,em,hyperlink,image,embed,list-item,o-list-item"
+            "multi": "paragraph,preformatted,strong,em,hyperlink,image,embed,list-item,o-list-item",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "image": {
@@ -58,7 +60,8 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading2,strong,em"
+            "single": "heading2,strong,em",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "description": {
@@ -67,7 +70,8 @@
             "label": "Description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,strong,em,hyperlink,image,embed,list-item,o-list-item"
+            "multi": "paragraph,preformatted,strong,em,hyperlink,image,embed,list-item,o-list-item",
+            "labels": ["highlight", "Company Name"]
           }
         }
       },

@@ -18,7 +18,8 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading1,strong,em"
+            "multi": "heading1,strong,em",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "description": {
@@ -27,7 +28,8 @@
             "label": "Description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph,strong,em,hyperlink"
+            "single": "paragraph,strong,em,hyperlink",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "logos": {
@@ -123,7 +125,8 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading1,strong,em"
+            "multi": "heading1,strong,em",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "description": {
@@ -132,7 +135,8 @@
             "label": "Description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph,strong,em,hyperlink"
+            "single": "paragraph,strong,em,hyperlink",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "logos": {

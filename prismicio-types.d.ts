@@ -64,18 +64,7 @@ interface AuthorDocumentData {
   phone_number: prismic.KeyTextField;
 
   /**
-   * LinkedIn Link field in *Author*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: author.linkedin_link
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  linkedin_link: prismic.KeyTextField;
-
-  /**
-   * Calendar Link field in *Author*
+   * Calendar field in *Author*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -84,6 +73,17 @@ interface AuthorDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   calendar_link: prismic.LinkField;
+
+  /**
+   * LinkedIn field in *Author*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: author.linkedin
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkedin: prismic.LinkField;
 }
 
 /**

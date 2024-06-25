@@ -15,10 +15,16 @@ const WithImage = ({
 }): JSX.Element => {
   return (
     <Container page={context.page} settings={context.settings}>
-      <SlideTwoCols className="items-center">
+      <SlideTwoCols className="items-center" larger="right">
         <LeftCol>
-          <GlobalPrismicRichText field={slice.primary.title} />
-          <GlobalPrismicRichText field={slice.primary.description} />
+          <GlobalPrismicRichText
+            field={slice.primary.title}
+            companyName={context.page?.company_name!}
+          />
+          <GlobalPrismicRichText
+            field={slice.primary.description}
+            companyName={context.page?.company_name!}
+          />
         </LeftCol>
         <RightCol>
           <PrismicNextImage field={slice.primary.image} />

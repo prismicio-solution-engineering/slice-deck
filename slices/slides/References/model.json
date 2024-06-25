@@ -29,7 +29,8 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading2,strong,em"
+            "single": "heading2,strong,em",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "description": {
@@ -38,7 +39,8 @@
             "label": "Description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph,strong,em,hyperlink"
+            "single": "paragraph,strong,em,hyperlink",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "right_side_content": {
@@ -47,7 +49,8 @@
             "label": "Right Side Content",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+            "labels": ["highlight", "Company Name"]
           }
         }
       },
@@ -78,7 +81,8 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading2,strong,em"
+            "single": "heading2,strong,em",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "description": {
@@ -87,7 +91,8 @@
             "label": "Description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph,strong,em,hyperlink"
+            "single": "paragraph,strong,em,hyperlink",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "image": {
@@ -106,7 +111,8 @@
             "label": "Bottom Content",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+            "labels": ["highlight", "Company Name"]
           }
         }
       },

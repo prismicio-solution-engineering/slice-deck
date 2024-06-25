@@ -29,15 +29,25 @@ const Agenda = ({
         <LeftCol>
           <GlobalPrismicRichText field={slice.primary.title} />
           {slice.primary.summary_items.map((item, idx) => (
-            <div key={idx} className="flex flex-col py-4 border-b border-gray-base mr-32">
+            <div
+              key={idx}
+              className="flex flex-col py-4 border-b border-gray-base mr-32"
+            >
               <div className="flex flex-row items-center gap-6">
-              <span className={`text-4xl w-16`}>{(idx += 1)} </span>
-              <GlobalPrismicRichText field={item.summary_item_name} components={{
-                paragraph: ({ children }) => (
-                  <p className="font-copy text-3xl mb-2 text-gray-darker break-words font-normal">{children}</p>
-                ),
-              }}/>
+                <span className={`text-4xl w-16`}>{(idx += 1)} </span>
 
+                <GlobalPrismicRichText
+                  field={item.summary_item_name}
+                  companyName={context.page?.company_name!}
+                  classNames="text-3xl"
+                  // components={{
+                  //   paragraph: ({ children }) => (
+                  //     <p className="font-copy text-3xl mb-2 text-gray-darker break-words font-normal">
+                  //       {children}
+                  //     </p>
+                  //   ),
+                  // }}
+                />
               </div>
             </div>
           ))}

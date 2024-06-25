@@ -18,7 +18,8 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading2,strong,em"
+            "multi": "heading2,strong,em",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "content": {
@@ -27,7 +28,8 @@
             "label": "Content",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "image": {
@@ -57,7 +59,8 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading2,strong,em"
+            "multi": "heading2,strong,em",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "features": {
@@ -72,7 +75,8 @@
                   "label": "Title",
                   "placeholder": "",
                   "allowTargetBlank": true,
-                  "single": "heading3"
+                  "single": "heading3",
+                  "labels": ["highlight", "Company Name"]
                 }
               },
               "description": {
@@ -81,7 +85,8 @@
                   "label": "Description",
                   "placeholder": "",
                   "allowTargetBlank": true,
-                  "multi": "paragraph,strong,em"
+                  "multi": "paragraph,strong,em",
+                  "labels": ["highlight", "Company Name"]
                 }
               },
               "cta_label": {
@@ -119,7 +124,8 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading2,strong,em"
+            "multi": "heading2,strong,em",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "features": {
@@ -134,7 +140,8 @@
                   "label": "Title",
                   "placeholder": "",
                   "allowTargetBlank": true,
-                  "single": "heading3"
+                  "single": "heading3",
+                  "labels": ["highlight", "Company Name"]
                 }
               },
               "description": {
@@ -143,7 +150,8 @@
                   "label": "Description",
                   "placeholder": "",
                   "allowTargetBlank": true,
-                  "multi": "paragraph,strong,em"
+                  "multi": "paragraph,strong,em",
+                  "labels": ["highlight", "Company Name"]
                 }
               },
               "feature_link": {
