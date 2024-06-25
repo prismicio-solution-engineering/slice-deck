@@ -2,14 +2,16 @@ import clsx from "clsx";
 
 const baseClassNames = "h-full flex flex-col justify-center";
 
-export const LeftCol = ({
-  larger,
-  children,
-  className,
-}: {
+interface ColProps {
   larger?: string;
   children: React.ReactNode;
   className?: string;
+}
+
+export const LeftCol: React.FC<ColProps> = ({
+  larger,
+  children,
+  className,
 }) => {
   className = clsx(
     baseClassNames,
@@ -20,14 +22,10 @@ export const LeftCol = ({
   return <div className={className}>{children}</div>;
 };
 
-export const RightCol = ({
+export const RightCol: React.FC<ColProps> = ({
   larger,
   children,
   className,
-}: {
-  larger?: string;
-  children: React.ReactNode;
-  className?: string;
 }) => {
   className = clsx(
     baseClassNames,
