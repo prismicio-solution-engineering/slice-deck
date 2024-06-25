@@ -18,7 +18,8 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading2,strong,em"
+            "single": "heading2,strong,em",
+            "labels": ["highlight", "Company Name"]
           }
         },
         "content": {
@@ -27,7 +28,8 @@
             "label": "Content",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,heading3,strong,em,hyperlink,list-item,o-list-item"
+            "multi": "paragraph,heading3,strong,em,hyperlink,list-item,o-list-item",
+            "labels": ["highlight", "Company Name"]
           }
         }
       },
@@ -47,7 +49,8 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading2,strong,em"
+            "single": "heading2,strong,em",
+            "labels": ["highlight", "Company Name"]
           }
         }
       },

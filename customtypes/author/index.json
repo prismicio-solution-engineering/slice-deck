@@ -51,17 +51,19 @@
           "placeholder": ""
         }
       },
-      "linkedin_link": {
-        "type": "Text",
-        "config": {
-          "label": "LinkedIn Link",
-          "placeholder": ""
-        }
-      },
       "calendar_link": {
         "type": "Link",
         "config": {
-          "label": "Calendar Link",
+          "label": "Calendar",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "linkedin": {
+        "type": "Link",
+        "config": {
+          "label": "LinkedIn",
           "placeholder": "",
           "select": null
         }

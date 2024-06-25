@@ -1,16 +1,18 @@
 import { AuthorDocument, ResourcesSlice } from "@/prismicio-types";
-import { Content, isFilled } from "@prismicio/client";
+import { Content, asLink, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { Context } from "../IntroSlide";
 import { Container } from "@/components/Slides/Container";
 import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
 import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
 import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
-import { Calendar } from "@/app/[uid]/components/Calendar";
 import { LeftCol, RightCol } from "@/components/Slides/Columns";
 import { createClient } from "@/prismicio";
 import { PrismicNextImage } from "@prismicio/next";
-import { EnvelopeIcon, LinkIcon, PhoneIcon } from "@heroicons/react/24/outline";
+import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/solid";
+import { Calendar } from "@/components/Calendar";
+import Image from "next/image";
+import LinkedInIcon from "@/assets/icons/linkedin"
 /**
  * Props for `Resources`.
  */
@@ -57,23 +59,26 @@ const Resources = async ({
             <p className="font-copy text-lg uppercase text-gray-base break-words font-normal mb-4">
               {author.data.role}
             </p>
+            <div className="w-full flex flex-row gap-4">
+              {isFilled.keyText(author.data.email) && (
+                <a href={`mailto:${author.data.email}`}>
+                  <EnvelopeIcon width={32} />
+                </a>
+              )}
 
-            {isFilled.keyText(author.data.email) && (
-              <a href={`mailto:${author.data.email}`}>
-                <EnvelopeIcon width={24} />
-              </a>
-            )}
+              {isFilled.link(author.data.linkedin) && (
+                <a href={`${asLink(author.data.linkedin)}`}>
 
-            {isFilled.keyText(author.data.linkedin_link) && (
-              <a href={author.data.linkedin_link}>
-                <LinkIcon width={24} />
-              </a>
-            )}
-            {isFilled.keyText(author.data.phone_number) && (
-              <a href={`tel:${author.data.phone_number}`}>
-                <PhoneIcon width={24} />
-              </a>
-            )}
+                  <LinkedInIcon />
+                </a>
+              )}
+
+              {isFilled.keyText(author.data.phone_number) && (
+                <a href={`tel:${author.data.phone_number}`}>
+                  <PhoneIcon width={32} />
+                </a>
+              )}
+            </div>
           </LeftCol>
           <RightCol>
             <Calendar author={author.data} />
