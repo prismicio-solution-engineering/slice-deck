@@ -1,8 +1,9 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import Intro from "./Intro";
-import { DeckDocumentData, MethodologySlice } from "@/prismicio-types";
+import { MethodologySlice } from "@/prismicio-types";
 import User from "./User";
+import { Context } from "../IntroSlide";
 
 /**
  * Props for `Methodology`.
@@ -17,7 +18,7 @@ const Methodology = ({
   context,
 }: {
   slice: MethodologySlice;
-  context: DeckDocumentData;
+  context: Context;
 }) => {
   switch (slice.variation) {
     case "default":

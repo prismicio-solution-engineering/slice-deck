@@ -2,18 +2,20 @@
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 export const SliderControls = ({ children }: { children: React.ReactNode }) => {
-  const sliderContainerRef = React.useRef(null);
+  const sliderContainerRef = React.useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = React.Children.count(children);
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
-    const slideWidth = sliderContainerRef.current.scrollWidth / totalSlides;
-    const newScrollLeft = slideWidth * index;
-    sliderContainerRef.current.scrollTo({
-      left: newScrollLeft,
-      behavior: "smooth",
-    });
+    if (sliderContainerRef.current) {
+      const slideWidth = sliderContainerRef.current.scrollWidth / totalSlides;
+      const newScrollLeft = slideWidth * index;
+      sliderContainerRef.current.scrollTo({
+        left: newScrollLeft,
+        behavior: "smooth",
+      });
+    }
   };
 
   const nextSlide = () => {
@@ -30,7 +32,7 @@ export const SliderControls = ({ children }: { children: React.ReactNode }) => {
 
   // Effect to add and remove keyboard event listeners
   useEffect(() => {
-    const handleKeyDown = (event) => {
+    const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowRight") {
         nextSlide();
       } else if (event.key === "ArrowLeft") {

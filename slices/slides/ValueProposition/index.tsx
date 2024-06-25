@@ -1,10 +1,11 @@
-import { DeckDocument, ValuePropositionSlice } from "@/prismicio-types";
+import { ValuePropositionSlice } from "@/prismicio-types";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import TwoCols from "./TwoCols";
 import TwoColsDiagram from "./TwoColsDiagram";
 import TwoColsLogos from "./TwoColsLogos";
 import List from "./List";
+import { Context } from "../IntroSlide";
 
 /**
  * Props for `ValueProposition`.
@@ -20,7 +21,7 @@ const ValueProposition = ({
   context,
 }: {
   slice: ValuePropositionSlice;
-  context: DeckDocument;
+  context: Context;
 }) => {
   switch (slice.variation) {
     case "default":

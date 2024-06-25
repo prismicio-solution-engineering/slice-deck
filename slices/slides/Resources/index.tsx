@@ -12,7 +12,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/solid";
 import { Calendar } from "@/components/Calendar";
 import Image from "next/image";
-import LinkedInIcon from "@/assets/icons/linkedin"
+import LinkedInIcon from "@/assets/icons/linkedin";
 /**
  * Props for `Resources`.
  */
@@ -29,10 +29,20 @@ const Resources = async ({
   context: Context;
 }) => {
   const client = createClient();
-  const author = await client.getByUID<AuthorDocument>(
-    "author",
-    context.page.author.uid
-  );
+
+  const authorUid: string | undefined = (() => {
+    if (isFilled.contentRelationship(context.page.author)) {
+      return context.page.author.uid;
+    }
+    return undefined; // Return undefined explicitly if the condition is not met
+  })();
+  
+  // If you need authorUid to always be a string, you should handle the undefined case
+  if (authorUid === undefined) {
+    throw new Error("Author UID is undefined");
+  }
+  
+  const author = await client.getByUID<AuthorDocument>("author", authorUid);
 
   return (
     <Container page={context.page} settings={context.settings}>
@@ -68,7 +78,6 @@ const Resources = async ({
 
               {isFilled.link(author.data.linkedin) && (
                 <a href={`${asLink(author.data.linkedin)}`}>
-
                   <LinkedInIcon />
                 </a>
               )}
