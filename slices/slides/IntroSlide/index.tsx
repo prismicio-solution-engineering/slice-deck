@@ -49,7 +49,7 @@ const IntroSlide = ({
   context: Context;
 }): JSX.Element => {
   return (
-    <Container page={context.page} settings={context.settings}>
+    <Container page={context.page} settings={context.settings} type={"company"}>
       <SlideFullWidth className="flex flex-col justify-evenly items-center">
         <div className="w-8/12 text-center flex flex-col gap-y-4">
           <GlobalPrismicRichText field={slice.primary.title} />

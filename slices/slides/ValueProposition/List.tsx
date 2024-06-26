@@ -17,15 +17,7 @@ const List = ({
       <SlideFullWidth className="items-center justify-evenly">
         <GlobalPrismicRichText
           field={slice.primary.title}
-          components={{
-            heading2: ({ children }) => (
-              <h2
-                className={`text-4xl font-headings font-medium text-gray-darker break-words text-center w-8/12`}
-              >
-                {children}
-              </h2>
-            ),
-          }}
+          classNames="w-8/12 text-center"
         />
         <div className="flex flex-col gap-y-4">
           {slice.primary.list.map((item, idx) => (
@@ -33,13 +25,7 @@ const List = ({
               <PrismicNextImage field={item.list_icon} />
               <GlobalPrismicRichText
                 field={item.list_item}
-                components={{
-                  paragraph: ({ children }) => (
-                    <p className="font-copy text-3xl pb-1 text-gray-darker break-words font-normal">
-                      {children}
-                    </p>
-                  ),
-                }}
+                classNames="!text-3xl"
               />
             </div>
           ))}

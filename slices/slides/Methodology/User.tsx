@@ -18,11 +18,10 @@ const User = ({
       <SlideTwoCols overflowRight className="items-center">
         <LeftCol>
           <GlobalPrismicRichText field={slice.primary.title} />
-          <GlobalPrismicRichText field={slice.primary.description} components={{
-            paragraph: ({ children }) => (
-              <p className="font-copy text-3xl mt-8 mb-2 text-gray-darker break-words font-normal">{children}</p>
-            ),
-          }}/>
+          <GlobalPrismicRichText
+            field={slice.primary.description}
+            classNames="!text-3xl mt-8"
+          />
         </LeftCol>
         <RightCol>
           <PrismicNextImage field={slice.primary.image} />

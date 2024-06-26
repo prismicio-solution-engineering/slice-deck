@@ -22,23 +22,11 @@ const ThreeColsList = ({
               <div>
                 <GlobalPrismicRichText
                   field={item.title}
-                  components={{
-                    heading3: ({ children }) => (
-                      <h3 className="text-3xl font-medium font-headings text-gray-darker my-4 first:mt-0 break-words border-b-2 border-gray-base">
-                        {children}
-                      </h3>
-                    ),
-                  }}
+                  classNames="my-4 border-b-2 border-gray-base"
                 />
                 <GlobalPrismicRichText
                   field={item.description}
-                  components={{
-                    paragraph: ({ children }) => (
-                      <p className="font-copy text-2xl mb-2 text-gray-darker break-words font-normal">
-                        {children}
-                      </p>
-                    ),
-                  }}
+                  classNames="!text-2xl"
                 />
               </div>
               <Button

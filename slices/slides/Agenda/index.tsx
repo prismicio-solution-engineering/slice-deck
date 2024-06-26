@@ -39,14 +39,7 @@ const Agenda = ({
                 <GlobalPrismicRichText
                   field={item.summary_item_name}
                   companyName={context.page?.company_name!}
-                  classNames="text-3xl"
-                  // components={{
-                  //   paragraph: ({ children }) => (
-                  //     <p className="font-copy text-3xl mb-2 text-gray-darker break-words font-normal">
-                  //       {children}
-                  //     </p>
-                  //   ),
-                  // }}
+                  classNames="!text-3xl"
                 />
               </div>
             </div>
