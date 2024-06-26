@@ -21,11 +21,10 @@ const Intro = ({
         </LeftCol>
         <RightCol>
           <GlobalPrismicRichText field={slice.primary.title} />
-          <GlobalPrismicRichText field={slice.primary.description} components={{
-            paragraph: ({ children }) => (
-              <p className="font-copy text-3xl mt-8 mb-2 text-gray-darker break-words font-normal">{children}</p>
-            ),
-          }}/>
+          <GlobalPrismicRichText
+            field={slice.primary.description}
+            classNames="!text-3xl mt-8"
+          />
         </RightCol>
       </SlideTwoCols>
     </Container>

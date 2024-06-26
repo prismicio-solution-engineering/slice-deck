@@ -25,51 +25,42 @@ const References = ({
 }): JSX.Element => {
   return (
     <Container page={context.page} settings={context.settings}>
-      {slice.variation === "default" ? 
-      <SlideTwoCols>
-        <LeftCol>
-          <PrismicNextImage
-            field={slice.primary.company_logo}
-            className="h-52 w-52 object-contain"
-          />
-          <GlobalPrismicRichText
-            field={slice.primary.description}
-            components={{
-              paragraph: ({ children }) => (
-                <p className="font-copy text-3xl mb-2 text-gray-darker break-words font-normal">
-                  {children}
-                </p>
-              ),
-            }}
-          />
-        </LeftCol>
-        <RightCol>
+      {slice.variation === "default" ? (
+        <SlideTwoCols>
+          <LeftCol>
+            <PrismicNextImage
+              field={slice.primary.company_logo}
+              className="h-52 w-52 object-contain"
+            />
+            <GlobalPrismicRichText
+              field={slice.primary.description}
+              classNames="!text-3xl"
+            />
+          </LeftCol>
+          <RightCol>
             <GlobalPrismicRichText field={slice.primary.right_side_content} />
-        </RightCol>
-      </SlideTwoCols>
-      :
-      <SlideTwoCols larger="left" overflowRight>
-        <LeftCol>
-          <PrismicNextImage
-            field={slice.primary.company_logo}
-            className="h-52 w-52 object-contain"
-          />
-          <GlobalPrismicRichText
-            field={slice.primary.description}
-            components={{
-              paragraph: ({ children }) => (
-                <p className="font-copy text-3xl mb-2 text-gray-darker break-words font-normal">
-                  {children}
-                </p>
-              ),
-            }}
-          />
-        </LeftCol>
-        <RightCol className="items-end">
-            <PrismicNextImage field={slice.primary.image} className="w-full h-full object-contain"/>
-        </RightCol>
-      </SlideTwoCols>
-      }
+          </RightCol>
+        </SlideTwoCols>
+      ) : (
+        <SlideTwoCols larger="left" overflowRight>
+          <LeftCol>
+            <PrismicNextImage
+              field={slice.primary.company_logo}
+              className="h-52 w-52 object-contain"
+            />
+            <GlobalPrismicRichText
+              field={slice.primary.description}
+              classNames="!text-3xl"
+            />
+          </LeftCol>
+          <RightCol className="items-end">
+            <PrismicNextImage
+              field={slice.primary.image}
+              className="w-full h-full object-contain"
+            />
+          </RightCol>
+        </SlideTwoCols>
+      )}
     </Container>
   );
 };
