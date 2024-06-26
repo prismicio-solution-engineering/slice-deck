@@ -224,7 +224,28 @@ interface DeckDocumentData {
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  meta_title: prismic.KeyTextField;
+  meta_title: prismic.KeyTextField /**
+   * Activate Password field in *Deck*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: deck.activate_password
+   * - **Tab**: Access
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */;
+  activate_password: prismic.BooleanField;
+
+  /**
+   * Password field in *Deck*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: deck.password
+   * - **Tab**: Access
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  password: prismic.KeyTextField;
 }
 
 /**

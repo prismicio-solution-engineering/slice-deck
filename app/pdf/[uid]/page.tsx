@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import fs from 'fs'
 import { notFound } from "next/navigation";
 import { PrismicRichText, SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
@@ -9,10 +10,9 @@ import {
   SettingsDocument,
 } from "@/prismicio-types";
 import * as crypto from 'crypto';
-import { components as slidesComponents } from "@/slices/slides";
-import Scaler from "@/components/Slides/Scaler";
-import { SliderControls } from "@/components/Slides/SliderControls";
 import PasswordForm from "@/components/PasswordForm";
+import path from "path";
+import PdfDeck from "@/components/PdfDeck";
 
 type Params = { uid: string };
 
@@ -40,21 +40,21 @@ export default async function Page({
 
   const isProtected = page.data.activate_password
 
-  if(isProtected){
+  if (isProtected) {
     const password = page.data.password
 
     if (!searchParams.pwd) {
       return (
-        <PasswordForm hash={params.uid!} />
+        <PasswordForm hash={params.uid!} isPdf/>
       )
     } else {
       const privateKey = process.env.PRIVATE_KEY!
       const encryptedPassword = Buffer.from(decodeURIComponent(searchParams.pwd!), 'base64');
-  
+
       const decrypted = crypto.privateDecrypt(privateKey,
         encryptedPassword
       );
-  
+
       if (decrypted.toString() !== password) {
         return (
           <PasswordForm hash={params.uid!} />
@@ -64,23 +64,13 @@ export default async function Page({
   }
 
   return (
-    <div className="max-w-screen-3xl mx-auto">
-      <PrismicRichText field={page.data.title} />
-      <p>Last updated : {new Date(page.last_publication_date).toUTCString()}</p>
-
-      {/* <Calendar author={author} /> */}
-      <Scaler>
-        <div className="relative">
-          <SliderControls>
-            <SliceZone
-              slices={page.data.slices}
-              components={{ ...slidesComponents }}
-              context={{ page: page.data, settings: settings.data }}
-            />
-          </SliderControls>
-        </div>
-      </Scaler>
-    </div>
+    <>
+      <div className="max-w-screen-3xl mx-auto">
+        <PrismicRichText field={page.data.title} />
+        <p>Last updated : {new Date(page.last_publication_date).toUTCString()}</p>
+      </div>
+      <PdfDeck slices={page.data.slices} context={{ page: page.data, settings: settings.data }} />
+    </>
   );
 }
 
@@ -112,6 +102,6 @@ export async function generateStaticParams() {
   const pages = await client.getAllByType("deck");
 
   return pages.map((page) => {
-    return { uid:  crypto.createHash('sha256').update(page.uid).digest('hex') };
+    return { uid: crypto.createHash('sha256').update(page.uid).digest('hex') };
   });
 }

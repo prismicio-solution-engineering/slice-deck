@@ -127,6 +127,24 @@
         },
         "type": "Text"
       }
+    },
+    "Access": {
+      "activate_password": {
+        "type": "Boolean",
+        "config": {
+          "label": "Activate Password",
+          "default_value": false,
+          "placeholder_true": "true",
+          "placeholder_false": "false"
+        }
+      },
+      "password": {
+        "type": "Text",
+        "config": {
+          "label": "Password",
+          "placeholder": ""
+        }
+      }
     }
   }
 }

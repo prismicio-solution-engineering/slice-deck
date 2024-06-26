@@ -13,7 +13,7 @@ export async function GET(request: NextRequest) {
 
 function linkResolver(doc:FilledContentRelationshipField) {
   if (doc.type === 'deck') {
-    return `/${crypto.createHash('sha256').update(doc.uid!).digest('hex')}`
+    return `/pdf/${crypto.createHash('sha256').update(doc.uid!).digest('hex')}`
   }
   return null
 }
