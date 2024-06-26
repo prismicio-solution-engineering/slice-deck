@@ -54,8 +54,8 @@ const PdfDeck = ({ slices, context }: {
             </div>
             {/* The component you want to capture */}
             {slices.map((slice, index) => (
-                <Scaler>
-                    <div key={index} className="relative p-8" ref={(el) => {
+                <Scaler key={index}>
+                    <div className="relative p-8" ref={(el) => {
                         if (el) {
                             componentRefs.current[index] = el
                         }
