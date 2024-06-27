@@ -11,8 +11,9 @@ import {
 } from "@/prismicio-types";
 import * as crypto from 'crypto';
 import PasswordForm from "@/components/PasswordForm";
-import path from "path";
-import PdfDeck from "@/components/PdfDeck";
+import { components as slidesComponents } from "@/slices/slides";
+import Scaler from "@/components/Slides/Scaler";
+import PdfButton from "@/components/PdfButton";
 
 type Params = { uid: string };
 
@@ -45,7 +46,7 @@ export default async function Page({
 
     if (!searchParams.pwd) {
       return (
-        <PasswordForm hash={params.uid!} isPdf/>
+        <PasswordForm hash={params.uid!} isPdf />
       )
     } else {
       const privateKey = process.env.PRIVATE_KEY!
@@ -69,7 +70,15 @@ export default async function Page({
         <PrismicRichText field={page.data.title} />
         <p>Last updated : {new Date(page.last_publication_date).toUTCString()}</p>
       </div>
-      <PdfDeck slices={page.data.slices} context={{ page: page.data, settings: settings.data }} />
+      <PdfButton title={asText(page.data.title)} pages={page.data.slices.length}/>
+      {page.data.slices.map((slice, index) => (
+        <Scaler key={index}>
+          <div id={"slice"+index} className="relative p-8">
+            <SliceZone slices={[slice]} components={{ ...slidesComponents }} context={{ page: page.data, settings: settings.data }} />
+          </div >
+        </Scaler>
+      ))
+      }
     </>
   );
 }
