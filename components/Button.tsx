@@ -8,7 +8,7 @@ const baseStyles: clsxT.ClassDictionary = {
     "group inline-flex items-center justify-center rounded-lg py-3 px-6 text-lg font-bold font-copy focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2",
   secondary:
     "group inline-flex ring-1 items-center justify-center rounded-lg py-2 px-4 text-lg focus:outline-none font-copy font-bold text-lg border-2 py-3 px-6 rounded-lg",
-  link: "font-copy font-bold text-base underline underline-offset-8 hover:underline-offset-4 mt-4 transition-all duration-300 ease-in-out",
+  link: "font-copy font-bold text-xl underline underline-offset-8 hover:underline-offset-4 mt-4 transition-all duration-300 ease-in-out",
 };
 
 const variantStyles: clsxT.ClassDictionary = {
