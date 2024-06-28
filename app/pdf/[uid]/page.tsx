@@ -45,7 +45,6 @@ export default async function Page({
     const password = page.data.password
 
     if (!searchParams.pwd) {
-      console.log("no pwd query param")
       return (
         <PasswordForm hash={params.uid!} isPdf />
       )
@@ -111,11 +110,12 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams() {
-  const client = createClient();
-  const pages = await client.getAllByType("deck");
+// We cannot use this as we need SSR to check pwd (we could use Middleware, but not sure if it's worth it)
+// export async function generateStaticParams() {
+//   const client = createClient();
+//   const pages = await client.getAllByType("deck");
 
-  return pages.map((page) => {
-    return { uid: crypto.createHash('sha256').update(page.uid).digest('hex') };
-  });
-}
+//   return pages.map((page) => {
+//     return { uid: crypto.createHash('sha256').update(page.uid).digest('hex') };
+//   });
+// }
