@@ -2,7 +2,7 @@ import React, { ReactElement, cloneElement } from "react";
 import clsx from "clsx";
 
 const baseClassNames =
-  "h-full w-[1520px] mb-14 flex flex-row gap-x-10 gap-y-4 items-center";
+  "h-full w-[1520px] mb-12 flex flex-row gap-x-10 gap-y-4 items-center overflow-clip";
 
 interface SlideTwoColsProps {
   larger?: string;

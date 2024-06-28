@@ -1074,15 +1074,30 @@ export type IntroSlideSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *LeadsGoals → With Image grid → Primary → Grid*
+ * Item in *LeadsGoals → With Image grid → Primary → Grid right column*
  */
-export interface LeadsGoalsSliceWithImageGridPrimaryGridItem {
+export interface LeadsGoalsSliceWithImageGridPrimaryGridRightColumnItem {
   /**
-   * Image field in *LeadsGoals → With Image grid → Primary → Grid*
+   * Image field in *LeadsGoals → With Image grid → Primary → Grid right column*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: leads_goals.withImageGrid.primary.grid[].image
+   * - **API ID Path**: leads_goals.withImageGrid.primary.grid_right_column[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Item in *LeadsGoals → With Image grid → Primary → Grid left column*
+ */
+export interface LeadsGoalsSliceWithImageGridPrimaryGridLeftColumnItem {
+  /**
+   * Image field in *LeadsGoals → With Image grid → Primary → Grid left column*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: leads_goals.withImageGrid.primary.grid_left_column[].image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
@@ -1209,25 +1224,27 @@ export interface LeadsGoalsSliceWithImageGridPrimary {
   description: prismic.RichTextField;
 
   /**
-   * Image field in *LeadsGoals → With Image grid → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: leads_goals.withImageGrid.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-
-  /**
-   * Grid field in *LeadsGoals → With Image grid → Primary*
+   * Grid right column field in *LeadsGoals → With Image grid → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: leads_goals.withImageGrid.primary.grid[]
+   * - **API ID Path**: leads_goals.withImageGrid.primary.grid_right_column[]
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  grid: prismic.GroupField<
-    Simplify<LeadsGoalsSliceWithImageGridPrimaryGridItem>
+  grid_right_column: prismic.GroupField<
+    Simplify<LeadsGoalsSliceWithImageGridPrimaryGridRightColumnItem>
+  >;
+
+  /**
+   * Grid left column field in *LeadsGoals → With Image grid → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: leads_goals.withImageGrid.primary.grid_left_column[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  grid_left_column: prismic.GroupField<
+    Simplify<LeadsGoalsSliceWithImageGridPrimaryGridLeftColumnItem>
   >;
 }
 
@@ -1736,6 +1753,36 @@ export type ProductSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *References → With Image → Primary → Grid right column*
+ */
+export interface ReferencesSliceWithImagePrimaryGridRightColumnItem {
+  /**
+   * Image field in *References → With Image → Primary → Grid right column*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.withImage.primary.grid_right_column[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Item in *References → With Image → Primary → Grid left column*
+ */
+export interface ReferencesSliceWithImagePrimaryGridLeftColumnItem {
+  /**
+   * Image field in *References → With Image → Primary → Grid left column*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.withImage.primary.grid_left_column[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
  * Primary content in *References → Two Cols Text → Primary*
  */
 export interface ReferencesSliceDefaultPrimary {
@@ -1856,14 +1903,28 @@ export interface ReferencesSliceWithImagePrimary {
   description: prismic.RichTextField;
 
   /**
-   * Image field in *References → With Image → Primary*
+   * Grid right column field in *References → With Image → Primary*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: references.withImage.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **API ID Path**: references.withImage.primary.grid_right_column[]
+   * - **Documentation**: https://prismic.io/docs/field#group
    */
-  image: prismic.ImageField<never>;
+  grid_right_column: prismic.GroupField<
+    Simplify<ReferencesSliceWithImagePrimaryGridRightColumnItem>
+  >;
+
+  /**
+   * Grid left column field in *References → With Image → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.withImage.primary.grid_left_column[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  grid_left_column: prismic.GroupField<
+    Simplify<ReferencesSliceWithImagePrimaryGridLeftColumnItem>
+  >;
 
   /**
    * Bottom Content field in *References → With Image → Primary*
@@ -2611,7 +2672,8 @@ declare module "@prismicio/client" {
       IntroSlideSliceSingleGroup,
       LeadsGoalsSlice,
       LeadsGoalsSliceDefaultPrimary,
-      LeadsGoalsSliceWithImageGridPrimaryGridItem,
+      LeadsGoalsSliceWithImageGridPrimaryGridRightColumnItem,
+      LeadsGoalsSliceWithImageGridPrimaryGridLeftColumnItem,
       LeadsGoalsSliceWithImageGridPrimary,
       LeadsGoalsSliceWithImageAndIllustrationPrimary,
       LeadsGoalsSliceWithIllustrationPrimary,
@@ -2633,6 +2695,8 @@ declare module "@prismicio/client" {
       ProductSliceDefault,
       ReferencesSlice,
       ReferencesSliceDefaultPrimary,
+      ReferencesSliceWithImagePrimaryGridRightColumnItem,
+      ReferencesSliceWithImagePrimaryGridLeftColumnItem,
       ReferencesSliceWithImagePrimary,
       ReferencesSliceVariation,
       ReferencesSliceDefault,

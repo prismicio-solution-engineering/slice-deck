@@ -34,7 +34,7 @@ export function GlobalPrismicRichText({
     heading1: ({ children }) => (
       <h2
         className={clsx(
-          `text-8xl font-headings font-medium break-words ${textColor}`,
+          `text-8xl font-headings font-medium break-words`,
           classNames
         )}
       >
@@ -44,7 +44,7 @@ export function GlobalPrismicRichText({
     heading2: ({ children }) => (
       <h2
         className={clsx(
-          `text-6xl mb-4 font-headings font-semibold break-words ${textColor}`,
+          `text-6xl mb-4 font-headings font-semibold break-words`,
           classNames
         )}
       >
@@ -54,7 +54,7 @@ export function GlobalPrismicRichText({
     heading3: ({ children }) => (
       <h3
         className={clsx(
-          `text-5xl font-medium font-headings mt-4 first:mt-0 break-words ${textColor}`,
+          `text-5xl font-medium font-headings mt-4 first:mt-0 break-words`,
           classNames
         )}
       >
@@ -64,7 +64,7 @@ export function GlobalPrismicRichText({
     heading4: ({ children }) => (
       <h4
         className={clsx(
-          `text-4xl font-medium font-headings mt-4 first:mt-0 break-words ${textColor}`,
+          `text-4xl font-medium font-headings mt-4 first:mt-0 break-words`,
           classNames
         )}
       >
@@ -152,7 +152,7 @@ export function GlobalPrismicRichText({
           )}
           {node.data.label === "Company Name" && (
             <span className={clsx(classNames)}>
-              {companyName ? companyName : "Your company's"}
+              {companyName ? companyName : "Your company"}
             </span>
           )}
         </>

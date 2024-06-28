@@ -4,6 +4,7 @@ import WithImage from "./WithImage";
 import { LeadsGoalsSlice } from "@/prismicio-types";
 import { Context } from "../IntroSlide";
 import WithImageGrid from "./WithImageGrid";
+import WithIllustration from "./WithIllustration";
 
 export const leadsGoalsComponents = {
   heading2: ({ children }: { children: React.ReactNode }) => (
@@ -40,6 +41,10 @@ const LeadsGoals = ({
       return <WithImage slice={slice} context={context} />;
     case "withImageGrid":
       return <WithImageGrid slice={slice} context={context} />;
+    case "withIllustration":
+      return <WithIllustration slice={slice} context={context} />;
+    case "withImageAndIllustration":
+      return <WithIllustration slice={slice} context={context} />;
   }
 };
 
