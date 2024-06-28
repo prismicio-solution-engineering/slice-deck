@@ -12,6 +12,15 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "theme": {
+          "type": "Select",
+          "config": {
+            "label": "Theme",
+            "placeholder": "Slide theme color",
+            "options": ["white", "orange", "pink", "green", "purple", "blue"],
+            "default_value": "white"
+          }
+        },
         "title": {
           "type": "StructuredText",
           "config": {
@@ -43,6 +52,15 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "theme": {
+          "type": "Select",
+          "config": {
+            "label": "Theme",
+            "placeholder": "Slide theme color",
+            "options": ["white", "orange", "pink", "green", "purple", "blue"],
+            "default_value": "white"
+          }
+        },
         "title": {
           "type": "StructuredText",
           "config": {

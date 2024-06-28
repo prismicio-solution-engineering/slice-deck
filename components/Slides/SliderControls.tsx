@@ -62,7 +62,7 @@ export const SliderControls = ({ children }: { children: React.ReactNode }) => {
         </button>
         <div
           ref={sliderContainerRef}
-          className="flex overflow-x-hidden overflow-y-clip scroll-smooth scrollbar-hide no-scrollbar max-w-[1520px] mx-auto"
+          className="flex overflow-x-hidden overflow-y-clip scroll-smooth scrollbar-hide no-scrollbar w-[1520px] mx-auto mb-12"
         >
           {children}
         </div>
@@ -75,7 +75,7 @@ export const SliderControls = ({ children }: { children: React.ReactNode }) => {
           <ChevronRightIcon className="h-10 w-10" />
         </button>
       </div>
-      <div className="absolute w-full flex justify-center bottom-4">
+      <div className="absolute w-full flex justify-center bottom-0">
         {Array.from({ length: totalSlides }).map((_, index) => (
           <button
             key={index}

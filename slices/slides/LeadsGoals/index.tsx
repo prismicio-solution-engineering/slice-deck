@@ -1,9 +1,9 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import WithImage from "./WithImage";
-import TextOnly from "./TextOnly";
 import { LeadsGoalsSlice } from "@/prismicio-types";
 import { Context } from "../IntroSlide";
+import WithImageGrid from "./WithImageGrid";
 
 export const leadsGoalsComponents = {
   heading2: ({ children }: { children: React.ReactNode }) => (
@@ -34,12 +34,12 @@ const LeadsGoals = ({
 }: {
   slice: LeadsGoalsSlice;
   context: Context;
-}): JSX.Element => {
+}) => {
   switch (slice.variation) {
     case "default":
       return <WithImage slice={slice} context={context} />;
-    case "textOnly":
-      return <TextOnly slice={slice} context={context} />;
+    case "withImageGrid":
+      return <WithImageGrid slice={slice} context={context} />;
   }
 };
 

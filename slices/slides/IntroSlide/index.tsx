@@ -49,11 +49,11 @@ const IntroSlide = ({
   context: Context;
 }): JSX.Element => {
   return (
-    <Container page={context.page} settings={context.settings} type={"company"}>
+    <Container page={context.page} settings={context.settings} type={"company"} theme={slice.primary.theme}>
       <SlideFullWidth className="flex flex-col justify-evenly items-center">
         <div className="w-8/12 text-center flex flex-col gap-y-4">
           <GlobalPrismicRichText field={slice.primary.title} />
-          <GlobalPrismicRichText field={slice.primary.description} />
+          <GlobalPrismicRichText field={slice.primary.description} theme={slice.primary.theme} />
         </div>
         {slice.variation === "default" ? (
           <ThreeGroups slice={slice} />

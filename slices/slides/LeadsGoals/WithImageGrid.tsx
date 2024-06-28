@@ -1,16 +1,16 @@
 import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
-import { LeadsGoalsSliceDefault } from "@/prismicio-types";
+import { LeadsGoalsSliceWithImageGrid } from "@/prismicio-types";
 import { Container } from "@/components/Slides/Container";
 import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
 import { LeftCol, RightCol } from "@/components/Slides/Columns";
 import { PrismicNextImage } from "@prismicio/next";
 import { Context } from "../IntroSlide";
 
-const WithImage = ({
+const WithImageGrid = ({
   slice,
   context,
 }: {
-  slice: LeadsGoalsSliceDefault;
+  slice: LeadsGoalsSliceWithImageGrid;
   context: Context;
 }): JSX.Element => {
   return (
@@ -42,4 +42,4 @@ const WithImage = ({
   );
 };
 
-export default WithImage;
+export default WithImageGrid;

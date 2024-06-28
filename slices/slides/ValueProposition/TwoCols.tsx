@@ -14,16 +14,26 @@ const TwoCols = ({
   context: Context;
 }): JSX.Element => {
   return (
-    <Container page={context.page} settings={context.settings}>
+    <Container
+      page={context.page}
+      settings={context.settings}
+      theme={slice.primary.theme}
+    >
       <SlideTwoCols overflowRight className="items-center">
         <LeftCol>
+          <div className="font-headings text-3xl font-semibold text-primary-pink">
+            {slice.primary.eyebrow}
+          </div>
           <Content
             title={slice.primary.title}
             description={slice.primary.description}
           />
         </LeftCol>
-        <RightCol className="flex flex-col gap-y-16 justify-center items-end object-contain">
-          <PrismicNextImage field={slice.primary.image} />
+        <RightCol>
+          <PrismicNextImage
+            field={slice.primary.image}
+            className="w-full h-full object-contain"
+          />
         </RightCol>
       </SlideTwoCols>
     </Container>

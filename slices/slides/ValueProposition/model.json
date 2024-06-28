@@ -12,6 +12,29 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "theme": {
+          "type": "Select",
+          "config": {
+            "label": "Theme",
+            "placeholder": "Slide theme color",
+            "options": [
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
+            "default_value": "white"
+          }
+        },
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
         "title": {
           "type": "StructuredText",
           "config": {
@@ -19,7 +42,10 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "heading2,strong,em,hyperlink",
-            "labels": ["highlight", "Company Name"]
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "description": {
@@ -29,7 +55,10 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
-            "labels": ["highlight", "Company Name"]
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "image": {
@@ -38,7 +67,7 @@
             "label": "Image",
             "constraint": {
               "width": 695,
-              "height": null
+              "height": 705
             },
             "thumbnails": []
           }
@@ -54,6 +83,29 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "theme": {
+          "type": "Select",
+          "config": {
+            "label": "Theme",
+            "placeholder": "Slide theme color",
+            "options": [
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
+            "default_value": "white"
+          }
+        },
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
         "title": {
           "type": "StructuredText",
           "config": {
@@ -61,7 +113,10 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "heading2,strong,em,hyperlink",
-            "labels": ["highlight", "Company Name"]
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "description": {
@@ -71,17 +126,10 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
-            "labels": ["highlight", "Company Name"]
-          }
-        },
-        "diagram": {
-          "type": "Image",
-          "config": {
-            "label": "Diagram",
-            "constraint": {
-              "width": 664
-            },
-            "thumbnails": []
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "image": {
@@ -106,6 +154,29 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "theme": {
+          "type": "Select",
+          "config": {
+            "label": "Theme",
+            "placeholder": "Slide theme color",
+            "options": [
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
+            "default_value": "white"
+          }
+        },
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
         "title": {
           "type": "StructuredText",
           "config": {
@@ -113,7 +184,10 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "heading2,strong,em,hyperlink",
-            "labels": ["highlight", "Company Name"]
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "description": {
@@ -123,7 +197,10 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
-            "labels": ["highlight", "Company Name"]
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "image": {
@@ -167,6 +244,29 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "theme": {
+          "type": "Select",
+          "config": {
+            "label": "Theme",
+            "placeholder": "Slide theme color",
+            "options": [
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
+            "default_value": "white"
+          }
+        },
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
         "title": {
           "type": "StructuredText",
           "config": {
@@ -174,7 +274,19 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "heading2,strong,em,hyperlink",
-            "labels": ["highlight", "Company Name"]
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,em,strong"
           }
         },
         "list": {
@@ -190,7 +302,10 @@
                   "placeholder": "",
                   "allowTargetBlank": true,
                   "single": "paragraph,strong,em,hyperlink",
-                  "labels": ["highlight", "Company Name"]
+                  "labels": [
+                    "highlight",
+                    "Company Name"
+                  ]
                 }
               },
               "list_icon": {

@@ -23,11 +23,21 @@ const Product = ({
   context: Context;
 }): JSX.Element => {
   return (
-    <Container page={context.page} settings={context.settings}>
+    <Container
+      page={context.page}
+      settings={context.settings}
+      theme={slice.primary.theme}
+    >
       <SlideTwoCols overflowRight className="items-center">
-        <LeftCol className="flex flex-col gap-y-8 justify-center">
+        <LeftCol>
+          <div className="font-headings text-3xl font-semibold text-primary-pink">
+            {slice.primary.eyebrow}
+          </div>
           <GlobalPrismicRichText field={slice.primary.title} />
-          <GlobalPrismicRichText field={slice.primary.description} />
+          <GlobalPrismicRichText
+            field={slice.primary.description}
+            theme={slice.primary.theme}
+          />
         </LeftCol>
         <RightCol className="flex flex-col justify-center items-end object-contain">
           <PrismicNextImage field={slice.primary.image} />
