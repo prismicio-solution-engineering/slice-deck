@@ -1,5 +1,3 @@
-export const dynamic = 'force-dynamic'
-
 import { Metadata } from "next";
 import fs from 'fs'
 import { notFound } from "next/navigation";
@@ -47,21 +45,26 @@ export default async function Page({
     const password = page.data.password
 
     if (!searchParams.pwd) {
+      console.log("no pwd query param")
       return (
         <PasswordForm hash={params.uid!} isPdf />
       )
     } else {
-      const privateKey = process.env.PRIVATE_KEY!
-      const encryptedPassword = Buffer.from(decodeURIComponent(searchParams.pwd!), 'base64');
+      try {
+        const privateKey = process.env.PRIVATE_KEY!
+        const encryptedPassword = Buffer.from(decodeURIComponent(searchParams.pwd!), 'base64');
 
-      const decrypted = crypto.privateDecrypt(privateKey,
-        encryptedPassword
-      );
+        const decrypted = crypto.privateDecrypt(privateKey,
+          encryptedPassword
+        );
 
-      if (decrypted.toString() !== password) {
-        return (
-          <PasswordForm hash={params.uid!} />
-        )
+        if (decrypted.toString() !== password) {
+          return (
+            <PasswordForm hash={params.uid!} />
+          )
+        }
+      } catch (error) {
+        console.log(error)
       }
     }
   }
