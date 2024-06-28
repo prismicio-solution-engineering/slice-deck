@@ -45,6 +45,8 @@ export default async function Page({
     console.log("protected honey","my uid", pageUid)
     const password = page.data.password
 
+    console.log("my search params",searchParams)
+
     if (!searchParams.pwd) {
       console.log("no params?","my pwd", password)
       return (
