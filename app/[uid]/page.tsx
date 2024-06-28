@@ -28,6 +28,7 @@ export default async function Page({
     .getAllByType<DeckDocument>("deck")
     .catch(() => notFound())).map((doc) => { return { uid: doc.uid, hash: crypto.createHash('sha256').update(doc.uid).digest('hex') } })
 
+  console.log(uidsHashTable)
   const pageUid = uidsHashTable.find((uid) => uid.hash === params.uid)?.uid
 
   const page = await client
