@@ -47,8 +47,11 @@ export default async function Page({
 
     console.log("my search params",searchParams)
     console.log("!searchParams",!searchParams)
+    console.log("wow")
     console.log("searchParams!.pwd",searchParams!.pwd)
+    console.log("wow")
     console.log("!searchParams!.pwd",!searchParams!.pwd)
+    console.log("wow")
     console.log(!searchParams!.pwd)
     console.log("wow")
 
