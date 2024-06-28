@@ -45,7 +45,6 @@ export default async function Page({
     const password = page.data.password
 
     if (!searchParams.pwd) {
-      console.log("no pwd query param")
       return (
         <PasswordForm hash={params.uid!} isPdf />
       )
