@@ -31,7 +31,7 @@ const Testimonials = ({
     >
       <SlideFullWidth className="flex flex-col justify-center">
         <div className="w-full grid grid-cols-3 gap-x-32 justify-center items-center">
-          {slice.primary.testimonials.map((item, idx) => (
+          {slice.variation=== "default" && slice.primary.testimonials.map((item, idx) => (
             <Card
               key={idx}
               className="w-full h-full text-center rounded-2xl shadow-lg border-1 border-silver-base"
