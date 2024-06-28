@@ -46,6 +46,7 @@ export default async function Page({
     const password = page.data.password
 
     console.log("my search params",searchParams)
+    console.log("!searchParams.pwd",!searchParams.pwd)
 
     if (!searchParams.pwd) {
       console.log("no params?","my pwd", password)
