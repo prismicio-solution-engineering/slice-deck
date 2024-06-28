@@ -57,7 +57,7 @@ export const Header = ({
   type?: "default" | "company";
 }) => {
   return (
-    <div className="w-full h-20 p-16">
+    <div className="w-full h-20 p-8">
       {type === "company" ? (
         <WithCompanyLogo page={page} settings={settings} />
       ) : type === "default" ? (
