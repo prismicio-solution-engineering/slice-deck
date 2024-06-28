@@ -12,6 +12,15 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "theme": {
+          "type": "Select",
+          "config": {
+            "label": "Theme",
+            "placeholder": "Slide theme color",
+            "options": ["white", "orange", "pink", "green", "purple", "blue"],
+            "default_value": "white"
+          }
+        },
         "company_logo": {
           "type": "Image",
           "config": {
@@ -64,6 +73,15 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "theme": {
+          "type": "Select",
+          "config": {
+            "label": "Theme",
+            "placeholder": "Slide theme color",
+            "options": ["white", "orange", "pink", "green", "purple", "blue"],
+            "default_value": "white"
+          }
+        },
         "company_logo": {
           "type": "Image",
           "config": {
@@ -111,7 +129,7 @@
             "label": "Bottom Content",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+            "multi": "paragraph,strong,em,hyperlink",
             "labels": ["highlight", "Company Name"]
           }
         }

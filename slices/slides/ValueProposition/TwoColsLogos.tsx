@@ -14,9 +14,16 @@ const TwoColsLogos = ({
   context: Context;
 }): JSX.Element => {
   return (
-    <Container page={context.page} settings={context.settings}>
-      <SlideTwoCols larger="left">
+    <Container
+      page={context.page}
+      settings={context.settings}
+      theme={slice.primary.theme}
+    >
+      <SlideTwoCols>
         <LeftCol>
+          <div className="font-headings text-3xl font-semibold text-primary-pink">
+            {slice.primary.eyebrow}
+          </div>
           <Content
             title={slice.primary.title}
             description={slice.primary.description}
@@ -33,7 +40,7 @@ const TwoColsLogos = ({
           </div>
         </LeftCol>
         <RightCol>
-          <PrismicNextImage field={slice.primary.image} />
+          <PrismicNextImage field={slice.primary.image} className="border-2 border-gray-darker shadow-xl"/>
         </RightCol>
       </SlideTwoCols>
     </Container>

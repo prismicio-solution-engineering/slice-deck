@@ -24,7 +24,11 @@ const References = ({
   context: Context;
 }): JSX.Element => {
   return (
-    <Container page={context.page} settings={context.settings}>
+    <Container
+      page={context.page}
+      settings={context.settings}
+      theme={slice.primary.theme}
+    >
       {slice.variation === "default" ? (
         <SlideTwoCols>
           <LeftCol>
@@ -35,10 +39,14 @@ const References = ({
             <GlobalPrismicRichText
               field={slice.primary.description}
               classNames="!text-3xl"
+              theme={slice.primary.theme}
             />
           </LeftCol>
           <RightCol>
-            <GlobalPrismicRichText field={slice.primary.right_side_content} />
+            <GlobalPrismicRichText
+              field={slice.primary.right_side_content}
+              theme={slice.primary.theme}
+            />
           </RightCol>
         </SlideTwoCols>
       ) : (
@@ -51,6 +59,7 @@ const References = ({
             <GlobalPrismicRichText
               field={slice.primary.description}
               classNames="!text-3xl"
+              theme={slice.primary.theme}
             />
           </LeftCol>
           <RightCol className="items-end">

@@ -36,25 +36,38 @@ const Resources = async ({
     }
     return undefined; // Return undefined explicitly if the condition is not met
   })();
-  
+
   // If you need authorUid to always be a string, you should handle the undefined case
   if (authorUid === undefined) {
     throw new Error("Author UID is undefined");
   }
-  
+
   const author = await client.getByUID<AuthorDocument>("author", authorUid);
 
   return (
-    <Container page={context.page} settings={context.settings}>
+    <Container
+      page={context.page}
+      settings={context.settings}
+      theme={slice.primary.theme}
+    >
       {slice.variation === "default" ? (
         <SlideFullWidth className="flex flex-col justify-center">
-          <GlobalPrismicRichText field={slice.primary.title} />
-          <GlobalPrismicRichText field={slice.primary.content} />
+          <GlobalPrismicRichText
+            field={slice.primary.title}
+            theme={slice.primary.theme}
+          />
+          <GlobalPrismicRichText
+            field={slice.primary.content}
+            theme={slice.primary.theme}
+          />
         </SlideFullWidth>
       ) : (
         <SlideTwoCols larger="right">
           <LeftCol>
-            <GlobalPrismicRichText field={slice.primary.title} />
+            <GlobalPrismicRichText
+              field={slice.primary.title}
+              theme={slice.primary.theme}
+            />
 
             <PrismicNextImage
               field={author.data.profile_picture}

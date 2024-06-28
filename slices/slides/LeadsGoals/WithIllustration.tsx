@@ -1,16 +1,22 @@
 import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
-import { LeadsGoalsSliceDefault } from "@/prismicio-types";
+import {
+  LeadsGoalsSliceWithIllustration,
+  LeadsGoalsSliceWithImageAndIllustration,
+  LeadsGoalsSliceWithImageGrid,
+} from "@/prismicio-types";
 import { Container } from "@/components/Slides/Container";
 import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
 import { LeftCol, RightCol } from "@/components/Slides/Columns";
 import { PrismicNextImage } from "@prismicio/next";
 import { Context } from "../IntroSlide";
 
-const WithImage = ({
+const WithIllustration = ({
   slice,
   context,
 }: {
-  slice: LeadsGoalsSliceDefault;
+  slice:
+    | LeadsGoalsSliceWithIllustration
+    | LeadsGoalsSliceWithImageAndIllustration;
   context: Context;
 }): JSX.Element => {
   return (
@@ -35,11 +41,28 @@ const WithImage = ({
           />
         </LeftCol>
         <RightCol>
-          <PrismicNextImage field={slice.primary.image} className="border-2 border-gray-darker shadow-xl"/>
+          {slice.variation === "withIllustration" && (
+            <PrismicNextImage
+              field={slice.primary.illustration}
+              className={`border-2 border-gray-darker shadow-xl`}
+            />
+          )}
+          {slice.variation === "withImageAndIllustration" && (
+            <div className="flex flex-row gap-x-8">
+            <PrismicNextImage
+              field={slice.primary.illustration}
+              className={`border-2 border-gray-darker shadow-xl`}
+              />
+            <PrismicNextImage
+              field={slice.primary.illustration}
+              className={`border-2 border-gray-darker shadow-xl`}
+              />
+              </div>
+          )}
         </RightCol>
       </SlideTwoCols>
     </Container>
   );
 };
 
-export default WithImage;
+export default WithIllustration;

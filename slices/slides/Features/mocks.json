@@ -17,17 +17,17 @@
 			"image": {
 				"origin": {
 					"id": "main",
-					"url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468",
-					"width": 4000,
-					"height": 6000
+					"url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea",
+					"width": 5000,
+					"height": 4613
 				},
-				"url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?rect=0%2C0%2C4000%2C6000&w=664&h=996",
-				"width": 664,
-				"height": 996,
+				"url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea?rect=226%2C0%2C4548%2C4613&w=695&h=705",
+				"width": 695,
+				"height": 705,
 				"edit": {
 					"zoom": 1,
 					"crop": {
-						"x": 0,
+						"x": 226,
 						"y": 0
 					},
 					"background": "transparent"
@@ -47,6 +47,11 @@
 						}
 					}
 				]
+			},
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "knowledge",
+				"type": "Text"
 			}
 		},
 		"items": []
@@ -117,10 +122,49 @@
 										"url": "https://slicemachine.dev"
 									}
 								}
+							],
+							[
+								"icon",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43",
+										"width": 4024,
+										"height": 4024
+									},
+									"url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43",
+									"width": 4024,
+									"height": 4024,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"icon_color",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "2",
+									"type": "Select"
+								}
 							]
 						]
 					}
 				]
+			},
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "or",
+				"type": "Text"
 			}
 		},
 		"items": [
@@ -204,6 +248,11 @@
 					"__TYPE__": "ExternalLink",
 					"url": "https://slicemachine.dev"
 				}
+			},
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "ball",
+				"type": "Text"
 			}
 		},
 		"items": [

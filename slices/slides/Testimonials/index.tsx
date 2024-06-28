@@ -24,11 +24,18 @@ const Testimonials = ({
   context: Context;
 }): JSX.Element => {
   return (
-    <Container page={context.page} settings={context.settings}>
+    <Container
+      page={context.page}
+      settings={context.settings}
+      theme={slice.primary.theme}
+    >
       <SlideFullWidth className="flex flex-col justify-center">
         <div className="w-full grid grid-cols-3 gap-x-32 justify-center items-center">
           {slice.primary.testimonials.map((item, idx) => (
-            <Card key={idx} className="w-full h-full text-center rounded-2xl shadow-lg border-1 border-silver-base">
+            <Card
+              key={idx}
+              className="w-full h-full text-center rounded-2xl shadow-lg border-1 border-silver-base"
+            >
               <PrismicNextImage
                 field={item.author_picture}
                 width={100}
@@ -42,7 +49,10 @@ const Testimonials = ({
               <p className="font-copy text-lg text-gray-base break-words font-normal mb-4">
                 {item.author_role_and_company}
               </p>
-              <GlobalPrismicRichText field={item.testimonial} />
+              <GlobalPrismicRichText
+                field={item.testimonial}
+                theme={slice.primary.theme}
+              />
             </Card>
           ))}
         </div>

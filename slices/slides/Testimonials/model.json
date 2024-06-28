@@ -12,6 +12,15 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "theme": {
+          "type": "Select",
+          "config": {
+            "label": "Theme",
+            "placeholder": "Slide theme color",
+            "options": ["white", "orange", "pink", "green", "purple", "blue"],
+            "default_value": "white"
+          }
+        },
         "testimonials": {
           "type": "Group",
           "config": {
@@ -53,6 +62,60 @@
                 }
               }
             }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "singleTestimonial",
+      "name": "Single Testimonial",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "theme": {
+          "type": "Select",
+          "config": {
+            "label": "Theme",
+            "placeholder": "Slide theme color",
+            "options": ["white", "orange", "pink", "green", "purple", "blue"],
+            "default_value": "white"
+          }
+        },
+        "author_picture": {
+          "type": "Image",
+          "config": {
+            "label": "Author picture",
+            "constraint": {
+              "width": 100,
+              "height": 100
+            },
+            "thumbnails": []
+          }
+        },
+        "author_name": {
+          "type": "Text",
+          "config": {
+            "label": "Author Name",
+            "placeholder": ""
+          }
+        },
+        "author_role_and_company": {
+          "type": "Text",
+          "config": {
+            "label": "Author Role and Company",
+            "placeholder": ""
+          }
+        },
+        "testimonial": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Testimonial",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
           }
         }
       },
