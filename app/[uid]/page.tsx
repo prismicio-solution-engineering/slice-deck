@@ -28,8 +28,10 @@ export default async function Page({
     .getAllByType<DeckDocument>("deck")
     .catch(() => notFound())).map((doc) => { return { uid: doc.uid, hash: crypto.createHash('sha256').update(doc.uid).digest('hex') } })
 
+  console.log(params.uid)
   console.log(uidsHashTable)
   const pageUid = uidsHashTable.find((uid) => uid.hash === params.uid)?.uid
+  console.log(pageUid)
 
   const page = await client
     .getByUID<DeckDocument>("deck", pageUid!)
@@ -42,6 +44,8 @@ export default async function Page({
   const isProtected = page.data.activate_password
 
   if(isProtected){
+
+    console.log("protected honey")
     const password = page.data.password
 
     if (!searchParams.pwd) {
