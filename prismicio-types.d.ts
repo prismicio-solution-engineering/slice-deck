@@ -2258,6 +2258,32 @@ export type MethodologySlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *Offer → Two Cols Content and Table → Primary → Tables*
+ */
+export interface OfferSliceDefaultPrimaryTablesItem {
+  /**
+   * table_has_header field in *Offer → Two Cols Content and Table → Primary → Tables*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: offer.default.primary.tables[].table_has_header
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  table_has_header: prismic.BooleanField;
+
+  /**
+   * table_csv field in *Offer → Two Cols Content and Table → Primary → Tables*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.default.primary.tables[].table_csv
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  table_csv: prismic.LinkToMediaField;
+}
+
+/**
  * Item in *Offer → Two Tables Columns → Primary → Content left column*
  */
 export interface OfferSliceTwoTablesColumnsPrimaryContentLeftColumnItem {
@@ -2282,14 +2308,25 @@ export interface OfferSliceTwoTablesColumnsPrimaryContentLeftColumnItem {
   description: prismic.RichTextField;
 
   /**
-   * Table field in *Offer → Two Tables Columns → Primary → Content left column*
+   * Table has header field in *Offer → Two Tables Columns → Primary → Content left column*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Boolean
    * - **Placeholder**: *None*
-   * - **API ID Path**: offer.twoTablesColumns.primary.content_left_column[].table
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **Default Value**: true
+   * - **API ID Path**: offer.twoTablesColumns.primary.content_left_column[].table_has_header
+   * - **Documentation**: https://prismic.io/docs/field#boolean
    */
-  table: prismic.ImageField<never>;
+  table_has_header: prismic.BooleanField;
+
+  /**
+   * Table Csv field in *Offer → Two Tables Columns → Primary → Content left column*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.twoTablesColumns.primary.content_left_column[].table_csv
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  table_csv: prismic.LinkToMediaField;
 }
 
 /**
@@ -2317,14 +2354,61 @@ export interface OfferSliceTwoTablesColumnsPrimaryContentRightColumnItem {
   description: prismic.RichTextField;
 
   /**
-   * Table field in *Offer → Two Tables Columns → Primary → Content right column*
+   * Table has header field in *Offer → Two Tables Columns → Primary → Content right column*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Boolean
    * - **Placeholder**: *None*
-   * - **API ID Path**: offer.twoTablesColumns.primary.content_right_column[].table
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **Default Value**: false
+   * - **API ID Path**: offer.twoTablesColumns.primary.content_right_column[].table_has_header
+   * - **Documentation**: https://prismic.io/docs/field#boolean
    */
-  table: prismic.ImageField<never>;
+  table_has_header: prismic.BooleanField;
+
+  /**
+   * Table CSV field in *Offer → Two Tables Columns → Primary → Content right column*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.twoTablesColumns.primary.content_right_column[].table_csv
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  table_csv: prismic.LinkToMediaField;
+}
+
+/**
+ * Item in *Offer → Full Width Tables → Primary → Tables*
+ */
+export interface OfferSliceFullWidthTablesPrimaryTablesItem {
+  /**
+   * Title field in *Offer → Full Width Tables → Primary → Tables*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.fullWidthTables.primary.tables[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Table has header field in *Offer → Full Width Tables → Primary → Tables*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: offer.fullWidthTables.primary.tables[].table_has_header
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  table_has_header: prismic.BooleanField;
+
+  /**
+   * Table Csv field in *Offer → Full Width Tables → Primary → Tables*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.fullWidthTables.primary.tables[].table_csv
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  table_csv: prismic.LinkToMediaField;
 }
 
 /**
@@ -2376,14 +2460,14 @@ export interface OfferSliceDefaultPrimary {
   description: prismic.RichTextField;
 
   /**
-   * Table field in *Offer → Two Cols Content and Table → Primary*
+   * Tables field in *Offer → Two Cols Content and Table → Primary*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: offer.default.primary.table
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **API ID Path**: offer.default.primary.tables[]
+   * - **Documentation**: https://prismic.io/docs/field#group
    */
-  table: prismic.ImageField<never>;
+  tables: prismic.GroupField<Simplify<OfferSliceDefaultPrimaryTablesItem>>;
 }
 
 /**
@@ -2514,14 +2598,16 @@ export interface OfferSliceFullWidthTablesPrimary {
   title: prismic.RichTextField;
 
   /**
-   * Table field in *Offer → Full Width Tables → Primary*
+   * Tables field in *Offer → Full Width Tables → Primary*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: offer.fullWidthTables.primary.table
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **API ID Path**: offer.fullWidthTables.primary.tables[]
+   * - **Documentation**: https://prismic.io/docs/field#group
    */
-  table: prismic.ImageField<never>;
+  tables: prismic.GroupField<
+    Simplify<OfferSliceFullWidthTablesPrimaryTablesItem>
+  >;
 }
 
 /**
@@ -4383,10 +4469,12 @@ declare module "@prismicio/client" {
       MethodologySliceDefault,
       MethodologySliceUser,
       OfferSlice,
+      OfferSliceDefaultPrimaryTablesItem,
       OfferSliceDefaultPrimary,
       OfferSliceTwoTablesColumnsPrimaryContentLeftColumnItem,
       OfferSliceTwoTablesColumnsPrimaryContentRightColumnItem,
       OfferSliceTwoTablesColumnsPrimary,
+      OfferSliceFullWidthTablesPrimaryTablesItem,
       OfferSliceFullWidthTablesPrimary,
       OfferSliceVariation,
       OfferSliceDefault,

@@ -53,12 +53,30 @@
             "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item,heading3"
           }
         },
-        "table": {
-          "type": "Image",
+        "tables": {
+          "type": "Group",
           "config": {
-            "label": "Table",
-            "constraint": {},
-            "thumbnails": []
+            "label": "Tables",
+            "repeat": true,
+            "fields": {
+              "table_has_header": {
+                "type": "Boolean",
+                "config": {
+                  "label": "table_has_header",
+                  "placeholder_false": "false",
+                  "placeholder_true": "true",
+                  "default_value": true
+                }
+              },
+              "table_csv": {
+                "type": "Link",
+                "config": {
+                  "label": "table_csv",
+                  "placeholder": "",
+                  "select": "media"
+                }
+              }
+            }
           }
         }
       },
@@ -128,12 +146,21 @@
                   "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
                 }
               },
-              "table": {
-                "type": "Image",
+              "table_has_header": {
+                "type": "Boolean",
                 "config": {
-                  "label": "Table",
-                  "constraint": {},
-                  "thumbnails": []
+                  "label": "Table has header",
+                  "placeholder_false": "false",
+                  "placeholder_true": "true",
+                  "default_value": true
+                }
+              },
+              "table_csv": {
+                "type": "Link",
+                "config": {
+                  "label": "Table Csv",
+                  "placeholder": "",
+                  "select": "media"
                 }
               }
             }
@@ -163,12 +190,21 @@
                   "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
                 }
               },
-              "table": {
-                "type": "Image",
+              "table_has_header": {
+                "type": "Boolean",
                 "config": {
-                  "label": "Table",
-                  "constraint": {},
-                  "thumbnails": []
+                  "label": "Table has header",
+                  "default_value": false,
+                  "placeholder_true": "true",
+                  "placeholder_false": "false"
+                }
+              },
+              "table_csv": {
+                "type": "Link",
+                "config": {
+                  "label": "Table CSV",
+                  "placeholder": "",
+                  "select": "media"
                 }
               }
             }
@@ -217,12 +253,39 @@
             "single": "heading2,strong,em"
           }
         },
-        "table": {
-          "type": "Image",
+        "tables": {
+          "type": "Group",
           "config": {
-            "label": "Table",
-            "constraint": {},
-            "thumbnails": []
+            "label": "Tables",
+            "repeat": true,
+            "fields": {
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Title",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "table_has_header": {
+                "type": "Boolean",
+                "config": {
+                  "label": "Table has header",
+                  "placeholder_false": "false",
+                  "placeholder_true": "true",
+                  "default_value": true
+                }
+              },
+              "table_csv": {
+                "type": "Link",
+                "config": {
+                  "label": "Table Csv",
+                  "placeholder": "",
+                  "select": "media"
+                }
+              }
+            }
           }
         }
       },
