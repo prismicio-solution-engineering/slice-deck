@@ -33,7 +33,7 @@ const TwoCols = ({
         <RightCol>
           <PrismicNextImage
             field={slice.primary.image}
-            className="w-full h-full object-contain shadow-xl"
+            className="w-full h-full object-contain"
           />
         </RightCol>
       </SlideTwoCols>

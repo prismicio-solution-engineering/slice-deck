@@ -18,7 +18,7 @@
             "label": "Theme",
             "placeholder": "Slide theme color",
             "options": ["white", "orange", "pink", "green", "purple", "blue"],
-            "default_value": "white"
+            "default_value": "orange"
           }
         },
         "title": {
@@ -58,7 +58,7 @@
             "label": "Theme",
             "placeholder": "Slide theme color",
             "options": ["white", "orange", "pink", "green", "purple", "blue"],
-            "default_value": "white"
+            "default_value": "orange"
           }
         },
         "title": {

@@ -54,7 +54,6 @@ const Resources = async ({
         <SlideFullWidth className="flex flex-col justify-center">
           <GlobalPrismicRichText
             field={slice.primary.title}
-            theme={slice.primary.theme}
           />
           <GlobalPrismicRichText
             field={slice.primary.content}
@@ -66,7 +65,6 @@ const Resources = async ({
           <LeftCol>
             <GlobalPrismicRichText
               field={slice.primary.title}
-              theme={slice.primary.theme}
             />
 
             <PrismicNextImage

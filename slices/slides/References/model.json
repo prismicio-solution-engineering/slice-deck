@@ -17,8 +17,15 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": ["white", "orange", "pink", "green", "purple", "blue"],
-            "default_value": "white"
+            "options": [
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
+            "default_value": "orange"
           }
         },
         "company_logo": {
@@ -39,7 +46,10 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "heading2,strong,em",
-            "labels": ["highlight", "Company Name"]
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "description": {
@@ -49,7 +59,10 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,strong,em,hyperlink",
-            "labels": ["highlight", "Company Name"]
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "right_side_content": {
@@ -59,7 +72,10 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
-            "labels": ["highlight", "Company Name"]
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         }
       },
@@ -67,7 +83,7 @@
     },
     {
       "id": "withImage",
-      "name": "With Image",
+      "name": "Images Grid",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
@@ -78,8 +94,15 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": ["white", "orange", "pink", "green", "purple", "blue"],
-            "default_value": "white"
+            "options": [
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
+            "default_value": "orange"
           }
         },
         "company_logo": {
@@ -100,7 +123,10 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "heading2,strong,em",
-            "labels": ["highlight", "Company Name"]
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "description": {
@@ -110,17 +136,44 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,strong,em,hyperlink",
-            "labels": ["highlight", "Company Name"]
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
-        "image": {
-          "type": "Image",
+        "grid_left_column": {
+          "type": "Group",
           "config": {
-            "label": "Image",
-            "constraint": {
-              "width": 571
-            },
-            "thumbnails": []
+            "label": "Grid left column",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        },
+        "grid_right_column": {
+          "type": "Group",
+          "config": {
+            "label": "Grid right column",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
           }
         },
         "bottom_content": {
@@ -129,8 +182,196 @@
             "label": "Bottom Content",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,strong,em,hyperlink",
-            "labels": ["highlight", "Company Name"]
+            "labels": [
+              "highlight",
+              "Company Name"
+            ],
+            "single": "paragraph,strong,em,hyperlink"
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "showcasedWebsites",
+      "name": "Showcased Websites",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "theme": {
+          "type": "Select",
+          "config": {
+            "label": "Theme",
+            "placeholder": "Slide theme color",
+            "options": [
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
+            "default_value": "orange"
+          }
+        },
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2,strong,em",
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,strong,em,hyperlink",
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
+          }
+        },
+        "stories": {
+          "type": "Group",
+          "config": {
+            "label": "Stories",
+            "repeat": true,
+            "fields": {
+              "website_screenshot": {
+                "type": "Image",
+                "config": {
+                  "label": "Website screenshot",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "Label",
+                  "placeholder": ""
+                }
+              },
+              "link": {
+                "type": "Link",
+                "config": {
+                  "label": "Link",
+                  "placeholder": "",
+                  "select": null
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "g2Badges",
+      "name": "G2 Badges",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "theme": {
+          "type": "Select",
+          "config": {
+            "label": "Theme",
+            "placeholder": "Slide theme color",
+            "options": [
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
+            "default_value": "orange"
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2,strong,em",
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,strong,em,hyperlink",
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
+          }
+        },
+        "numbers": {
+          "type": "Group",
+          "config": {
+            "label": "Numbers",
+            "repeat": true,
+            "fields": {
+              "number": {
+                "type": "Number",
+                "config": {
+                  "label": "Number",
+                  "placeholder": ""
+                }
+              },
+              "text": {
+                "type": "Text",
+                "config": {
+                  "label": "Text",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "badges": {
+          "type": "Group",
+          "config": {
+            "label": "Badges",
+            "repeat": true,
+            "fields": {
+              "badge": {
+                "type": "Image",
+                "config": {
+                  "label": "Badge",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
           }
         }
       },

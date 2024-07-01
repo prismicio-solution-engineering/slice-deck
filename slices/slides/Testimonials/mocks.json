@@ -64,6 +64,14 @@
 									"__TYPE__": "ImageContent",
 									"thumbnails": {}
 								}
+							],
+							[
+								"card_color",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "pink",
+									"type": "Select"
+								}
 							]
 						]
 					}
@@ -146,6 +154,50 @@
 				"__TYPE__": "FieldContent",
 				"value": "pink",
 				"type": "Select"
+			},
+			"author_picture": {
+				"__TYPE__": "ImageContent",
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a",
+					"width": 4000,
+					"height": 4000
+				},
+				"url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a?rect=0%2C0%2C4000%2C4000&w=600&h=600",
+				"width": 600,
+				"height": 600,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"thumbnails": {}
+			},
+			"author_name": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Heather Robertson"
+			},
+			"author_role_and_company": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "VP OF MARKETING AT MACSTADIUM"
+			},
+			"testimonial": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "I didn't want our site to look like a template, like if we bought a theme. I wanted unique pages, unique content. Slices give me a standardized CMS so pages look unique even if we are reusing the same Slices over and over again.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
 			}
 		},
 		"items": [
