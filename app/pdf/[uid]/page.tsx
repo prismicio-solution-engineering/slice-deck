@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import { Metadata } from "next";
 import fs from 'fs'
 import { notFound } from "next/navigation";
