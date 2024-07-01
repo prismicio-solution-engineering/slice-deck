@@ -7,6 +7,10 @@ import { SliceComponentProps } from "@prismicio/react";
 import { Context } from "../IntroSlide";
 import { PrismicNextImage } from "@prismicio/next";
 import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
+import TwoColsText from "./TwoColsText";
+import WithImageGrid from "./WithImageGrid";
+import ShowcasedWebsites from "./ShowcasedWebsites";
+import G2Badges from "./G2Badges";
 
 /**
  * Props for `References`.
@@ -22,56 +26,17 @@ const References = ({
 }: {
   slice: ReferencesSlice;
   context: Context;
-}): JSX.Element => {
-  return (
-    <Container
-      page={context.page}
-      settings={context.settings}
-      theme={slice.primary.theme}
-    >
-      {slice.variation === "default" ? (
-        <SlideTwoCols>
-          <LeftCol>
-            <PrismicNextImage
-              field={slice.primary.company_logo}
-              className="h-52 w-52 object-contain"
-            />
-            <GlobalPrismicRichText
-              field={slice.primary.description}
-              classNames="!text-3xl"
-              theme={slice.primary.theme}
-            />
-          </LeftCol>
-          <RightCol>
-            <GlobalPrismicRichText
-              field={slice.primary.right_side_content}
-              theme={slice.primary.theme}
-            />
-          </RightCol>
-        </SlideTwoCols>
-      ) : (
-        <SlideTwoCols larger="left" overflowRight>
-          <LeftCol>
-            <PrismicNextImage
-              field={slice.primary.company_logo}
-              className="h-52 w-52 object-contain"
-            />
-            <GlobalPrismicRichText
-              field={slice.primary.description}
-              classNames="!text-3xl"
-              theme={slice.primary.theme}
-            />
-          </LeftCol>
-          <RightCol className="items-end">
-            <PrismicNextImage
-              field={slice.primary.image}
-              className="w-full h-full object-contain"
-            />
-          </RightCol>
-        </SlideTwoCols>
-      )}
-    </Container>
-  );
+}) => {
+  switch (slice.variation) {
+    case "default":
+      return <TwoColsText slice={slice} context={context} />;
+    case "withImage":
+      return <WithImageGrid slice={slice} context={context} />;
+    case "showcasedWebsites":
+      return <ShowcasedWebsites slice={slice} context={context} />;
+    case "g2Badges":
+      return <G2Badges slice={slice} context={context} />;
+  }
 };
 
 export default References;

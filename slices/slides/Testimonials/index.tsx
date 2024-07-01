@@ -30,32 +30,63 @@ const Testimonials = ({
       theme={slice.primary.theme}
     >
       <SlideFullWidth className="flex flex-col justify-center">
-        <div className="w-full grid grid-cols-3 gap-x-32 justify-center items-center">
-          {slice.variation=== "default" && slice.primary.testimonials.map((item, idx) => (
-            <Card
-              key={idx}
-              className="w-full h-full text-center rounded-2xl shadow-lg border-1 border-silver-base"
-            >
-              <PrismicNextImage
-                field={item.author_picture}
-                width={100}
-                height={100}
-                className="rounded-full mb-4"
-              />
+        {slice.variation === "default" ? (
+          <div className="w-full grid grid-cols-3 gap-x-32 justify-center items-center">
+            {slice.primary.testimonials.map((item, idx) => (
+              <Card
+                key={idx}
+                className={`w-full h-full text-center shadow-xl bg-quaternary-${item.card_color}`}
+              >
+                <PrismicNextImage
+                  field={item.author_picture}
+                  width={100}
+                  height={100}
+                  className="rounded-full mb-4"
+                />
 
-              <p className="font-headings text-xl text-gray-base break-words font-normal">
-                {item.author_name}
-              </p>
-              <p className="font-copy text-lg text-gray-base break-words font-normal mb-4">
-                {item.author_role_and_company}
-              </p>
-              <GlobalPrismicRichText
-                field={item.testimonial}
-                theme={slice.primary.theme}
+                <p
+                  className={`font-headings text-xl text-primary-${item.card_color} break-words font-normal`}
+                >
+                  {item.author_name}
+                </p>
+                <p
+                  className={`font-copy text-lg text-primary-${item.card_color} break-words font-normal mb-4`}
+                >
+                  {item.author_role_and_company}
+                </p>
+                <GlobalPrismicRichText
+                  field={item.testimonial}
+                  theme={slice.primary.theme}
+                />
+              </Card>
+            ))}
+          </div>
+        ) : (
+          <div className="w-full flex flex-row gap-x-8">
+            <Card className="w-1/2">
+              <PrismicNextImage
+                field={slice.primary.author_picture}
+                className="rounded-xl mb-4"
               />
             </Card>
-          ))}
-        </div>
+            <Card className="w-1/2">
+              <GlobalPrismicRichText
+                field={slice.primary.testimonial}
+                theme={slice.primary.theme}
+              />
+              <p
+                className={`font-headings text-lg text-gray-dark break-words font-normal`}
+              >
+                {slice.primary.author_name}
+              </p>
+              <p
+                className={`font-copy text-lg text-gray-dark break-words font-normal mb-4 uppercase`}
+              >
+                {slice.primary.author_role_and_company}
+              </p>
+            </Card>
+          </div>
+        )}
       </SlideFullWidth>
     </Container>
   );

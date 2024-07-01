@@ -99,6 +99,10 @@ export type AuthorDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<AuthorDocumentData>, "author", Lang>;
 
 type DeckDocumentDataSlicesSlice =
+  | CompanySlice
+  | SalesProcessSlice
+  | PricingSlice
+  | OfferSlice
   | FeaturesSlice
   | TestimonialsSlice
   | ResourcesSlice
@@ -405,7 +409,7 @@ export interface AgendaSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: agenda.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -473,6 +477,596 @@ type AgendaSliceVariation = AgendaSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type AgendaSlice = prismic.SharedSlice<"agenda", AgendaSliceVariation>;
+
+/**
+ * Item in *Company → Intro → Primary → Showcased Websites*
+ */
+export interface CompanySliceDefaultPrimaryShowcasedWebsitesItem {
+  /**
+   * Image field in *Company → Intro → Primary → Showcased Websites*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.default.primary.showcased_websites[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Item in *Company → History → Primary → Milestone*
+ */
+export interface CompanySliceHistoryPrimaryMilestoneItem {
+  /**
+   * Date field in *Company → History → Primary → Milestone*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Date or year
+   * - **API ID Path**: company.history.primary.milestone[].date
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  date: prismic.KeyTextField;
+
+  /**
+   * Description field in *Company → History → Primary → Milestone*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.history.primary.milestone[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Number of websites field in *Company → History → Primary → Milestone*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.history.primary.milestone[].number_of_websites
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  number_of_websites: prismic.NumberField;
+}
+
+/**
+ * Item in *Company → Key Figures and References → Primary → Figures*
+ */
+export interface CompanySliceKeyFiguresAndReferencesPrimaryFiguresItem {
+  /**
+   * Number field in *Company → Key Figures and References → Primary → Figures*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.figures[].number
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  number: prismic.RichTextField;
+
+  /**
+   * Description field in *Company → Key Figures and References → Primary → Figures*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.figures[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Card color field in *Company → Key Figures and References → Primary → Figures*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: pink
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.figures[].card_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  card_color: prismic.SelectField<
+    "pink" | "green" | "purple" | "blue" | "orange",
+    "filled"
+  >;
+}
+
+/**
+ * Item in *Company → Key Figures and References → Primary → Reference group 1*
+ */
+export interface CompanySliceKeyFiguresAndReferencesPrimaryReferenceGroup1Item {
+  /**
+   * Logo field in *Company → Key Figures and References → Primary → Reference group 1*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.reference_group_1[].logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * Description field in *Company → Key Figures and References → Primary → Reference group 1*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.reference_group_1[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Company → Key Figures and References → Primary → Reference group 2*
+ */
+export interface CompanySliceKeyFiguresAndReferencesPrimaryReferenceGroup2Item {
+  /**
+   * Logo field in *Company → Key Figures and References → Primary → Reference group 2*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.reference_group_2[].logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * Description field in *Company → Key Figures and References → Primary → Reference group 2*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.reference_group_2[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Company → Key Figures and References → Primary → Reference group 3*
+ */
+export interface CompanySliceKeyFiguresAndReferencesPrimaryReferenceGroup3Item {
+  /**
+   * Logo field in *Company → Key Figures and References → Primary → Reference group 3*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.reference_group_3[].logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * Description field in *Company → Key Figures and References → Primary → Reference group 3*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.reference_group_3[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Company → Key Figures and References → Primary → Reference group 4*
+ */
+export interface CompanySliceKeyFiguresAndReferencesPrimaryReferenceGroup4Item {
+  /**
+   * Logo field in *Company → Key Figures and References → Primary → Reference group 4*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.reference_group_4[].logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * Description field in *Company → Key Figures and References → Primary → Reference group 4*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.reference_group_4[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Company → Full width Key Figures → Primary → Figures*
+ */
+export interface CompanySliceFullWidthKeyFiguresPrimaryFiguresItem {
+  /**
+   * Number field in *Company → Full width Key Figures → Primary → Figures*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.fullWidthKeyFigures.primary.figures[].number
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  number: prismic.RichTextField;
+
+  /**
+   * Description field in *Company → Full width Key Figures → Primary → Figures*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.fullWidthKeyFigures.primary.figures[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Card color field in *Company → Full width Key Figures → Primary → Figures*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: pink
+   * - **API ID Path**: company.fullWidthKeyFigures.primary.figures[].card_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  card_color: prismic.SelectField<
+    "pink" | "green" | "purple" | "blue" | "orange",
+    "filled"
+  >;
+}
+
+/**
+ * Item in *Company → Full width Key Figures → Primary → Logos*
+ */
+export interface CompanySliceFullWidthKeyFiguresPrimaryLogosItem {
+  /**
+   * Logo field in *Company → Full width Key Figures → Primary → Logos*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.fullWidthKeyFigures.primary.logos[].logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Company → Intro → Primary*
+ */
+export interface CompanySliceDefaultPrimary {
+  /**
+   * Theme field in *Company → Intro → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide theme color
+   * - **Default Value**: orange
+   * - **API ID Path**: company.default.primary.theme
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  theme: prismic.SelectField<
+    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
+   * Eyebrow field in *Company → Intro → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.default.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *Company → Intro → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Showcased Websites field in *Company → Intro → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.default.primary.showcased_websites[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  showcased_websites: prismic.GroupField<
+    Simplify<CompanySliceDefaultPrimaryShowcasedWebsitesItem>
+  >;
+}
+
+/**
+ * Intro variation for Company Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CompanySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CompanySliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Company → History → Primary*
+ */
+export interface CompanySliceHistoryPrimary {
+  /**
+   * Theme field in *Company → History → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide theme color
+   * - **Default Value**: orange
+   * - **API ID Path**: company.history.primary.theme
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  theme: prismic.SelectField<
+    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
+   * Milestone field in *Company → History → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.history.primary.milestone[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  milestone: prismic.GroupField<
+    Simplify<CompanySliceHistoryPrimaryMilestoneItem>
+  >;
+
+  /**
+   * Source field in *Company → History → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.history.primary.source
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  source: prismic.RichTextField;
+}
+
+/**
+ * History variation for Company Slice
+ *
+ * - **API ID**: `history`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CompanySliceHistory = prismic.SharedSliceVariation<
+  "history",
+  Simplify<CompanySliceHistoryPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Company → Key Figures and References → Primary*
+ */
+export interface CompanySliceKeyFiguresAndReferencesPrimary {
+  /**
+   * Theme field in *Company → Key Figures and References → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide theme color
+   * - **Default Value**: orange
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.theme
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  theme: prismic.SelectField<
+    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
+   * Eyebrow field in *Company → Key Figures and References → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *Company → Key Figures and References → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Figures field in *Company → Key Figures and References → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.figures[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  figures: prismic.GroupField<
+    Simplify<CompanySliceKeyFiguresAndReferencesPrimaryFiguresItem>
+  >;
+
+  /**
+   * Group 1 name field in *Company → Key Figures and References → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.group_1_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  group_1_name: prismic.KeyTextField;
+
+  /**
+   * Reference group 1 field in *Company → Key Figures and References → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.reference_group_1[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  reference_group_1: prismic.GroupField<
+    Simplify<CompanySliceKeyFiguresAndReferencesPrimaryReferenceGroup1Item>
+  >;
+
+  /**
+   * Group 2 name field in *Company → Key Figures and References → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.group_2_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  group_2_name: prismic.KeyTextField;
+
+  /**
+   * Reference group 2 field in *Company → Key Figures and References → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.reference_group_2[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  reference_group_2: prismic.GroupField<
+    Simplify<CompanySliceKeyFiguresAndReferencesPrimaryReferenceGroup2Item>
+  >;
+
+  /**
+   * Group 3 name field in *Company → Key Figures and References → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.group_3_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  group_3_name: prismic.KeyTextField;
+
+  /**
+   * Reference group 3 field in *Company → Key Figures and References → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.reference_group_3[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  reference_group_3: prismic.GroupField<
+    Simplify<CompanySliceKeyFiguresAndReferencesPrimaryReferenceGroup3Item>
+  >;
+
+  /**
+   * Group 4 name field in *Company → Key Figures and References → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.group_4_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  group_4_name: prismic.KeyTextField;
+
+  /**
+   * Reference group 4 field in *Company → Key Figures and References → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.keyFiguresAndReferences.primary.reference_group_4[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  reference_group_4: prismic.GroupField<
+    Simplify<CompanySliceKeyFiguresAndReferencesPrimaryReferenceGroup4Item>
+  >;
+}
+
+/**
+ * Key Figures and References variation for Company Slice
+ *
+ * - **API ID**: `keyFiguresAndReferences`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CompanySliceKeyFiguresAndReferences = prismic.SharedSliceVariation<
+  "keyFiguresAndReferences",
+  Simplify<CompanySliceKeyFiguresAndReferencesPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Company → Full width Key Figures → Primary*
+ */
+export interface CompanySliceFullWidthKeyFiguresPrimary {
+  /**
+   * Theme field in *Company → Full width Key Figures → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide theme color
+   * - **Default Value**: orange
+   * - **API ID Path**: company.fullWidthKeyFigures.primary.theme
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  theme: prismic.SelectField<
+    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
+   * Figures field in *Company → Full width Key Figures → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.fullWidthKeyFigures.primary.figures[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  figures: prismic.GroupField<
+    Simplify<CompanySliceFullWidthKeyFiguresPrimaryFiguresItem>
+  >;
+
+  /**
+   * Logos field in *Company → Full width Key Figures → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.fullWidthKeyFigures.primary.logos[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  logos: prismic.GroupField<
+    Simplify<CompanySliceFullWidthKeyFiguresPrimaryLogosItem>
+  >;
+}
+
+/**
+ * Full width Key Figures variation for Company Slice
+ *
+ * - **API ID**: `fullWidthKeyFigures`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CompanySliceFullWidthKeyFigures = prismic.SharedSliceVariation<
+  "fullWidthKeyFigures",
+  Simplify<CompanySliceFullWidthKeyFiguresPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Company*
+ */
+type CompanySliceVariation =
+  | CompanySliceDefault
+  | CompanySliceHistory
+  | CompanySliceKeyFiguresAndReferences
+  | CompanySliceFullWidthKeyFigures;
+
+/**
+ * Company Shared Slice
+ *
+ * - **API ID**: `company`
+ * - **Description**: Company
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CompanySlice = prismic.SharedSlice<
+  "company",
+  CompanySliceVariation
+>;
 
 /**
  * Item in *Features → Three Cols List → Primary → Features*
@@ -607,7 +1201,7 @@ export interface FeaturesSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: features.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -679,7 +1273,7 @@ export interface FeaturesSliceThreeColsListPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: features.threeColsList.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -743,7 +1337,7 @@ export interface FeaturesSliceThreeColsGridPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: features.threeColsGrid.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -937,7 +1531,7 @@ export interface IntroSlideSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: intro_slide.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -999,7 +1593,7 @@ export interface IntroSlideSliceSingleGroupPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: intro_slide.singleGroup.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -1074,15 +1668,30 @@ export type IntroSlideSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *LeadsGoals → With Image grid → Primary → Grid*
+ * Item in *LeadsGoals → With Image grid → Primary → Grid left column*
  */
-export interface LeadsGoalsSliceWithImageGridPrimaryGridItem {
+export interface LeadsGoalsSliceWithImageGridPrimaryGridLeftColumnItem {
   /**
-   * Image field in *LeadsGoals → With Image grid → Primary → Grid*
+   * Image field in *LeadsGoals → With Image grid → Primary → Grid left column*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: leads_goals.withImageGrid.primary.grid[].image
+   * - **API ID Path**: leads_goals.withImageGrid.primary.grid_left_column[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Item in *LeadsGoals → With Image grid → Primary → Grid right column*
+ */
+export interface LeadsGoalsSliceWithImageGridPrimaryGridRightColumnItem {
+  /**
+   * Image field in *LeadsGoals → With Image grid → Primary → Grid right column*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: leads_goals.withImageGrid.primary.grid_right_column[].image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
@@ -1097,7 +1706,7 @@ export interface LeadsGoalsSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: leads_goals.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -1169,7 +1778,7 @@ export interface LeadsGoalsSliceWithImageGridPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: leads_goals.withImageGrid.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -1209,25 +1818,27 @@ export interface LeadsGoalsSliceWithImageGridPrimary {
   description: prismic.RichTextField;
 
   /**
-   * Image field in *LeadsGoals → With Image grid → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: leads_goals.withImageGrid.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-
-  /**
-   * Grid field in *LeadsGoals → With Image grid → Primary*
+   * Grid left column field in *LeadsGoals → With Image grid → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: leads_goals.withImageGrid.primary.grid[]
+   * - **API ID Path**: leads_goals.withImageGrid.primary.grid_left_column[]
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  grid: prismic.GroupField<
-    Simplify<LeadsGoalsSliceWithImageGridPrimaryGridItem>
+  grid_left_column: prismic.GroupField<
+    Simplify<LeadsGoalsSliceWithImageGridPrimaryGridLeftColumnItem>
+  >;
+
+  /**
+   * Grid right column field in *LeadsGoals → With Image grid → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: leads_goals.withImageGrid.primary.grid_right_column[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  grid_right_column: prismic.GroupField<
+    Simplify<LeadsGoalsSliceWithImageGridPrimaryGridRightColumnItem>
   >;
 }
 
@@ -1253,7 +1864,7 @@ export interface LeadsGoalsSliceWithImageAndIllustrationPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: leads_goals.withImageAndIllustration.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -1350,7 +1961,7 @@ export interface LeadsGoalsSliceWithIllustrationPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: leads_goals.withIllustration.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -1472,7 +2083,7 @@ export interface MethodologySliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: methodology.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -1544,7 +2155,7 @@ export interface MethodologySliceUserPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: methodology.user.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -1647,6 +2258,729 @@ export type MethodologySlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *Offer → Two Tables Columns → Primary → Content left column*
+ */
+export interface OfferSliceTwoTablesColumnsPrimaryContentLeftColumnItem {
+  /**
+   * Title field in *Offer → Two Tables Columns → Primary → Content left column*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.twoTablesColumns.primary.content_left_column[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Offer → Two Tables Columns → Primary → Content left column*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.twoTablesColumns.primary.content_left_column[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Table field in *Offer → Two Tables Columns → Primary → Content left column*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.twoTablesColumns.primary.content_left_column[].table
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  table: prismic.ImageField<never>;
+}
+
+/**
+ * Item in *Offer → Two Tables Columns → Primary → Content right column*
+ */
+export interface OfferSliceTwoTablesColumnsPrimaryContentRightColumnItem {
+  /**
+   * Title field in *Offer → Two Tables Columns → Primary → Content right column*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.twoTablesColumns.primary.content_right_column[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Offer → Two Tables Columns → Primary → Content right column*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.twoTablesColumns.primary.content_right_column[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Table field in *Offer → Two Tables Columns → Primary → Content right column*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.twoTablesColumns.primary.content_right_column[].table
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  table: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Offer → Two Cols Content and Table → Primary*
+ */
+export interface OfferSliceDefaultPrimary {
+  /**
+   * Theme field in *Offer → Two Cols Content and Table → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide theme color
+   * - **Default Value**: orange
+   * - **API ID Path**: offer.default.primary.theme
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  theme: prismic.SelectField<
+    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
+   * Eyebrow field in *Offer → Two Cols Content and Table → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.default.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *Offer → Two Cols Content and Table → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Offer → Two Cols Content and Table → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Table field in *Offer → Two Cols Content and Table → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.default.primary.table
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  table: prismic.ImageField<never>;
+}
+
+/**
+ * Two Cols Content and Table variation for Offer Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OfferSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<OfferSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Offer → Two Tables Columns → Primary*
+ */
+export interface OfferSliceTwoTablesColumnsPrimary {
+  /**
+   * Theme field in *Offer → Two Tables Columns → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide theme color
+   * - **Default Value**: orange
+   * - **API ID Path**: offer.twoTablesColumns.primary.theme
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  theme: prismic.SelectField<
+    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
+   * Eyebrow field in *Offer → Two Tables Columns → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.twoTablesColumns.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *Offer → Two Tables Columns → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.twoTablesColumns.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Content left column field in *Offer → Two Tables Columns → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.twoTablesColumns.primary.content_left_column[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  content_left_column: prismic.GroupField<
+    Simplify<OfferSliceTwoTablesColumnsPrimaryContentLeftColumnItem>
+  >;
+
+  /**
+   * Content right column field in *Offer → Two Tables Columns → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.twoTablesColumns.primary.content_right_column[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  content_right_column: prismic.GroupField<
+    Simplify<OfferSliceTwoTablesColumnsPrimaryContentRightColumnItem>
+  >;
+}
+
+/**
+ * Two Tables Columns variation for Offer Slice
+ *
+ * - **API ID**: `twoTablesColumns`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OfferSliceTwoTablesColumns = prismic.SharedSliceVariation<
+  "twoTablesColumns",
+  Simplify<OfferSliceTwoTablesColumnsPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Offer → Full Width Tables → Primary*
+ */
+export interface OfferSliceFullWidthTablesPrimary {
+  /**
+   * Theme field in *Offer → Full Width Tables → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide theme color
+   * - **Default Value**: orange
+   * - **API ID Path**: offer.fullWidthTables.primary.theme
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  theme: prismic.SelectField<
+    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
+   * Eyebrow field in *Offer → Full Width Tables → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.fullWidthTables.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *Offer → Full Width Tables → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.fullWidthTables.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Table field in *Offer → Full Width Tables → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offer.fullWidthTables.primary.table
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  table: prismic.ImageField<never>;
+}
+
+/**
+ * Full Width Tables variation for Offer Slice
+ *
+ * - **API ID**: `fullWidthTables`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OfferSliceFullWidthTables = prismic.SharedSliceVariation<
+  "fullWidthTables",
+  Simplify<OfferSliceFullWidthTablesPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Offer*
+ */
+type OfferSliceVariation =
+  | OfferSliceDefault
+  | OfferSliceTwoTablesColumns
+  | OfferSliceFullWidthTables;
+
+/**
+ * Offer Shared Slice
+ *
+ * - **API ID**: `offer`
+ * - **Description**: Offer
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OfferSlice = prismic.SharedSlice<"offer", OfferSliceVariation>;
+
+/**
+ * Item in *Pricing → Default → Primary → Card*
+ */
+export interface PricingSliceDefaultPrimaryCardItem {
+  /**
+   * Title field in *Pricing → Default → Primary → Card*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.card[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Pricing → Default → Primary → Card*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.card[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Logo 1 field in *Pricing → Default → Primary → Card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.card[].logo_1
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo_1: prismic.ImageField<never>;
+
+  /**
+   * Logo 2 field in *Pricing → Default → Primary → Card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.card[].logo_2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo_2: prismic.ImageField<never>;
+
+  /**
+   * Logo 3 field in *Pricing → Default → Primary → Card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.card[].logo_3
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo_3: prismic.ImageField<never>;
+
+  /**
+   * Logo 4 field in *Pricing → Default → Primary → Card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.card[].logo_4
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo_4: prismic.ImageField<never>;
+
+  /**
+   * Logo 5 field in *Pricing → Default → Primary → Card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.card[].logo_5
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo_5: prismic.ImageField<never>;
+
+  /**
+   * Logo 6 field in *Pricing → Default → Primary → Card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.card[].logo_6
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo_6: prismic.ImageField<never>;
+}
+
+/**
+ * Item in *Pricing → Enterprise Cards → Primary → Card*
+ */
+export interface PricingSliceEnterpriseCardsPrimaryCardItem {
+  /**
+   * Title field in *Pricing → Enterprise Cards → Primary → Card*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.enterpriseCards.primary.card[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Pricing → Enterprise Cards → Primary → Card*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.enterpriseCards.primary.card[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Item in *Pricing → Enterprise Grid → Primary → Card*
+ */
+export interface PricingSliceEnterpriseGridPrimaryCardItem {
+  /**
+   * Title field in *Pricing → Enterprise Grid → Primary → Card*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.enterpriseGrid.primary.card[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Pricing → Enterprise Grid → Primary → Card*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.enterpriseGrid.primary.card[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Pricing → Default → Primary*
+ */
+export interface PricingSliceDefaultPrimary {
+  /**
+   * Theme field in *Pricing → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide theme color
+   * - **Default Value**: orange
+   * - **API ID Path**: pricing.default.primary.theme
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  theme: prismic.SelectField<
+    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
+   * Eyebrow field in *Pricing → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *Pricing → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Content left column field in *Pricing → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.content_left_column
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content_left_column: prismic.RichTextField;
+
+  /**
+   * Content right column field in *Pricing → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.content_right_column
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content_right_column: prismic.RichTextField;
+
+  /**
+   * Card field in *Pricing → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.card[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  card: prismic.GroupField<Simplify<PricingSliceDefaultPrimaryCardItem>>;
+}
+
+/**
+ * Default variation for Pricing Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PricingSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PricingSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Pricing → Enterprise Cards → Primary*
+ */
+export interface PricingSliceEnterpriseCardsPrimary {
+  /**
+   * Theme field in *Pricing → Enterprise Cards → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide theme color
+   * - **Default Value**: orange
+   * - **API ID Path**: pricing.enterpriseCards.primary.theme
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  theme: prismic.SelectField<
+    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
+   * Eyebrow field in *Pricing → Enterprise Cards → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.enterpriseCards.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *Pricing → Enterprise Cards → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.enterpriseCards.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Card field in *Pricing → Enterprise Cards → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.enterpriseCards.primary.card[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  card: prismic.GroupField<
+    Simplify<PricingSliceEnterpriseCardsPrimaryCardItem>
+  >;
+}
+
+/**
+ * Enterprise Cards variation for Pricing Slice
+ *
+ * - **API ID**: `enterpriseCards`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PricingSliceEnterpriseCards = prismic.SharedSliceVariation<
+  "enterpriseCards",
+  Simplify<PricingSliceEnterpriseCardsPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Pricing → Enterprise Grid → Primary*
+ */
+export interface PricingSliceEnterpriseGridPrimary {
+  /**
+   * Theme field in *Pricing → Enterprise Grid → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide theme color
+   * - **Default Value**: orange
+   * - **API ID Path**: pricing.enterpriseGrid.primary.theme
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  theme: prismic.SelectField<
+    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
+   * Eyebrow field in *Pricing → Enterprise Grid → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.enterpriseGrid.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *Pricing → Enterprise Grid → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.enterpriseGrid.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Card field in *Pricing → Enterprise Grid → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.enterpriseGrid.primary.card[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  card: prismic.GroupField<Simplify<PricingSliceEnterpriseGridPrimaryCardItem>>;
+}
+
+/**
+ * Enterprise Grid variation for Pricing Slice
+ *
+ * - **API ID**: `enterpriseGrid`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PricingSliceEnterpriseGrid = prismic.SharedSliceVariation<
+  "enterpriseGrid",
+  Simplify<PricingSliceEnterpriseGridPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Pricing → Table Image → Primary*
+ */
+export interface PricingSliceTableImagePrimary {
+  /**
+   * Theme field in *Pricing → Table Image → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide theme color
+   * - **Default Value**: orange
+   * - **API ID Path**: pricing.tableImage.primary.theme
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  theme: prismic.SelectField<
+    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
+   * Eyebrow field in *Pricing → Table Image → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.tableImage.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *Pricing → Table Image → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.tableImage.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Table field in *Pricing → Table Image → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.tableImage.primary.table
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  table: prismic.ImageField<never>;
+}
+
+/**
+ * Table Image variation for Pricing Slice
+ *
+ * - **API ID**: `tableImage`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PricingSliceTableImage = prismic.SharedSliceVariation<
+  "tableImage",
+  Simplify<PricingSliceTableImagePrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Pricing*
+ */
+type PricingSliceVariation =
+  | PricingSliceDefault
+  | PricingSliceEnterpriseCards
+  | PricingSliceEnterpriseGrid
+  | PricingSliceTableImage;
+
+/**
+ * Pricing Shared Slice
+ *
+ * - **API ID**: `pricing`
+ * - **Description**: Pricing
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PricingSlice = prismic.SharedSlice<
+  "pricing",
+  PricingSliceVariation
+>;
+
+/**
  * Primary content in *Product → Default → Primary*
  */
 export interface ProductSliceDefaultPrimary {
@@ -1655,7 +2989,7 @@ export interface ProductSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: product.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -1736,6 +3070,111 @@ export type ProductSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *References → Images Grid → Primary → Grid left column*
+ */
+export interface ReferencesSliceWithImagePrimaryGridLeftColumnItem {
+  /**
+   * Image field in *References → Images Grid → Primary → Grid left column*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.withImage.primary.grid_left_column[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Item in *References → Images Grid → Primary → Grid right column*
+ */
+export interface ReferencesSliceWithImagePrimaryGridRightColumnItem {
+  /**
+   * Image field in *References → Images Grid → Primary → Grid right column*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.withImage.primary.grid_right_column[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Item in *References → Showcased Websites → Primary → Stories*
+ */
+export interface ReferencesSliceShowcasedWebsitesPrimaryStoriesItem {
+  /**
+   * Website screenshot field in *References → Showcased Websites → Primary → Stories*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.showcasedWebsites.primary.stories[].website_screenshot
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  website_screenshot: prismic.ImageField<never>;
+
+  /**
+   * Label field in *References → Showcased Websites → Primary → Stories*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.showcasedWebsites.primary.stories[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Link field in *References → Showcased Websites → Primary → Stories*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.showcasedWebsites.primary.stories[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Item in *References → G2 Badges → Primary → Numbers*
+ */
+export interface ReferencesSliceG2BadgesPrimaryNumbersItem {
+  /**
+   * Number field in *References → G2 Badges → Primary → Numbers*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.g2Badges.primary.numbers[].number
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  number: prismic.NumberField;
+
+  /**
+   * Text field in *References → G2 Badges → Primary → Numbers*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.g2Badges.primary.numbers[].text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+}
+
+/**
+ * Item in *References → G2 Badges → Primary → Badges*
+ */
+export interface ReferencesSliceG2BadgesPrimaryBadgesItem {
+  /**
+   * Badge field in *References → G2 Badges → Primary → Badges*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.g2Badges.primary.badges[].badge
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  badge: prismic.ImageField<never>;
+}
+
+/**
  * Primary content in *References → Two Cols Text → Primary*
  */
 export interface ReferencesSliceDefaultPrimary {
@@ -1744,7 +3183,7 @@ export interface ReferencesSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: references.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -1808,15 +3247,15 @@ export type ReferencesSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *References → With Image → Primary*
+ * Primary content in *References → Images Grid → Primary*
  */
 export interface ReferencesSliceWithImagePrimary {
   /**
-   * Theme field in *References → With Image → Primary*
+   * Theme field in *References → Images Grid → Primary*
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: references.withImage.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -1826,7 +3265,7 @@ export interface ReferencesSliceWithImagePrimary {
   >;
 
   /**
-   * Company logo field in *References → With Image → Primary*
+   * Company logo field in *References → Images Grid → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -1836,7 +3275,7 @@ export interface ReferencesSliceWithImagePrimary {
   company_logo: prismic.ImageField<never>;
 
   /**
-   * Title field in *References → With Image → Primary*
+   * Title field in *References → Images Grid → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1846,7 +3285,7 @@ export interface ReferencesSliceWithImagePrimary {
   title: prismic.RichTextField;
 
   /**
-   * Description field in *References → With Image → Primary*
+   * Description field in *References → Images Grid → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1856,17 +3295,31 @@ export interface ReferencesSliceWithImagePrimary {
   description: prismic.RichTextField;
 
   /**
-   * Image field in *References → With Image → Primary*
+   * Grid left column field in *References → Images Grid → Primary*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: references.withImage.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **API ID Path**: references.withImage.primary.grid_left_column[]
+   * - **Documentation**: https://prismic.io/docs/field#group
    */
-  image: prismic.ImageField<never>;
+  grid_left_column: prismic.GroupField<
+    Simplify<ReferencesSliceWithImagePrimaryGridLeftColumnItem>
+  >;
 
   /**
-   * Bottom Content field in *References → With Image → Primary*
+   * Grid right column field in *References → Images Grid → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.withImage.primary.grid_right_column[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  grid_right_column: prismic.GroupField<
+    Simplify<ReferencesSliceWithImagePrimaryGridRightColumnItem>
+  >;
+
+  /**
+   * Bottom Content field in *References → Images Grid → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1877,7 +3330,7 @@ export interface ReferencesSliceWithImagePrimary {
 }
 
 /**
- * With Image variation for References Slice
+ * Images Grid variation for References Slice
  *
  * - **API ID**: `withImage`
  * - **Description**: Default
@@ -1890,11 +3343,163 @@ export type ReferencesSliceWithImage = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *References → Showcased Websites → Primary*
+ */
+export interface ReferencesSliceShowcasedWebsitesPrimary {
+  /**
+   * Theme field in *References → Showcased Websites → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide theme color
+   * - **Default Value**: orange
+   * - **API ID Path**: references.showcasedWebsites.primary.theme
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  theme: prismic.SelectField<
+    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
+   * Eyebrow field in *References → Showcased Websites → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.showcasedWebsites.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *References → Showcased Websites → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.showcasedWebsites.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *References → Showcased Websites → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.showcasedWebsites.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Stories field in *References → Showcased Websites → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.showcasedWebsites.primary.stories[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  stories: prismic.GroupField<
+    Simplify<ReferencesSliceShowcasedWebsitesPrimaryStoriesItem>
+  >;
+}
+
+/**
+ * Showcased Websites variation for References Slice
+ *
+ * - **API ID**: `showcasedWebsites`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ReferencesSliceShowcasedWebsites = prismic.SharedSliceVariation<
+  "showcasedWebsites",
+  Simplify<ReferencesSliceShowcasedWebsitesPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *References → G2 Badges → Primary*
+ */
+export interface ReferencesSliceG2BadgesPrimary {
+  /**
+   * Theme field in *References → G2 Badges → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide theme color
+   * - **Default Value**: orange
+   * - **API ID Path**: references.g2Badges.primary.theme
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  theme: prismic.SelectField<
+    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
+   * Title field in *References → G2 Badges → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.g2Badges.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *References → G2 Badges → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.g2Badges.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Numbers field in *References → G2 Badges → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.g2Badges.primary.numbers[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  numbers: prismic.GroupField<
+    Simplify<ReferencesSliceG2BadgesPrimaryNumbersItem>
+  >;
+
+  /**
+   * Badges field in *References → G2 Badges → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.g2Badges.primary.badges[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  badges: prismic.GroupField<
+    Simplify<ReferencesSliceG2BadgesPrimaryBadgesItem>
+  >;
+}
+
+/**
+ * G2 Badges variation for References Slice
+ *
+ * - **API ID**: `g2Badges`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ReferencesSliceG2Badges = prismic.SharedSliceVariation<
+  "g2Badges",
+  Simplify<ReferencesSliceG2BadgesPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *References*
  */
 type ReferencesSliceVariation =
   | ReferencesSliceDefault
-  | ReferencesSliceWithImage;
+  | ReferencesSliceWithImage
+  | ReferencesSliceShowcasedWebsites
+  | ReferencesSliceG2Badges;
 
 /**
  * References Shared Slice
@@ -1917,7 +3522,7 @@ export interface ResourcesSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: resources.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -1969,7 +3574,7 @@ export interface ResourcesSliceContactPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: resources.contact.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -2020,6 +3625,122 @@ export type ResourcesSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *SalesProcess → Default → Primary → Planning*
+ */
+export interface SalesProcessSliceDefaultPrimaryPlanningItem {
+  /**
+   * Milestone name field in *SalesProcess → Default → Primary → Planning*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sales_process.default.primary.planning[].milestone_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  milestone_name: prismic.KeyTextField;
+
+  /**
+   * Milestone description field in *SalesProcess → Default → Primary → Planning*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sales_process.default.primary.planning[].milestone_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  milestone_description: prismic.RichTextField;
+
+  /**
+   * Milestone Icon field in *SalesProcess → Default → Primary → Planning*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sales_process.default.primary.planning[].milestone_icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  milestone_icon: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *SalesProcess → Default → Primary*
+ */
+export interface SalesProcessSliceDefaultPrimary {
+  /**
+   * Theme field in *SalesProcess → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide theme color
+   * - **Default Value**: orange
+   * - **API ID Path**: sales_process.default.primary.theme
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  theme: prismic.SelectField<
+    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
+   * Eyebrow field in *SalesProcess → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sales_process.default.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *SalesProcess → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sales_process.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Planning field in *SalesProcess → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sales_process.default.primary.planning[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  planning: prismic.GroupField<
+    Simplify<SalesProcessSliceDefaultPrimaryPlanningItem>
+  >;
+}
+
+/**
+ * Default variation for SalesProcess Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SalesProcessSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SalesProcessSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SalesProcess*
+ */
+type SalesProcessSliceVariation = SalesProcessSliceDefault;
+
+/**
+ * SalesProcess Shared Slice
+ *
+ * - **API ID**: `sales_process`
+ * - **Description**: SalesProcess
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SalesProcessSlice = prismic.SharedSlice<
+  "sales_process",
+  SalesProcessSliceVariation
+>;
+
+/**
  * Item in *Testimonials → Default → Primary → Testimonials*
  */
 export interface TestimonialsSliceDefaultPrimaryTestimonialsItem {
@@ -2062,6 +3783,20 @@ export interface TestimonialsSliceDefaultPrimaryTestimonialsItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   testimonial: prismic.RichTextField;
+
+  /**
+   * Card color field in *Testimonials → Default → Primary → Testimonials*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: pink
+   * - **API ID Path**: testimonials.default.primary.testimonials[].card_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  card_color: prismic.SelectField<
+    "pink" | "green" | "purple" | "blue" | "orange",
+    "filled"
+  >;
 }
 
 /**
@@ -2073,7 +3808,7 @@ export interface TestimonialsSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: testimonials.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -2117,7 +3852,7 @@ export interface TestimonialsSliceSingleTestimonialPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: testimonials.singleTestimonial.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -2248,7 +3983,7 @@ export interface ValuePropositionSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: value_proposition.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -2320,7 +4055,7 @@ export interface ValuePropositionSliceTwoColumnsWithDiagramPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: value_proposition.twoColumnsWithDiagram.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -2393,7 +4128,7 @@ export interface ValuePropositionSliceTwoColumnsWithLogosPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: value_proposition.twoColumnsWithLogos.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -2478,7 +4213,7 @@ export interface ValuePropositionSliceWithListPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: orange
    * - **API ID Path**: value_proposition.withList.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -2591,6 +4326,25 @@ declare module "@prismicio/client" {
       AgendaSliceDefaultPrimary,
       AgendaSliceVariation,
       AgendaSliceDefault,
+      CompanySlice,
+      CompanySliceDefaultPrimaryShowcasedWebsitesItem,
+      CompanySliceDefaultPrimary,
+      CompanySliceHistoryPrimaryMilestoneItem,
+      CompanySliceHistoryPrimary,
+      CompanySliceKeyFiguresAndReferencesPrimaryFiguresItem,
+      CompanySliceKeyFiguresAndReferencesPrimaryReferenceGroup1Item,
+      CompanySliceKeyFiguresAndReferencesPrimaryReferenceGroup2Item,
+      CompanySliceKeyFiguresAndReferencesPrimaryReferenceGroup3Item,
+      CompanySliceKeyFiguresAndReferencesPrimaryReferenceGroup4Item,
+      CompanySliceKeyFiguresAndReferencesPrimary,
+      CompanySliceFullWidthKeyFiguresPrimaryFiguresItem,
+      CompanySliceFullWidthKeyFiguresPrimaryLogosItem,
+      CompanySliceFullWidthKeyFiguresPrimary,
+      CompanySliceVariation,
+      CompanySliceDefault,
+      CompanySliceHistory,
+      CompanySliceKeyFiguresAndReferences,
+      CompanySliceFullWidthKeyFigures,
       FeaturesSlice,
       FeaturesSliceDefaultPrimary,
       FeaturesSliceThreeColsListPrimaryFeaturesItem,
@@ -2611,7 +4365,8 @@ declare module "@prismicio/client" {
       IntroSlideSliceSingleGroup,
       LeadsGoalsSlice,
       LeadsGoalsSliceDefaultPrimary,
-      LeadsGoalsSliceWithImageGridPrimaryGridItem,
+      LeadsGoalsSliceWithImageGridPrimaryGridLeftColumnItem,
+      LeadsGoalsSliceWithImageGridPrimaryGridRightColumnItem,
       LeadsGoalsSliceWithImageGridPrimary,
       LeadsGoalsSliceWithImageAndIllustrationPrimary,
       LeadsGoalsSliceWithIllustrationPrimary,
@@ -2627,22 +4382,59 @@ declare module "@prismicio/client" {
       MethodologySliceVariation,
       MethodologySliceDefault,
       MethodologySliceUser,
+      OfferSlice,
+      OfferSliceDefaultPrimary,
+      OfferSliceTwoTablesColumnsPrimaryContentLeftColumnItem,
+      OfferSliceTwoTablesColumnsPrimaryContentRightColumnItem,
+      OfferSliceTwoTablesColumnsPrimary,
+      OfferSliceFullWidthTablesPrimary,
+      OfferSliceVariation,
+      OfferSliceDefault,
+      OfferSliceTwoTablesColumns,
+      OfferSliceFullWidthTables,
+      PricingSlice,
+      PricingSliceDefaultPrimaryCardItem,
+      PricingSliceDefaultPrimary,
+      PricingSliceEnterpriseCardsPrimaryCardItem,
+      PricingSliceEnterpriseCardsPrimary,
+      PricingSliceEnterpriseGridPrimaryCardItem,
+      PricingSliceEnterpriseGridPrimary,
+      PricingSliceTableImagePrimary,
+      PricingSliceVariation,
+      PricingSliceDefault,
+      PricingSliceEnterpriseCards,
+      PricingSliceEnterpriseGrid,
+      PricingSliceTableImage,
       ProductSlice,
       ProductSliceDefaultPrimary,
       ProductSliceVariation,
       ProductSliceDefault,
       ReferencesSlice,
       ReferencesSliceDefaultPrimary,
+      ReferencesSliceWithImagePrimaryGridLeftColumnItem,
+      ReferencesSliceWithImagePrimaryGridRightColumnItem,
       ReferencesSliceWithImagePrimary,
+      ReferencesSliceShowcasedWebsitesPrimaryStoriesItem,
+      ReferencesSliceShowcasedWebsitesPrimary,
+      ReferencesSliceG2BadgesPrimaryNumbersItem,
+      ReferencesSliceG2BadgesPrimaryBadgesItem,
+      ReferencesSliceG2BadgesPrimary,
       ReferencesSliceVariation,
       ReferencesSliceDefault,
       ReferencesSliceWithImage,
+      ReferencesSliceShowcasedWebsites,
+      ReferencesSliceG2Badges,
       ResourcesSlice,
       ResourcesSliceDefaultPrimary,
       ResourcesSliceContactPrimary,
       ResourcesSliceVariation,
       ResourcesSliceDefault,
       ResourcesSliceContact,
+      SalesProcessSlice,
+      SalesProcessSliceDefaultPrimaryPlanningItem,
+      SalesProcessSliceDefaultPrimary,
+      SalesProcessSliceVariation,
+      SalesProcessSliceDefault,
       TestimonialsSlice,
       TestimonialsSliceDefaultPrimaryTestimonialsItem,
       TestimonialsSliceDefaultPrimary,

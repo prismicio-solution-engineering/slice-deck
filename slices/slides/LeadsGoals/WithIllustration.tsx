@@ -2,7 +2,6 @@ import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
 import {
   LeadsGoalsSliceWithIllustration,
   LeadsGoalsSliceWithImageAndIllustration,
-  LeadsGoalsSliceWithImageGrid,
 } from "@/prismicio-types";
 import { Container } from "@/components/Slides/Container";
 import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
@@ -25,7 +24,10 @@ const WithIllustration = ({
       settings={context.settings}
       theme={slice.primary.theme}
     >
-      <SlideTwoCols className="items-center" larger="right">
+      <SlideTwoCols
+        className="items-center"
+        larger={slice.variation === "withIllustration" ? "" : "right"}
+      >
         <LeftCol>
           <div className="font-headings text-3xl font-semibold text-primary-pink">
             {slice.primary.eyebrow}
@@ -42,22 +44,31 @@ const WithIllustration = ({
         </LeftCol>
         <RightCol>
           {slice.variation === "withIllustration" && (
-            <PrismicNextImage
-              field={slice.primary.illustration}
-              className={`border-2 border-gray-darker shadow-xl`}
-            />
+            <div className="relative w-full h-full">
+              <PrismicNextImage
+                field={slice.primary.illustration}
+                className={`w-[500px] absolute inset-0 top-1/3 left-16 z-10`}
+              />
+              <div
+                className={`w-3/4 h-full ml-auto bg-tertiary-${slice.primary.illustration_background_color} border-2 border-gray-darker`}
+              />
+            </div>
           )}
           {slice.variation === "withImageAndIllustration" && (
-            <div className="flex flex-row gap-x-8">
-            <PrismicNextImage
-              field={slice.primary.illustration}
-              className={`border-2 border-gray-darker shadow-xl`}
+            <div className="w-full h-3/4 flex flex-row gap-x-8">
+              <PrismicNextImage
+                field={slice.primary.image}
+                className={`w-1/2 h-full object-cover object-center border-2 border-gray-darker`}
               />
-            <PrismicNextImage
-              field={slice.primary.illustration}
-              className={`border-2 border-gray-darker shadow-xl`}
-              />
+              <div
+                className={`relative w-1/2 h-full bg-tertiary-${slice.primary.illustration_background_color} border-2 border-gray-darker`}
+              >
+                <PrismicNextImage
+                  field={slice.primary.illustration}
+                  className={`h-full absolute inset-0 top-1/4 z-10`}
+                />
               </div>
+            </div>
           )}
         </RightCol>
       </SlideTwoCols>

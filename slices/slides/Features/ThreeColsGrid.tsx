@@ -59,7 +59,7 @@ const ThreeColsGrid = ({
                     />
                   )}
                 </div>
-                <div className="">
+                <div>
                   <GlobalPrismicRichText
                     field={item.title}
                     classNames="!text-xl"

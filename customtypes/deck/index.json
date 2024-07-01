@@ -26,6 +26,18 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "company": {
+              "type": "SharedSlice"
+            },
+            "sales_process": {
+              "type": "SharedSlice"
+            },
+            "pricing": {
+              "type": "SharedSlice"
+            },
+            "offer": {
+              "type": "SharedSlice"
+            },
             "features": {
               "type": "SharedSlice"
             },

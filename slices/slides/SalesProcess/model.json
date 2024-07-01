@@ -1,0 +1,84 @@
+{
+  "id": "sales_process",
+  "type": "SharedSlice",
+  "name": "SalesProcess",
+  "description": "SalesProcess",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "theme": {
+          "type": "Select",
+          "config": {
+            "label": "Theme",
+            "placeholder": "Slide theme color",
+            "options": [
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
+            "default_value": "orange"
+          }
+        },
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2,strong,em"
+          }
+        },
+        "planning": {
+          "type": "Group",
+          "config": {
+            "label": "Planning",
+            "repeat": true,
+            "fields": {
+              "milestone_name": {
+                "type": "Text",
+                "config": {
+                  "label": "Milestone name",
+                  "placeholder": ""
+                }
+              },
+              "milestone_description": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Milestone description",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "milestone_icon": {
+                "type": "Image",
+                "config": {
+                  "label": "Milestone Icon",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

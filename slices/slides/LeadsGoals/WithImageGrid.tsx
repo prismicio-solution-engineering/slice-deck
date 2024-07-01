@@ -19,7 +19,7 @@ const WithImageGrid = ({
       settings={context.settings}
       theme={slice.primary.theme}
     >
-      <SlideTwoCols className="items-center" larger="right">
+      <SlideTwoCols className="mb-0" larger="right" overflowRight>
         <LeftCol>
           <div className="font-headings text-3xl font-semibold text-primary-pink">
             {slice.primary.eyebrow}
@@ -35,7 +35,37 @@ const WithImageGrid = ({
           />
         </LeftCol>
         <RightCol>
-          <PrismicNextImage field={slice.primary.image} className="border-2 border-gray-darker shadow-xl"/>
+          <div className="w-full relative ">
+            <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl"
+              >
+                <div className="absolute sm:top-0 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
+                  <div className="flex items-center space-x-6 lg:space-x-8">
+                    <div className="w-1/2 mt-16 grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                      {slice.primary.grid_left_column.map((item, idx) => (
+                        <PrismicNextImage
+                          key={idx}
+                          field={item.image}
+                          className="h-full w-96 object-contain p-4 bg-white rounded-xl shadow-2xl"
+                        />
+                      ))}
+                    </div>
+                    <div className="w-1/2 -mt-32 grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                      {slice.primary.grid_right_column.map((item, idx) => (
+                        <PrismicNextImage
+                          key={idx}
+                          field={item.image}
+                          className="w-96 object-contain p-4 bg-white rounded-xl shadow-xl"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </RightCol>
       </SlideTwoCols>
     </Container>

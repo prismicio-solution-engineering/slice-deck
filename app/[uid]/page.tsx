@@ -10,7 +10,7 @@ import {
   DeckDocument,
   SettingsDocument,
 } from "@/prismicio-types";
-import * as crypto from 'crypto';
+import * as crypto from "crypto";
 import { components as slidesComponents } from "@/slices/slides";
 import Scaler from "@/components/Slides/Scaler";
 import { SliderControls } from "@/components/Slides/SliderControls";
@@ -20,17 +20,23 @@ type Params = { uid: string };
 
 export default async function Page({
   params,
-  searchParams }: {
-    params: Params
-    searchParams: { pwd?: string };
-  }) {
+  searchParams,
+}: {
+  params: Params;
+  searchParams: { pwd?: string };
+}) {
   const client = createClient();
 
-  const uidsHashTable = (await client
-    .getAllByType<DeckDocument>("deck")
-    .catch(() => notFound())).map((doc) => { return { uid: doc.uid, hash: crypto.createHash('sha256').update(doc.uid).digest('hex') } })
+  const uidsHashTable = (
+    await client.getAllByType<DeckDocument>("deck").catch(() => notFound())
+  ).map((doc) => {
+    return {
+      uid: doc.uid,
+      hash: crypto.createHash("sha256").update(doc.uid).digest("hex"),
+    };
+  });
 
-  const pageUid = uidsHashTable.find((uid) => uid.hash === params.uid)?.uid
+  const pageUid = uidsHashTable.find((uid) => uid.hash === params.uid)?.uid;
 
   const page = await client
     .getByUID<DeckDocument>("deck", pageUid!)
@@ -40,27 +46,24 @@ export default async function Page({
     .getSingle<SettingsDocument>("settings")
     .catch(() => notFound());
 
-  const isProtected = page.data.activate_password
+  const isProtected = page.data.activate_password;
 
-  if(isProtected){
-    const password = page.data.password
+  if (isProtected) {
+    const password = page.data.password;
 
     if (!searchParams.pwd) {
-      return (
-        <PasswordForm hash={params.uid!} />
-      )
+      return <PasswordForm hash={params.uid!} />;
     } else {
-      const privateKey = process.env.PRIVATE_KEY!
-      const encryptedPassword = Buffer.from(decodeURIComponent(searchParams.pwd!), 'base64');
-  
-      const decrypted = crypto.privateDecrypt(privateKey,
-        encryptedPassword
+      const privateKey = process.env.PRIVATE_KEY!;
+      const encryptedPassword = Buffer.from(
+        decodeURIComponent(searchParams.pwd!),
+        "base64"
       );
-  
+
+      const decrypted = crypto.privateDecrypt(privateKey, encryptedPassword);
+
       if (decrypted.toString() !== password) {
-        return (
-          <PasswordForm hash={params.uid!} />
-        )
+        return <PasswordForm hash={params.uid!} />;
       }
     }
   }
@@ -68,9 +71,8 @@ export default async function Page({
   return (
     <div className="max-w-screen-3xl mx-auto">
       <PrismicRichText field={page.data.title} />
-      <p>Last updated : {new Date(page.last_publication_date).toUTCString()}</p>
+      {/* <p>Last updated : {new Date(page.last_publication_date).toUTCString()}</p> */}
 
-      {/* <Calendar author={author} /> */}
       <Scaler>
         <div className="relative">
           <SliderControls>
@@ -87,17 +89,22 @@ export default async function Page({
 }
 
 export async function generateMetadata({
-  params
+  params,
 }: {
   params: Params;
 }): Promise<Metadata> {
   const client = createClient();
 
-  const uidsHashTable = (await client
-    .getAllByType<DeckDocument>("deck")
-    .catch(() => notFound())).map((doc) => { return { uid: doc.uid, hash: crypto.createHash('sha256').update(doc.uid).digest('hex') } })
+  const uidsHashTable = (
+    await client.getAllByType<DeckDocument>("deck").catch(() => notFound())
+  ).map((doc) => {
+    return {
+      uid: doc.uid,
+      hash: crypto.createHash("sha256").update(doc.uid).digest("hex"),
+    };
+  });
 
-  const pageUid = uidsHashTable.find((uid) => uid.hash === params.uid)?.uid
+  const pageUid = uidsHashTable.find((uid) => uid.hash === params.uid)?.uid;
 
   const page = await client
     .getByUID<DeckDocument>("deck", pageUid!)

@@ -25,7 +25,7 @@
               "purple",
               "blue"
             ],
-            "default_value": "white"
+            "default_value": "orange"
           }
         },
         "title": {
@@ -105,7 +105,7 @@
               "purple",
               "blue"
             ],
-            "default_value": "white"
+            "default_value": "orange"
           }
         },
         "user_number": {
