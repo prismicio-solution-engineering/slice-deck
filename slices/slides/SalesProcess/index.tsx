@@ -1,10 +1,10 @@
-import { LeftCol, RightCol } from "@/components/Slides/Columns";
 import { Container } from "@/components/Slides/Container";
-import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
 import { SalesProcessSlice } from "@/prismicio-types";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { Context } from "../IntroSlide";
+import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
+import Timeline from "@/components/Timeline";
 
 /**
  * Props for `SalesProcess`.
@@ -27,10 +27,9 @@ const SalesProcess = ({
       settings={context.settings}
       theme={slice.primary.theme}
     >
-      <SlideTwoCols larger="right" overflowRight className="mb-0">
-        <LeftCol>toto</LeftCol>
-        <RightCol>Tutu</RightCol>
-      </SlideTwoCols>
+      <SlideFullWidth className="flex flex-row justify-center">
+        <Timeline planning={slice.primary.planning}/>
+      </SlideFullWidth>
     </Container>
   );
 };
