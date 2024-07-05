@@ -5,7 +5,7 @@ import { Context } from "../IntroSlide";
 import Intro from "./Intro";
 import History from "./History";
 import KeyFiguresAndReferences from "./KeyFiguresAndReferences";
-import FullWidthKeyFigures from "./FullWidthKeyFigures";
+import FullWidthKeyFiguresGrid from "./FullWidthKeyFiguresGrid";
 
 /**
  * Props for `Company`.
@@ -30,7 +30,7 @@ const Company = ({
     case "keyFiguresAndReferences":
       return <KeyFiguresAndReferences slice={slice} context={context} />;
     case "fullWidthKeyFigures":
-      return <FullWidthKeyFigures slice={slice} context={context} />;
+      return <FullWidthKeyFiguresGrid slice={slice} context={context} />;
   }
 };
 

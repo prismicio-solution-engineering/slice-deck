@@ -20,26 +20,28 @@ const Intro = ({
     >
       <SlideFullWidth>
         <div className="grid grid-rows-3 grid-cols-12 gap-y-8 gap-x-4">
-          <div className="col-span-12 flex flex-row gap-x-8">
+          <div className="col-span-12 flex flex-row gap-x-8 -mx-28 -mt-4">
             {slice.primary.showcased_websites.slice(0, 4).map((item, idx) => (
-              <PrismicNextImage
-                key={idx}
-                field={item.image}
-                className="object-contain rounded-xl bg-white p-4 shadow-2xl"
-              />
+              <div key={idx} className="h-60 shadow-2xl p-4 bg-white rounded-2xl object-contain">
+                <PrismicNextImage
+                  field={item.image}
+                  className="h-full w-full object-contain"
+                />
+              </div>
             ))}
           </div>
-          <div className="grid grid-cols-subgrid row-span-1 col-span-12">
-            <div className="col-span-3">
+          <div className="flex flex-row col-span-12 gap-x-8 -mx-32">
+            <div>
               {slice.primary.showcased_websites.slice(4, 5).map((item, idx) => (
-                <PrismicNextImage
-                  key={idx}
-                  field={item.image}
-                  className="object-contain rounded-xl bg-white p-4 shadow-2xl"
-                />
+                <div key={idx} className="h-60 shadow-2xl p-4 bg-white rounded-2xl object-contain">
+                  <PrismicNextImage
+                    field={item.image}
+                    className="h-full w-full object-contain"
+                  />
+                </div>
               ))}
             </div>
-            <div className="col-span-6 text-center">
+            <div className="w-2/3 self-center text-center">
               <div className="font-headings text-3xl font-semibold text-primary-pink text-center">
                 {slice.primary.eyebrow}
               </div>
@@ -48,23 +50,25 @@ const Intro = ({
                 classNames="text-center"
               />
             </div>
-            <div className="col-span-3">
+            <div>
               {slice.primary.showcased_websites.slice(5, 6).map((item, idx) => (
-                <PrismicNextImage
-                  key={idx}
-                  field={item.image}
-                  className="object-contain rounded-xl bg-white p-4 shadow-2xl"
-                />
+                <div key={idx} className="h-60 shadow-2xl p-4 bg-white rounded-2xl object-contain">
+                  <PrismicNextImage
+                    field={item.image}
+                    className="h-full w-full object-contain"
+                  />
+                </div>
               ))}
             </div>
           </div>
-          <div className="col-span-12 flex flex-row gap-x-8">
+          <div className="col-span-12 flex flex-row gap-x-8 -mx-40 mt-4">
             {slice.primary.showcased_websites.slice(6).map((item, idx) => (
-              <PrismicNextImage
-                key={idx}
-                field={item.image}
-                className="object-contain rounded-xl bg-white p-4 shadow-2xl"
-              />
+              <div key={idx} className="h-60 shadow-2xl p-4 bg-white rounded-2xl object-contain">
+                <PrismicNextImage
+                  field={item.image}
+                  className="h-full w-full object-contain"
+                />
+              </div>
             ))}
           </div>
         </div>
