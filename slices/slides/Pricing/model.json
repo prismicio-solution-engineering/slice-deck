@@ -90,7 +90,9 @@
                 "type": "Image",
                 "config": {
                   "label": "Logo 1",
-                  "constraint": {},
+                  "constraint": {
+                    "height": 16
+                  },
                   "thumbnails": []
                 }
               },
@@ -98,7 +100,9 @@
                 "type": "Image",
                 "config": {
                   "label": "Logo 2",
-                  "constraint": {},
+                  "constraint": {
+                    "height": 16
+                  },
                   "thumbnails": []
                 }
               },
@@ -106,7 +110,9 @@
                 "type": "Image",
                 "config": {
                   "label": "Logo 3",
-                  "constraint": {},
+                  "constraint": {
+                    "height": 16
+                  },
                   "thumbnails": []
                 }
               },
@@ -114,7 +120,9 @@
                 "type": "Image",
                 "config": {
                   "label": "Logo 4",
-                  "constraint": {},
+                  "constraint": {
+                    "height": 16
+                  },
                   "thumbnails": []
                 }
               },
@@ -122,7 +130,9 @@
                 "type": "Image",
                 "config": {
                   "label": "Logo 5",
-                  "constraint": {},
+                  "constraint": {
+                    "height": 16
+                  },
                   "thumbnails": []
                 }
               },
@@ -130,7 +140,9 @@
                 "type": "Image",
                 "config": {
                   "label": "Logo 6",
-                  "constraint": {},
+                  "constraint": {
+                    "height": 16
+                  },
                   "thumbnails": []
                 }
               }
