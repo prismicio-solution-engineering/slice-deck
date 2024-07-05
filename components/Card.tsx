@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-const baseClassNames = "w-3/12 p-6 border flex flex-col items-center";
+const baseClassNames = "p-6 border flex flex-col items-center";
 
 export const Card = ({
   alternateAlignment = false,
@@ -13,7 +13,7 @@ export const Card = ({
 }) => {
   className = clsx(
     baseClassNames,
-    alternateAlignment && "even:self-center",
+    alternateAlignment && "even:self-end",
     className
   );
 
