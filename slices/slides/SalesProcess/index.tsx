@@ -5,6 +5,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import { Context } from "../IntroSlide";
 import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
 import Timeline from "@/components/Timeline";
+import { Headings } from "@/components/Slides/Headings";
 
 /**
  * Props for `SalesProcess`.
@@ -27,8 +28,15 @@ const SalesProcess = ({
       settings={context.settings}
       theme={slice.primary.theme}
     >
-      <SlideFullWidth className="flex flex-row justify-center">
-        <Timeline planning={slice.primary.planning}/>
+      <SlideFullWidth className="flex flex-col justify-between">
+        <Headings
+          eyebrow={slice.primary.eyebrow}
+          title={slice.primary.title}
+          alignTop
+        />
+        <div className="w-full grow">
+          <Timeline planning={slice.primary.planning} />
+        </div>
       </SlideFullWidth>
     </Container>
   );

@@ -804,6 +804,26 @@ export interface CompanySliceHistoryPrimary {
   >;
 
   /**
+   * Eyebrow field in *Company → History → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.history.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *Company → History → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.history.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
    * Milestone field in *Company → History → Primary*
    *
    * - **Field Type**: Group
@@ -824,6 +844,16 @@ export interface CompanySliceHistoryPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   source: prismic.RichTextField;
+
+  /**
+   * Image field in *Company → History → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.history.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
 }
 
 /**
@@ -1008,6 +1038,26 @@ export interface CompanySliceFullWidthKeyFiguresPrimary {
     "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
+
+  /**
+   * Eyebrow field in *Company → Full width Key Figures → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.fullWidthKeyFigures.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *Company → Full width Key Figures → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.fullWidthKeyFigures.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
 
   /**
    * Figures field in *Company → Full width Key Figures → Primary*
