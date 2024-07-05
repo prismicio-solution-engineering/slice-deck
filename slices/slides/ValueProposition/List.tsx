@@ -33,10 +33,7 @@ const List = ({
         <div className="flex flex-row gap-x-32">
           {slice.primary.list.map((item, idx) => (
             <div key={idx} className="w-1/3 flex flex-col justify-between">
-              <Card
-                key={idx}
-                className="w-full h-full flex flex-col gap-y-8 text-center bg-white"
-              >
+              <Card className="w-full h-full flex flex-col gap-y-8 text-center bg-white">
                 <PrismicNextImage field={item.list_icon} />
 
                 <div className="flex flex-col gap-y-8 grow">
