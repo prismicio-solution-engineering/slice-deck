@@ -63,27 +63,30 @@ const Testimonials = ({
           </div>
         ) : (
           <div className="w-full flex flex-row gap-x-8">
-            <Card className="w-1/2">
+            <Card className="w-1/2 p-0">
               <PrismicNextImage
                 field={slice.primary.author_picture}
-                className="rounded-xl mb-4"
+                className="w-full h-full rounded-xl object-contain"
               />
             </Card>
-            <Card className="w-1/2">
+            <Card className="w-1/2 rounded-xl bg-white justify-center gap-y-4">
               <GlobalPrismicRichText
                 field={slice.primary.testimonial}
                 theme={slice.primary.theme}
+                classNames="text-left text-4xl"
               />
-              <p
-                className={`font-headings text-lg text-gray-dark break-words font-normal`}
-              >
-                {slice.primary.author_name}
-              </p>
-              <p
-                className={`font-copy text-lg text-gray-dark break-words font-normal mb-4 uppercase`}
-              >
-                {slice.primary.author_role_and_company}
-              </p>
+              <div className="w-full">
+                <p
+                  className={`font-copy text-2xl text-gray-dark break-words font-normal`}
+                >
+                  {slice.primary.author_name}
+                </p>
+                <p
+                  className={`font-headings text-2xl text-gray-dark break-words font-normal mb-4 uppercase`}
+                >
+                  {slice.primary.author_role_and_company}
+                </p>
+              </div>
             </Card>
           </div>
         )}
