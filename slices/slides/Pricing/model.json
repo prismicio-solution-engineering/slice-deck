@@ -336,7 +336,10 @@
           "type": "Image",
           "config": {
             "label": "Table",
-            "constraint": {},
+            "constraint": {
+              "width": 1500,
+              "height": null
+            },
             "thumbnails": []
           }
         }

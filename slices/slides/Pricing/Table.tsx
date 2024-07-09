@@ -1,7 +1,7 @@
 import { PricingSliceEnterpriseGrid, PricingSliceTableImage } from "@/prismicio-types";
 import { Container } from "@/components/Slides/Container";
 import { Context } from "../IntroSlide";
-import { PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
 import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
 import { isFilled } from "@prismicio/client";
@@ -27,7 +27,9 @@ const Table = ({
           eyebrow={slice.primary.eyebrow}
           title={slice.primary.title}
           alignTop
+          titleSize="text-xl"
         />
+        <PrismicNextImage field={slice.primary.table} width={1500} height={660} className="border-2 border-gray-darker object-contain" />
       </SlideFullWidth>
     </Container>
   );
