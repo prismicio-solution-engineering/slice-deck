@@ -45,12 +45,12 @@ const Testimonials = ({
                 />
 
                 <p
-                  className={`font-headings text-xl text-primary-${item.card_color} break-words font-normal`}
+                  className={`font-copy text-xl text-primary-${item.card_color} break-words font-normal`}
                 >
                   {item.author_name}
                 </p>
                 <p
-                  className={`font-copy text-lg text-primary-${item.card_color} break-words font-normal mb-4`}
+                  className={`font-headings text-lg text-primary-${item.card_color} break-words font-normal mb-4`}
                 >
                   {item.author_role_and_company}
                 </p>
