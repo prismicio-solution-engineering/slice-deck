@@ -57,7 +57,7 @@
           "type": "Group",
           "config": {
             "label": "Tables",
-            "repeat": true,
+            "repeat": false,
             "fields": {
               "table_has_header": {
                 "type": "Boolean",
@@ -126,7 +126,7 @@
           "type": "Group",
           "config": {
             "label": "Content left column",
-            "repeat": true,
+            "repeat": false,
             "fields": {
               "title": {
                 "type": "StructuredText",
@@ -170,7 +170,7 @@
           "type": "Group",
           "config": {
             "label": "Content right column",
-            "repeat": true,
+            "repeat": false,
             "fields": {
               "title": {
                 "type": "StructuredText",
