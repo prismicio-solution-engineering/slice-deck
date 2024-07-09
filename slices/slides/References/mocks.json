@@ -238,6 +238,22 @@
 										"url": "http://google.com"
 									}
 								}
+							],
+							[
+								"user_quote",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "improve",
+									"type": "Text"
+								}
+							],
+							[
+								"use_name",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "active",
+									"type": "Text"
+								}
 							]
 						]
 					}
@@ -292,6 +308,11 @@
 						}
 					}
 				]
+			},
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "rose",
+				"type": "Text"
 			}
 		},
 		"items": [

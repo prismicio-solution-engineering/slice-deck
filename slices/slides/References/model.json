@@ -277,6 +277,20 @@
                   "placeholder": "",
                   "select": null
                 }
+              },
+              "use_name": {
+                "type": "Text",
+                "config": {
+                  "label": "Use name",
+                  "placeholder": ""
+                }
+              },
+              "user_quote": {
+                "type": "Text",
+                "config": {
+                  "label": "User Quote",
+                  "placeholder": ""
+                }
               }
             }
           }
@@ -306,6 +320,13 @@
               "blue"
             ],
             "default_value": "orange"
+          }
+        },
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
           }
         },
         "title": {

@@ -6,6 +6,7 @@ export const components = {
   agenda: dynamic(() => import("./Agenda")),
   company: dynamic(() => import("./Company")),
   features: dynamic(() => import("./Features")),
+  generic_image_slice: dynamic(() => import("./GenericImageSlice")),
   intro_slide: dynamic(() => import("./IntroSlide")),
   leads_goals: dynamic(() => import("./LeadsGoals")),
   methodology: dynamic(() => import("./Methodology")),

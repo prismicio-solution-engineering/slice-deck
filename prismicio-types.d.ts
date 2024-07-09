@@ -1483,6 +1483,85 @@ export type FeaturesSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *GenericImageSlice → Default → Primary*
+ */
+export interface GenericImageSliceSliceDefaultPrimary {
+  /**
+   * Theme field in *GenericImageSlice → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide theme color
+   * - **Default Value**: white
+   * - **API ID Path**: generic_image_slice.default.primary.theme
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  theme: prismic.SelectField<
+    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
+   * Eyebrow field in *GenericImageSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: generic_image_slice.default.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *GenericImageSlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: generic_image_slice.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Image field in *GenericImageSlice → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: generic_image_slice.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for GenericImageSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GenericImageSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<GenericImageSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *GenericImageSlice*
+ */
+type GenericImageSliceSliceVariation = GenericImageSliceSliceDefault;
+
+/**
+ * GenericImageSlice Shared Slice
+ *
+ * - **API ID**: `generic_image_slice`
+ * - **Description**: GenericImageSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GenericImageSliceSlice = prismic.SharedSlice<
+  "generic_image_slice",
+  GenericImageSliceSliceVariation
+>;
+
+/**
  * Item in *IntroSlide → 3 groups → Primary → Logos*
  */
 export interface IntroSlideSliceDefaultPrimaryLogosItem {
@@ -3268,6 +3347,26 @@ export interface ReferencesSliceShowcasedWebsitesPrimaryStoriesItem {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   link: prismic.LinkField;
+
+  /**
+   * Use name field in *References → Showcased Websites → Primary → Stories*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.showcasedWebsites.primary.stories[].use_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  use_name: prismic.KeyTextField;
+
+  /**
+   * User Quote field in *References → Showcased Websites → Primary → Stories*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.showcasedWebsites.primary.stories[].user_quote
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  user_quote: prismic.KeyTextField;
 }
 
 /**
@@ -3569,6 +3668,16 @@ export interface ReferencesSliceG2BadgesPrimary {
     "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
+
+  /**
+   * Eyebrow field in *References → G2 Badges → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.g2Badges.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
 
   /**
    * Title field in *References → G2 Badges → Primary*
@@ -4491,6 +4600,10 @@ declare module "@prismicio/client" {
       FeaturesSliceDefault,
       FeaturesSliceThreeColsList,
       FeaturesSliceThreeColsGrid,
+      GenericImageSliceSlice,
+      GenericImageSliceSliceDefaultPrimary,
+      GenericImageSliceSliceVariation,
+      GenericImageSliceSliceDefault,
       IntroSlideSlice,
       IntroSlideSliceDefaultPrimaryLogosItem,
       IntroSlideSliceDefaultPrimary,
