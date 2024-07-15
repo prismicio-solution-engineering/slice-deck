@@ -30,13 +30,13 @@ const Cards = ({
             <Card
               key={idx}
               alternateAlignment
-              className="h-5/6 w-1/4 bg-white border-4 border-gray-darker"
+              className="h-5/6 w-1/4 bg-white border-4 border-gray-darker gap-y-8"
             >
-              <GlobalPrismicRichText field={item.title} classNames="text-xl" />
+              <GlobalPrismicRichText field={item.title} classNames="w-full text-xl" />
               <GlobalPrismicRichText
                 field={item.description}
                 theme={slice.primary.theme}
-                classNames="text-xl"
+                classNames="w-full text-xl"
               />
             </Card>
           ))}
