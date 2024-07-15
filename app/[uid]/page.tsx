@@ -1,15 +1,9 @@
-export const dynamic = 'force-dynamic'
+export const dynamic = "force-dynamic";
 
-import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PrismicRichText, SliceZone } from "@prismicio/react";
+import { SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
-import { asText } from "@prismicio/client";
-import {
-  AuthorDocument,
-  DeckDocument,
-  SettingsDocument,
-} from "@/prismicio-types";
+import { DeckDocument, SettingsDocument } from "@/prismicio-types";
 import * as crypto from "crypto";
 import { components as slidesComponents } from "@/slices/slides";
 import Scaler from "@/components/Slides/Scaler";
@@ -70,9 +64,6 @@ export default async function Page({
 
   return (
     <div className="max-w-screen-3xl mx-auto">
-      <PrismicRichText field={page.data.title} />
-      {/* <p>Last updated : {new Date(page.last_publication_date).toUTCString()}</p> */}
-
       <Scaler>
         <div className="relative">
           <SliderControls>
@@ -83,37 +74,12 @@ export default async function Page({
             />
           </SliderControls>
         </div>
+        <p className="w-full mt-4 text-left">
+          Last updated : {new Date(page.last_publication_date).toUTCString()}
+        </p>
       </Scaler>
     </div>
   );
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Params;
-}): Promise<Metadata> {
-  const client = createClient();
-
-  const uidsHashTable = (
-    await client.getAllByType<DeckDocument>("deck").catch(() => notFound())
-  ).map((doc) => {
-    return {
-      uid: doc.uid,
-      hash: crypto.createHash("sha256").update(doc.uid).digest("hex"),
-    };
-  });
-
-  const pageUid = uidsHashTable.find((uid) => uid.hash === params.uid)?.uid;
-
-  const page = await client
-    .getByUID<DeckDocument>("deck", pageUid!)
-    .catch(() => notFound());
-
-  return {
-    title: page.data.meta_title || page.data.company_name,
-    description: page.data.meta_description || asText(page.data.title),
-  };
 }
 
 // We cannot use this as we need SSR to check pwd (we could use Middleware, but not sure if it's worth it)
