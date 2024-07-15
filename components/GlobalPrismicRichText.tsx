@@ -94,7 +94,7 @@ export function GlobalPrismicRichText({
     list: ({ children }) => (
       <ul
         className={clsx(
-          `my-2 break-words font-copy text-2xl font-normal marker:${textColor}`,
+          `ml-4 my-2 break-words font-copy text-2xl font-normal marker:${textColor}`,
           classNames
         )}
       >
@@ -104,7 +104,7 @@ export function GlobalPrismicRichText({
     oList: ({ children }) => (
       <ol
         className={clsx(
-          `my-2 break-words font-copy text-2xl font-normal marker:${textColor}`,
+          `ml-4 my-2 break-words font-copy text-2xl font-normal marker:${textColor}`,
           classNames
         )}
       >
