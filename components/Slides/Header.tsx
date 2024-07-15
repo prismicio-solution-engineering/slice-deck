@@ -1,5 +1,6 @@
 import { DeckDocumentData, SettingsDocumentData } from "@/prismicio-types";
 import { PrismicNextImage } from "@prismicio/next";
+import { GlobalPrismicRichText } from "../GlobalPrismicRichText";
 
 const Default = ({
   page,
@@ -10,12 +11,15 @@ const Default = ({
 }) => {
   return (
     <div className="flex justify-between items-center h-fit">
-      <PrismicNextImage
-        field={settings.prismic_icon}
-        height={40}
-        className="h-full object-contain rounded-xl"
-      />
-      <p className="text-center text-silver-darker">
+      <div className="flex flex-row gap-x-8 items-center">
+        <PrismicNextImage
+          field={settings.prismic_icon}
+          height={40}
+          className="h-full object-contain rounded-xl"
+        />
+        <GlobalPrismicRichText field={page.title} classNames="!text-2xl" />
+      </div>
+      <p className="text-center text-silver-darker text-lg">
         Copyright Prismic · All Rights Reserved
       </p>
     </div>
@@ -35,7 +39,8 @@ const WithCompanyLogo = ({
         height={40}
         className="h-full object-contain rounded-xl"
       />
-      <p className="text-center text-silver-darker">
+      <GlobalPrismicRichText field={page.title} classNames="text-xl" />
+      <p className="text-center text-silver-darker text-xl">
         Copyright Prismic · All Rights Reserved
       </p>
       <PrismicNextImage
