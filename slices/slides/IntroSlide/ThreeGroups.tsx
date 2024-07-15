@@ -14,11 +14,22 @@ const ThreeGroups = ({
             {item.group_name}
           </p>
 
-          <div className="flex flex-row flex-wrap gap-x-2 justify-center">
+          {/* <div className="mt-16 w-full flex flex-row gap-x-8 justify-start">
+            {slice.primary.logos.map((item, idx) => (
+              <PrismicNextImage
+                key={idx}
+                field={item.logo}
+                height={40}
+                className="object-contain"
+              />
+            ))}
+          </div> */}
+
+          <div className="w-full grid grid-cols-3 grid-rows-2 gap-x-4 justify-center">
             <PrismicNextImage
               field={item.logo_1}
-              height={40}
               className="object-contain"
+              height={40}
             />
             <PrismicNextImage
               field={item.logo_2}
