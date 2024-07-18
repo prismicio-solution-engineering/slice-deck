@@ -21,6 +21,15 @@
           "single": "heading1,strong,em"
         }
       },
+      "theme": {
+        "type": "Select",
+        "config": {
+          "label": "Theme",
+          "placeholder": "Slide theme color",
+          "options": ["white", "orange", "pink", "green", "purple", "blue"],
+          "default_value": "white"
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

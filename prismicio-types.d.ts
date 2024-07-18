@@ -145,6 +145,21 @@ interface DeckDocumentData {
   title: prismic.RichTextField;
 
   /**
+   * Theme field in *Deck*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide theme color
+   * - **Default Value**: white
+   * - **API ID Path**: deck.theme
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  theme: prismic.SelectField<
+    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
    * Slice Zone field in *Deck*
    *
    * - **Field Type**: Slice Zone
@@ -1505,11 +1520,11 @@ export type GenericImageSliceSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *IntroSlide → 3 groups → Primary → Logos*
+ * Item in *IntroSlide → 3 logo groups → Primary → Logos*
  */
 export interface IntroSlideSliceDefaultPrimaryLogosItem {
   /**
-   * Group Name field in *IntroSlide → 3 groups → Primary → Logos*
+   * Group Name field in *IntroSlide → 3 logo groups → Primary → Logos*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1519,7 +1534,7 @@ export interface IntroSlideSliceDefaultPrimaryLogosItem {
   group_name: prismic.KeyTextField;
 
   /**
-   * Logo 1 field in *IntroSlide → 3 groups → Primary → Logos*
+   * Logo 1 field in *IntroSlide → 3 logo groups → Primary → Logos*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -1529,7 +1544,7 @@ export interface IntroSlideSliceDefaultPrimaryLogosItem {
   logo_1: prismic.ImageField<never>;
 
   /**
-   * Logo 2 field in *IntroSlide → 3 groups → Primary → Logos*
+   * Logo 2 field in *IntroSlide → 3 logo groups → Primary → Logos*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -1539,7 +1554,7 @@ export interface IntroSlideSliceDefaultPrimaryLogosItem {
   logo_2: prismic.ImageField<never>;
 
   /**
-   * Logo 3 field in *IntroSlide → 3 groups → Primary → Logos*
+   * Logo 3 field in *IntroSlide → 3 logo groups → Primary → Logos*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -1549,7 +1564,7 @@ export interface IntroSlideSliceDefaultPrimaryLogosItem {
   logo_3: prismic.ImageField<never>;
 
   /**
-   * Logo 4 field in *IntroSlide → 3 groups → Primary → Logos*
+   * Logo 4 field in *IntroSlide → 3 logo groups → Primary → Logos*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -1559,7 +1574,7 @@ export interface IntroSlideSliceDefaultPrimaryLogosItem {
   logo_4: prismic.ImageField<never>;
 
   /**
-   * Logo 5 field in *IntroSlide → 3 groups → Primary → Logos*
+   * Logo 5 field in *IntroSlide → 3 logo groups → Primary → Logos*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -1569,7 +1584,7 @@ export interface IntroSlideSliceDefaultPrimaryLogosItem {
   logo_5: prismic.ImageField<never>;
 
   /**
-   * Logo 6 field in *IntroSlide → 3 groups → Primary → Logos*
+   * Logo 6 field in *IntroSlide → 3 logo groups → Primary → Logos*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -1595,11 +1610,11 @@ export interface IntroSlideSliceSingleGroupPrimaryLogosItem {
 }
 
 /**
- * Primary content in *IntroSlide → 3 groups → Primary*
+ * Primary content in *IntroSlide → 3 logo groups → Primary*
  */
 export interface IntroSlideSliceDefaultPrimary {
   /**
-   * Theme field in *IntroSlide → 3 groups → Primary*
+   * Theme field in *IntroSlide → 3 logo groups → Primary*
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
@@ -1613,7 +1628,7 @@ export interface IntroSlideSliceDefaultPrimary {
   >;
 
   /**
-   * Title field in *IntroSlide → 3 groups → Primary*
+   * Title field in *IntroSlide → 3 logo groups → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1623,7 +1638,7 @@ export interface IntroSlideSliceDefaultPrimary {
   title: prismic.RichTextField;
 
   /**
-   * Description field in *IntroSlide → 3 groups → Primary*
+   * Description field in *IntroSlide → 3 logo groups → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1633,7 +1648,7 @@ export interface IntroSlideSliceDefaultPrimary {
   description: prismic.RichTextField;
 
   /**
-   * Logos field in *IntroSlide → 3 groups → Primary*
+   * Logos field in *IntroSlide → 3 logo groups → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -1644,7 +1659,7 @@ export interface IntroSlideSliceDefaultPrimary {
 }
 
 /**
- * 3 groups variation for IntroSlide Slice
+ * 3 logo groups variation for IntroSlide Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -1721,11 +1736,98 @@ export type IntroSlideSliceSingleGroup = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *IntroSlide → Section Intro → Primary*
+ */
+export interface IntroSlideSliceSectionIntroPrimary {
+  /**
+   * Theme field in *IntroSlide → Section Intro → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide theme color
+   * - **Default Value**: orange
+   * - **API ID Path**: intro_slide.sectionIntro.primary.theme
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  theme: prismic.SelectField<
+    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
+   * Eyebrow field in *IntroSlide → Section Intro → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_slide.sectionIntro.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *IntroSlide → Section Intro → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_slide.sectionIntro.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *IntroSlide → Section Intro → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_slide.sectionIntro.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Illustration field in *IntroSlide → Section Intro → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro_slide.sectionIntro.primary.illustration
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  illustration: prismic.ImageField<never>;
+
+  /**
+   * Illustration Background Color field in *IntroSlide → Section Intro → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: white
+   * - **API ID Path**: intro_slide.sectionIntro.primary.illustration_background_color
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  illustration_background_color: prismic.SelectField<
+    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+}
+
+/**
+ * Section Intro variation for IntroSlide Slice
+ *
+ * - **API ID**: `sectionIntro`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IntroSlideSliceSectionIntro = prismic.SharedSliceVariation<
+  "sectionIntro",
+  Simplify<IntroSlideSliceSectionIntroPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *IntroSlide*
  */
 type IntroSlideSliceVariation =
   | IntroSlideSliceDefault
-  | IntroSlideSliceSingleGroup;
+  | IntroSlideSliceSingleGroup
+  | IntroSlideSliceSectionIntro;
 
 /**
  * IntroSlide Shared Slice
@@ -3371,6 +3473,16 @@ export interface ReferencesSliceDefaultPrimary {
   >;
 
   /**
+   * Eyebrow field in *References → Two Cols Text → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.default.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
    * Company logo field in *References → Two Cols Text → Primary*
    *
    * - **Field Type**: Image
@@ -3441,6 +3553,16 @@ export interface ReferencesSliceWithImagePrimary {
     "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
+
+  /**
+   * Eyebrow field in *References → Images Grid → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.withImage.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
 
   /**
    * Company logo field in *References → Images Grid → Primary*
@@ -3681,13 +3803,96 @@ export type ReferencesSliceG2Badges = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *References → Two Cols Image → Primary*
+ */
+export interface ReferencesSliceTwoColsImagePrimary {
+  /**
+   * Theme field in *References → Two Cols Image → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide theme color
+   * - **Default Value**: orange
+   * - **API ID Path**: references.twoColsImage.primary.theme
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  theme: prismic.SelectField<
+    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
+   * Eyebrow field in *References → Two Cols Image → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.twoColsImage.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Company logo field in *References → Two Cols Image → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.twoColsImage.primary.company_logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  company_logo: prismic.ImageField<never>;
+
+  /**
+   * Title field in *References → Two Cols Image → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.twoColsImage.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *References → Two Cols Image → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.twoColsImage.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Image field in *References → Two Cols Image → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: references.twoColsImage.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Two Cols Image variation for References Slice
+ *
+ * - **API ID**: `twoColsImage`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ReferencesSliceTwoColsImage = prismic.SharedSliceVariation<
+  "twoColsImage",
+  Simplify<ReferencesSliceTwoColsImagePrimary>,
+  never
+>;
+
+/**
  * Slice variation for *References*
  */
 type ReferencesSliceVariation =
   | ReferencesSliceDefault
   | ReferencesSliceWithImage
   | ReferencesSliceShowcasedWebsites
-  | ReferencesSliceG2Badges;
+  | ReferencesSliceG2Badges
+  | ReferencesSliceTwoColsImage;
 
 /**
  * References Shared Slice
@@ -4551,9 +4756,11 @@ declare module "@prismicio/client" {
       IntroSlideSliceDefaultPrimary,
       IntroSlideSliceSingleGroupPrimaryLogosItem,
       IntroSlideSliceSingleGroupPrimary,
+      IntroSlideSliceSectionIntroPrimary,
       IntroSlideSliceVariation,
       IntroSlideSliceDefault,
       IntroSlideSliceSingleGroup,
+      IntroSlideSliceSectionIntro,
       LeadsGoalsSlice,
       LeadsGoalsSliceDefaultPrimary,
       LeadsGoalsSliceWithImageGridPrimaryGridLeftColumnItem,
@@ -4612,11 +4819,13 @@ declare module "@prismicio/client" {
       ReferencesSliceG2BadgesPrimaryNumbersItem,
       ReferencesSliceG2BadgesPrimaryBadgesItem,
       ReferencesSliceG2BadgesPrimary,
+      ReferencesSliceTwoColsImagePrimary,
       ReferencesSliceVariation,
       ReferencesSliceDefault,
       ReferencesSliceWithImage,
       ReferencesSliceShowcasedWebsites,
       ReferencesSliceG2Badges,
+      ReferencesSliceTwoColsImage,
       ResourcesSlice,
       ResourcesSliceDefaultPrimary,
       ResourcesSliceContactPrimary,

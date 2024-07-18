@@ -1,7 +1,4 @@
 "use client";
-import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
-import { Container } from "@/components/Slides/Container";
-import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
 import {
   DeckDocumentData,
   IntroSlideSlice,
@@ -9,8 +6,8 @@ import {
 } from "@/prismicio-types";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import ThreeGroups from "./ThreeGroups";
-import SingleGroup from "./SingleGroup";
+import SectionIntro from "./SectionIntro";
+import SliderIntro from "./SliderIntro";
 
 export const introComponents = {
   heading2: ({ children }: { children: React.ReactNode }) => (
@@ -47,22 +44,15 @@ const IntroSlide = ({
 }: {
   slice: IntroSlideSlice;
   context: Context;
-}): JSX.Element => {
-  return (
-    <Container page={context.page} settings={context.settings} type={"company"} theme={slice.primary.theme}>
-      <SlideFullWidth className="flex flex-col justify-evenly items-center">
-        <div className="w-8/12 text-center flex flex-col gap-y-4 justify-center grow">
-          <GlobalPrismicRichText field={slice.primary.title} />
-          <GlobalPrismicRichText field={slice.primary.description} theme={slice.primary.theme} />
-        </div>
-        {slice.variation === "default" ? (
-          <ThreeGroups slice={slice} />
-        ) : (
-          <SingleGroup slice={slice} />
-        )}
-      </SlideFullWidth>
-    </Container>
-  );
+}) => {
+  switch (slice.variation) {
+    case "default":
+      return <SliderIntro slice={slice} context={context} />;
+    case "singleGroup":
+      return <SliderIntro slice={slice} context={context} />;
+    case "sectionIntro":
+      return <SectionIntro slice={slice} context={context} />;
+  }
 };
 
 export default IntroSlide;

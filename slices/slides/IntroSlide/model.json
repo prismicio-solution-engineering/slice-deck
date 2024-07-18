@@ -6,7 +6,7 @@
   "variations": [
     {
       "id": "default",
-      "name": "3 groups",
+      "name": "3 logo groups",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
@@ -17,14 +17,7 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": [
-              "white",
-              "orange",
-              "pink",
-              "green",
-              "purple",
-              "blue"
-            ],
+            "options": ["white", "orange", "pink", "green", "purple", "blue"],
             "default_value": "orange"
           }
         },
@@ -35,10 +28,7 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "heading1,strong,em",
-            "labels": [
-              "highlight",
-              "Company Name"
-            ]
+            "labels": ["highlight", "Company Name"]
           }
         },
         "description": {
@@ -48,10 +38,7 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,strong,em,hyperlink",
-            "labels": [
-              "highlight",
-              "Company Name"
-            ]
+            "labels": ["highlight", "Company Name"]
           }
         },
         "logos": {
@@ -146,14 +133,7 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": [
-              "white",
-              "orange",
-              "pink",
-              "green",
-              "purple",
-              "blue"
-            ],
+            "options": ["white", "orange", "pink", "green", "purple", "blue"],
             "default_value": "orange"
           }
         },
@@ -164,10 +144,7 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "heading1,strong,em",
-            "labels": [
-              "highlight",
-              "Company Name"
-            ]
+            "labels": ["highlight", "Company Name"]
           }
         },
         "description": {
@@ -177,10 +154,7 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,strong,em,hyperlink",
-            "labels": [
-              "highlight",
-              "Company Name"
-            ]
+            "labels": ["highlight", "Company Name"]
           }
         },
         "logos": {
@@ -200,6 +174,70 @@
                 }
               }
             }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "sectionIntro",
+      "name": "Section Intro",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "theme": {
+          "type": "Select",
+          "config": {
+            "label": "Theme",
+            "placeholder": "Slide theme color",
+            "options": ["white", "orange", "pink", "green", "purple", "blue"],
+            "default_value": "orange"
+          }
+        },
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2,strong,em",
+            "labels": ["highlight", "Company Name"]
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,strong,em,hyperlink,image,embed,list-item,o-list-item",
+            "labels": ["highlight", "Company Name"]
+          }
+        },
+        "illustration": {
+          "type": "Image",
+          "config": {
+            "label": "Illustration",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "illustration_background_color": {
+          "type": "Select",
+          "config": {
+            "label": "Illustration Background Color",
+            "placeholder": "",
+            "options": ["white", "orange", "pink", "green", "purple", "blue"],
+            "default_value": "white"
           }
         }
       },
