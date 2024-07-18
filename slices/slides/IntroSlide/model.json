@@ -17,7 +17,14 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": ["white", "orange", "pink", "green", "purple", "blue"],
+            "options": [
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
             "default_value": "orange"
           }
         },
@@ -28,7 +35,10 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "heading1,strong,em",
-            "labels": ["highlight", "Company Name"]
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "description": {
@@ -38,7 +48,10 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,strong,em,hyperlink",
-            "labels": ["highlight", "Company Name"]
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "logos": {
@@ -133,7 +146,14 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": ["white", "orange", "pink", "green", "purple", "blue"],
+            "options": [
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
             "default_value": "orange"
           }
         },
@@ -144,7 +164,10 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "heading1,strong,em",
-            "labels": ["highlight", "Company Name"]
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "description": {
@@ -154,7 +177,10 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,strong,em,hyperlink",
-            "labels": ["highlight", "Company Name"]
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "logos": {
@@ -192,7 +218,14 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": ["white", "orange", "pink", "green", "purple", "blue"],
+            "options": [
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
             "default_value": "orange"
           }
         },
@@ -210,7 +243,10 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "heading2,strong,em",
-            "labels": ["highlight", "Company Name"]
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "description": {
@@ -220,7 +256,10 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,strong,em,hyperlink,image,embed,list-item,o-list-item",
-            "labels": ["highlight", "Company Name"]
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "illustration": {
@@ -236,7 +275,14 @@
           "config": {
             "label": "Illustration Background Color",
             "placeholder": "",
-            "options": ["white", "orange", "pink", "green", "purple", "blue"],
+            "options": [
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
             "default_value": "white"
           }
         }
