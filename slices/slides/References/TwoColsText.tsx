@@ -21,6 +21,9 @@ const TwoColsText = ({
     >
       <SlideTwoCols>
         <LeftCol>
+          <div className="font-headings text-3xl font-semibold text-primary-pink">
+            {slice.primary.eyebrow}
+          </div>
           <PrismicNextImage
             field={slice.primary.company_logo}
             imgixParams={{

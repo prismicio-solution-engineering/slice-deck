@@ -65,11 +65,11 @@
             "label": "Description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph,strong,em,hyperlink",
             "labels": [
               "highlight",
               "Company Name"
-            ]
+            ],
+            "multi": "paragraph,strong,em,hyperlink"
           }
         },
         "right_side_content": {
@@ -149,11 +149,11 @@
             "label": "Description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph,strong,em,hyperlink",
             "labels": [
               "highlight",
               "Company Name"
-            ]
+            ],
+            "multi": "paragraph,strong,em,hyperlink"
           }
         },
         "grid_left_column": {
@@ -473,11 +473,11 @@
             "label": "Description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph,strong,em,hyperlink",
             "labels": [
               "highlight",
               "Company Name"
-            ]
+            ],
+            "multi": "paragraph,strong,em,hyperlink"
           }
         },
         "image": {
