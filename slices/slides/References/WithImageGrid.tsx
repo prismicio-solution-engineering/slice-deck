@@ -23,6 +23,9 @@ const WithImageGrid = ({
         <LeftCol>
           <PrismicNextImage
             field={slice.primary.company_logo}
+            imgixParams={{
+              monochrome: "AAAAAA",
+            }}
             className="h-52 w-52 object-contain"
           />
           <GlobalPrismicRichText

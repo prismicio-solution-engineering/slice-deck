@@ -85,8 +85,8 @@ const G2Badges = ({
       settings={context.settings}
       theme={slice.primary.theme}
     >
-      <SlideFullWidth>
-        <div className="container sm:grid sm:grid-cols-12 gap-6 items-center">
+      <SlideFullWidth className="justify-center">
+        <div className="sm:grid sm:grid-cols-12 gap-6 items-center">
           <div className="col-span-6 flex flex-col">
             <Headings
               eyebrow={slice.primary.eyebrow}
@@ -103,10 +103,10 @@ const G2Badges = ({
                       key={index}
                       className="xl:col-span-1 flex items-center gap-6"
                     >
-                      <p className="w-20 text-3xl sm:w-28 h-20 sm:h-28 rounded-xl shrink-0 flex items-center justify-center bg-quaternary-purple text-primary-purple">
+                      <p className="w-20 text-4xl sm:w-28 h-20 sm:h-28 rounded-xl shrink-0 flex items-center justify-center bg-quaternary-purple text-primary-purple">
                         {number.number}
                       </p>
-                      <p className="lg">{number.text}</p>
+                      <p className="font-copy text-2xl">{number.text}</p>
                     </div>
                   ))}
                 </div>

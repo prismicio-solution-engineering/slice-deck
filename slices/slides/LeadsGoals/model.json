@@ -142,7 +142,10 @@
                 "type": "Image",
                 "config": {
                   "label": "Image",
-                  "constraint": {},
+                  "constraint": {
+                    "width": 408,
+                    "height": 247
+                  },
                   "thumbnails": []
                 }
               }
@@ -159,7 +162,10 @@
                 "type": "Image",
                 "config": {
                   "label": "Image",
-                  "constraint": {},
+                  "constraint": {
+                    "width": 408,
+                    "height": 247
+                  },
                   "thumbnails": []
                 }
               }

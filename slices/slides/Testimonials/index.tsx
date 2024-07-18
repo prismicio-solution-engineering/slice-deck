@@ -35,7 +35,7 @@ const Testimonials = ({
             {slice.primary.testimonials.map((item, idx) => (
               <Card
                 key={idx}
-                className={`w-full h-full text-center shadow-xl bg-quaternary-${item.card_color}`}
+                className="w-full h-full text-center shadow-xl bg-white"
               >
                 <PrismicNextImage
                   field={item.author_picture}
@@ -63,7 +63,7 @@ const Testimonials = ({
           </div>
         ) : (
           <div className="w-full flex flex-row gap-x-8">
-            <Card className="w-1/2 p-0">
+            <Card className="w-1/2 !p-0">
               <PrismicNextImage
                 field={slice.primary.author_picture}
                 className="w-full h-full rounded-xl object-contain"

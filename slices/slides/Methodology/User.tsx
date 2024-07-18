@@ -9,11 +9,13 @@ import { PrismicNextImage } from "@prismicio/next";
 const Content = ({ slice }: { slice: MethodologySliceUser }) => {
   return (
     <div className="flex flex-col gap-y-4">
-      <span
-        className={`w-16 text-3xl font-headings font-semibold text-center text-primary-${slice.primary.user_color} p-2 rounded-md border border-primary-${slice.primary.user_color} bg-tertiary-${slice.primary.user_color}`}
-      >
-        {slice.primary.user_number}
-      </span>
+      {slice.primary.user_number && (
+        <span
+          className={`w-16 text-3xl font-headings font-semibold text-center text-primary-${slice.primary.user_color} p-2 rounded-md border border-primary-${slice.primary.user_color} bg-tertiary-${slice.primary.user_color}`}
+        >
+          {slice.primary.user_number}
+        </span>
+      )}
       <GlobalPrismicRichText
         field={slice.primary.title}
         classNames={`text-primary-${slice.primary.user_color}`}

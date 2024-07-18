@@ -494,41 +494,6 @@ export interface CompanySliceDefaultPrimaryShowcasedWebsitesItem {
 }
 
 /**
- * Item in *Company → History → Primary → Milestone*
- */
-export interface CompanySliceHistoryPrimaryMilestoneItem {
-  /**
-   * Date field in *Company → History → Primary → Milestone*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Date or year
-   * - **API ID Path**: company.history.primary.milestone[].date
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  date: prismic.KeyTextField;
-
-  /**
-   * Description field in *Company → History → Primary → Milestone*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: company.history.primary.milestone[].description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
-   * Number of websites field in *Company → History → Primary → Milestone*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: *None*
-   * - **API ID Path**: company.history.primary.milestone[].number_of_websites
-   * - **Documentation**: https://prismic.io/docs/field#number
-   */
-  number_of_websites: prismic.NumberField;
-}
-
-/**
  * Item in *Company → Key Figures and References → Primary → Figures*
  */
 export interface CompanySliceKeyFiguresAndReferencesPrimaryFiguresItem {
@@ -822,28 +787,6 @@ export interface CompanySliceHistoryPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.RichTextField;
-
-  /**
-   * Milestone field in *Company → History → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: company.history.primary.milestone[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  milestone: prismic.GroupField<
-    Simplify<CompanySliceHistoryPrimaryMilestoneItem>
-  >;
-
-  /**
-   * Source field in *Company → History → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: company.history.primary.source
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  source: prismic.RichTextField;
 
   /**
    * Image field in *Company → History → Primary*
@@ -4574,7 +4517,6 @@ declare module "@prismicio/client" {
       CompanySlice,
       CompanySliceDefaultPrimaryShowcasedWebsitesItem,
       CompanySliceDefaultPrimary,
-      CompanySliceHistoryPrimaryMilestoneItem,
       CompanySliceHistoryPrimary,
       CompanySliceKeyFiguresAndReferencesPrimaryFiguresItem,
       CompanySliceKeyFiguresAndReferencesPrimaryReferenceGroup1Item,

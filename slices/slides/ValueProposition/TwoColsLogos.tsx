@@ -33,6 +33,9 @@ const TwoColsLogos = ({
               <PrismicNextImage
                 key={idx}
                 field={item.logo}
+                imgixParams={{
+                  monochrome: "AAAAAA",
+                }}
                 height={40}
                 className="object-contain"
               />
@@ -40,7 +43,10 @@ const TwoColsLogos = ({
           </div>
         </LeftCol>
         <RightCol>
-          <PrismicNextImage field={slice.primary.image} className="border-2 border-gray-darker shadow-xl"/>
+          <PrismicNextImage
+            field={slice.primary.image}
+            className="border-2 border-gray-darker shadow-xl"
+          />
         </RightCol>
       </SlideTwoCols>
     </Container>

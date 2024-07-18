@@ -55,6 +55,9 @@ const FullWidthKeyFiguresGrid = ({
             <PrismicNextImage
               key={idx}
               field={item.logo}
+              imgixParams={{
+                monochrome: "AAAAAA",
+              }}
               className="object-contain h-10"
             />
           ))}

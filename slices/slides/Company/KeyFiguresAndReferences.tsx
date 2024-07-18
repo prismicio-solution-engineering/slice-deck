@@ -1,7 +1,5 @@
 import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
 import { CompanySliceKeyFiguresAndReferences } from "@/prismicio-types";
-import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
-import { LeftCol, RightCol } from "@/components/Slides/Columns";
 import { Container } from "@/components/Slides/Container";
 import { Context } from "../IntroSlide";
 import { PrismicNextImage } from "@prismicio/next";
@@ -30,7 +28,7 @@ const KeyFiguresAndReferences = ({
               {slice.primary.figures.map((item, idx) => (
                 <Card
                   key={idx}
-                  className={`w-full h-full flex !flex-row gap-x-4 justify-center text-center bg-white bg-tertiary-${item.card_color}`}
+                  className={`w-full h-full flex !flex-row gap-x-4 justify-center text-center bg-tertiary-${item.card_color}`}
                 >
                   <div>
                     <GlobalPrismicRichText field={item.number} />
@@ -52,11 +50,15 @@ const KeyFiguresAndReferences = ({
                 {slice.primary.reference_group_1.map((item, idx) => (
                   <div
                     key={idx}
-                    className="grid grid-cols-3 items-center gap-x-8"
+                    className="grid grid-cols-3 items-center gap-x-20 mt-4"
                   >
                     <PrismicNextImage
                       field={item.logo}
-                      className="object-left object-contain max-w-36 h-10 col-span-1"
+                      height={40}
+                      imgixParams={{
+                        monochrome: "AAAAAA",
+                      }}
+                      className="w-full h-full object-left object-contain max-w-36 col-span-1"
                     />
                     <div className="col-span-2 text-left font-copy text-base">
                       {item.description}
@@ -71,13 +73,17 @@ const KeyFiguresAndReferences = ({
                 {slice.primary.reference_group_2.map((item, idx) => (
                   <div
                     key={idx}
-                    className="grid grid-cols-3 items-center gap-x-8"
+                    className="grid grid-cols-3 items-center gap-x-20 mt-4"
                   >
                     <PrismicNextImage
                       field={item.logo}
-                      className="object-left object-contain max-w-36 h-10 col-span-1"
+                      height={40}
+                      imgixParams={{
+                        monochrome: "AAAAAA",
+                      }}
+                      className="object-left object-contain max-w-36 w-full h-full col-span-1"
                     />
-                    <div className="col-span-2 text-left font-copy text-base">
+                    <div className="w-full col-span-2 text-left font-copy text-base">
                       {item.description}
                     </div>
                   </div>
@@ -90,13 +96,17 @@ const KeyFiguresAndReferences = ({
                 {slice.primary.reference_group_3.map((item, idx) => (
                   <div
                     key={idx}
-                    className="grid grid-cols-3 items-center gap-x-8"
+                    className="grid grid-cols-3 items-center gap-x-20 mt-4"
                   >
                     <PrismicNextImage
                       field={item.logo}
-                      className="object-left object-contain max-w-36 h-10 col-span-1"
+                      height={40}
+                      imgixParams={{
+                        monochrome: "AAAAAA",
+                      }}
+                      className="object-left object-contain max-w-36 w-full h-full col-span-1"
                     />
-                    <div className="col-span-2 text-left font-copy text-base">
+                    <div className="w-full col-span-2 text-left font-copy text-base">
                       {item.description}
                     </div>
                   </div>
@@ -109,13 +119,17 @@ const KeyFiguresAndReferences = ({
                 {slice.primary.reference_group_4.map((item, idx) => (
                   <div
                     key={idx}
-                    className="grid grid-cols-3 items-center gap-x-8"
+                    className="grid grid-cols-3 items-center gap-x-20 mt-4"
                   >
                     <PrismicNextImage
                       field={item.logo}
-                      className="object-left object-contain max-w-36 h-10 col-span-1"
+                      height={40}
+                      imgixParams={{
+                        monochrome: "AAAAAA",
+                      }}
+                      className="object-left object-contain max-w-36 w-full h-full col-span-1"
                     />
-                    <div className="col-span-2 text-left font-copy text-base">
+                    <div className="w-full col-span-2 text-left font-copy text-base">
                       {item.description}
                     </div>
                   </div>

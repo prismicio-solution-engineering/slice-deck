@@ -30,7 +30,10 @@ const FullWidth = ({
             alignLeft
             titleSize="!text-5xl"
           />
-          <GlobalPrismicRichText field={slice.primary.content_left_column} theme={slice.primary.theme} />
+          <GlobalPrismicRichText
+            field={slice.primary.content_left_column}
+            theme={slice.primary.theme}
+          />
         </LeftCol>
         <RightCol className="justify-between">
           <Card className="bg-white h-fit border-4 border-gray-darker">
@@ -46,18 +49,57 @@ const FullWidth = ({
                   classNames="text-xl"
                 />
                 <div className="w-full flex flex-row gap-x-4 justify-around">
-                  <PrismicNextImage field={item.logo_1} height={16} />
-                  <PrismicNextImage field={item.logo_2} height={16} />
-                  <PrismicNextImage field={item.logo_3} height={16} />
-                  <PrismicNextImage field={item.logo_4} height={16} />
-                  <PrismicNextImage field={item.logo_5} height={16} />
-                  <PrismicNextImage field={item.logo_6} height={16} />
+                  <PrismicNextImage
+                    field={item.logo_1}
+                    imgixParams={{
+                      monochrome: "AAAAAA",
+                    }}
+                    height={16}
+                  />
+                  <PrismicNextImage
+                    field={item.logo_2}
+                    imgixParams={{
+                      monochrome: "AAAAAA",
+                    }}
+                    height={16}
+                  />
+                  <PrismicNextImage
+                    field={item.logo_3}
+                    imgixParams={{
+                      monochrome: "AAAAAA",
+                    }}
+                    height={16}
+                  />
+                  <PrismicNextImage
+                    field={item.logo_4}
+                    imgixParams={{
+                      monochrome: "AAAAAA",
+                    }}
+                    height={16}
+                  />
+                  <PrismicNextImage
+                    field={item.logo_5}
+                    imgixParams={{
+                      monochrome: "AAAAAA",
+                    }}
+                    height={16}
+                  />
+                  <PrismicNextImage
+                    field={item.logo_6}
+                    imgixParams={{
+                      monochrome: "AAAAAA",
+                    }}
+                    height={16}
+                  />
                 </div>
               </div>
             ))}
           </Card>
           <div>
-            <GlobalPrismicRichText field={slice.primary.content_right_column} theme={slice.primary.theme} />
+            <GlobalPrismicRichText
+              field={slice.primary.content_right_column}
+              theme={slice.primary.theme}
+            />
           </div>
         </RightCol>
       </SlideTwoCols>

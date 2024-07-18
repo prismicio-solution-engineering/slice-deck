@@ -104,47 +104,6 @@
             "single": "heading2,strong,em"
           }
         },
-        "milestone": {
-          "type": "Group",
-          "config": {
-            "label": "Milestone",
-            "repeat": true,
-            "fields": {
-              "date": {
-                "type": "Text",
-                "config": {
-                  "label": "Date",
-                  "placeholder": "Date or year"
-                }
-              },
-              "description": {
-                "type": "StructuredText",
-                "config": {
-                  "label": "Description",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "single": "paragraph,strong,em,hyperlink"
-                }
-              },
-              "number_of_websites": {
-                "type": "Number",
-                "config": {
-                  "label": "Number of websites",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "source": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Source",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,hyperlink,strong,em"
-          }
-        },
         "image": {
           "type": "Image",
           "config": {
@@ -258,7 +217,9 @@
                 "type": "Image",
                 "config": {
                   "label": "Logo",
-                  "constraint": {},
+                  "constraint": {
+                    "height": 40
+                  },
                   "thumbnails": []
                 }
               },
@@ -289,7 +250,9 @@
                 "type": "Image",
                 "config": {
                   "label": "Logo",
-                  "constraint": {},
+                  "constraint": {
+                    "height": 40
+                  },
                   "thumbnails": []
                 }
               },
@@ -320,7 +283,9 @@
                 "type": "Image",
                 "config": {
                   "label": "Logo",
-                  "constraint": {},
+                  "constraint": {
+                    "height": 40
+                  },
                   "thumbnails": []
                 }
               },
@@ -351,7 +316,10 @@
                 "type": "Image",
                 "config": {
                   "label": "Logo",
-                  "constraint": {},
+                  "constraint": {
+                    "width": null,
+                    "height": 40
+                  },
                   "thumbnails": []
                 }
               },

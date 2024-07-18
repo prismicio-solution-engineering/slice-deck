@@ -40,6 +40,7 @@ const WithIllustration = ({
             field={slice.primary.description}
             companyName={context.page?.company_name!}
             theme={slice.primary.theme}
+            classNames="w-full"
           />
         </LeftCol>
         <RightCol>

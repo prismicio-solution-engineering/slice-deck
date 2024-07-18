@@ -14,6 +14,9 @@ const SingleGroup = ({
           key={idx}
           field={item.logo}
           height={40}
+          imgixParams={{
+            monochrome: "AAAAAA",
+          }}
           className="object-contain"
         />
       ))}
