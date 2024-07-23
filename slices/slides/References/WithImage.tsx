@@ -5,6 +5,7 @@ import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
 import { LeftCol, RightCol } from "@/components/Slides/Columns";
 import { PrismicNextImage } from "@prismicio/next";
 import { Context } from "../IntroSlide";
+import { Headings } from "@/components/Slides/Headings";
 
 const WithImage = ({
   slice,
@@ -21,12 +22,11 @@ const WithImage = ({
     >
       <SlideTwoCols className="items-center" larger="right">
         <LeftCol>
-          <div className="font-headings text-3xl font-semibold text-primary-pink">
-            {slice.primary.eyebrow}
-          </div>
-          <GlobalPrismicRichText
-            field={slice.primary.title}
-            companyName={context.page?.company_name!}
+          <Headings
+            eyebrow={slice.primary.eyebrow}
+            title={slice.primary.title}
+            alignLeft
+            alignTop
           />
           <GlobalPrismicRichText
             field={slice.primary.description}
