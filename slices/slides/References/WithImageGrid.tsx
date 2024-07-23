@@ -35,14 +35,14 @@ const WithImageGrid = ({
             }}
             className="max-h-52 w-52 object-contain my-4"
           />
-          <div className="">
+          <div className="mb-16">
             <GlobalPrismicRichText
               field={slice.primary.description}
               classNames="!text-3xl"
               theme={slice.primary.theme}
             />
           </div>
-          <div className="">
+          <div>
             <GlobalPrismicRichText
               field={slice.primary.bottom_content}
               classNames="text-lg"
