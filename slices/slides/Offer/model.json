@@ -290,6 +290,105 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "twoColsTable",
+      "name": "Two Cols Table",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "theme": {
+          "type": "Select",
+          "config": {
+            "label": "Theme",
+            "placeholder": "Slide theme color",
+            "options": [
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
+            "default_value": "orange"
+          }
+        },
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2,strong,em"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item,heading3"
+          }
+        },
+        "table": {
+          "type": "Group",
+          "config": {
+            "label": "Table",
+            "repeat": false,
+            "fields": {
+              "plan": {
+                "type": "Text",
+                "config": {
+                  "label": "Plan",
+                  "placeholder": ""
+                }
+              },
+              "engagement_time": {
+                "type": "Text",
+                "config": {
+                  "label": "Engagement time",
+                  "placeholder": ""
+                }
+              },
+              "currency": {
+                "type": "Text",
+                "config": {
+                  "label": "Currency",
+                  "placeholder": ""
+                }
+              },
+              "table_has_header": {
+                "type": "Boolean",
+                "config": {
+                  "label": "table_has_header",
+                  "placeholder_false": "false",
+                  "placeholder_true": "true",
+                  "default_value": true
+                }
+              },
+              "table_csv": {
+                "type": "Link",
+                "config": {
+                  "label": "table_csv",
+                  "placeholder": "",
+                  "select": "media"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

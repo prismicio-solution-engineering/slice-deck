@@ -22,14 +22,17 @@ const Table = ({
       settings={context.settings}
       theme={slice.primary.theme}
     >
-      <SlideFullWidth>
+      <SlideFullWidth className="">
         <Headings
           eyebrow={slice.primary.eyebrow}
           title={slice.primary.title}
           alignTop
           titleSize="text-xl"
         />
-        <PrismicNextImage field={slice.primary.table} width={1500} height={660} className="border-2 border-gray-darker object-contain" />
+        <div className="max-h-[636px]">
+
+        <PrismicNextImage field={slice.primary.table} className="h-full object-contain border-2 border-gray-darker" />
+        </div>
       </SlideFullWidth>
     </Container>
   );

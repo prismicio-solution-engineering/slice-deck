@@ -74,44 +74,64 @@ const Offer = ({
             );
           })}
         </SlideFullWidth>
-      ) : (
-        slice.variation === "twoTablesColumns" && (
-          <SlideTwoCols className="mb-0">
-            <LeftCol>
-              {slice.primary.content_left_column.map((table, index) => {
-                return (
-                  <div key={index}>
-                    <GlobalPrismicRichText
-                      field={table.title}
-                      classNames="!text-3xl"
+      ) : slice.variation === "twoTablesColumns" ? (
+        <SlideTwoCols className="mb-0">
+          <LeftCol>
+            {slice.primary.content_left_column.map((table, index) => {
+              return (
+                <div key={index}>
+                  <GlobalPrismicRichText
+                    field={table.title}
+                    classNames="!text-3xl"
+                  />
+                  <GlobalPrismicRichText field={table.description} />
+                  {isFilled.linkToMedia(table.table_csv) && (
+                    <Table
+                      tableCsv={table.table_csv}
+                      hasHeader={table.table_has_header}
                     />
-                    <GlobalPrismicRichText field={table.description} />
-                    {isFilled.linkToMedia(table.table_csv) && (
-                      <Table
-                        tableCsv={table.table_csv}
-                        hasHeader={table.table_has_header}
-                      />
-                    )}
-                  </div>
-                );
-              })}
+                  )}
+                </div>
+              );
+            })}
+          </LeftCol>
+          <RightCol>
+            {slice.primary.content_right_column.map((table, index) => {
+              return (
+                <div key={index}>
+                  <GlobalPrismicRichText
+                    field={table.title}
+                    classNames="!text-3xl"
+                  />
+                  <GlobalPrismicRichText field={table.description} />
+                  {isFilled.linkToMedia(table.table_csv) && (
+                    <Table
+                      tableCsv={table.table_csv}
+                      hasHeader={table.table_has_header}
+                    />
+                  )}
+                </div>
+              );
+            })}
+          </RightCol>
+        </SlideTwoCols>
+      ) : (
+        slice.variation === "twoColsTable" && (
+          <SlideTwoCols larger="right" className="mb-0">
+            <LeftCol>
+              <GlobalPrismicRichText field={slice.primary.description} />
             </LeftCol>
             <RightCol>
-              {slice.primary.content_right_column.map((table, index) => {
+              {slice.primary.table.map((table, index) => {
                 return (
-                  <div key={index}>
-                    <GlobalPrismicRichText
-                      field={table.title}
-                      classNames="!text-3xl"
-                    />
-                    <GlobalPrismicRichText field={table.description} />
-                    {isFilled.linkToMedia(table.table_csv) && (
+                  isFilled.linkToMedia(table.table_csv) && (
+                    <div key={index}>
                       <Table
                         tableCsv={table.table_csv}
                         hasHeader={table.table_has_header}
                       />
-                    )}
-                  </div>
+                    </div>
+                  )
                 );
               })}
             </RightCol>

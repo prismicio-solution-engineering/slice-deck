@@ -288,5 +288,104 @@
 				"value": []
 			}
 		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "twoColsTable",
+		"primary": {
+			"theme": {
+				"__TYPE__": "FieldContent",
+				"value": "orange",
+				"type": "Select"
+			},
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "elephant",
+				"type": "Text"
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Power"
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Fugiat aliqua laboris adipisicing."
+						}
+					}
+				]
+			},
+			"table": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"table_has_header",
+								{
+									"__TYPE__": "BooleanContent",
+									"value": false
+								}
+							],
+							[
+								"table_csv",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"id": "mock_Media_link",
+										"kind": "image/jpeg",
+										"name": "mock_name",
+										"url": "https://source.unsplash.com/daily",
+										"size": "0",
+										"__TYPE__": "FileLink"
+									}
+								}
+							],
+							[
+								"plan",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "short",
+									"type": "Text"
+								}
+							],
+							[
+								"currency",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "paper",
+									"type": "Text"
+								}
+							],
+							[
+								"engagement_time",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "according",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]
