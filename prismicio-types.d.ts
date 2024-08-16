@@ -4205,109 +4205,6 @@ export type SalesProcessSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *Testimonials → Default → Primary → Testimonials*
- */
-export interface TestimonialsSliceDefaultPrimaryTestimonialsItem {
-  /**
-   * Author picture field in *Testimonials → Default → Primary → Testimonials*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: testimonials.default.primary.testimonials[].author_picture
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  author_picture: prismic.ImageField<never>;
-
-  /**
-   * Author Name field in *Testimonials → Default → Primary → Testimonials*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: testimonials.default.primary.testimonials[].author_name
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  author_name: prismic.KeyTextField;
-
-  /**
-   * Author Role and Company field in *Testimonials → Default → Primary → Testimonials*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: testimonials.default.primary.testimonials[].author_role_and_company
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  author_role_and_company: prismic.KeyTextField;
-
-  /**
-   * Testimonial field in *Testimonials → Default → Primary → Testimonials*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: testimonials.default.primary.testimonials[].testimonial
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  testimonial: prismic.RichTextField;
-
-  /**
-   * Card color field in *Testimonials → Default → Primary → Testimonials*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **Default Value**: pink
-   * - **API ID Path**: testimonials.default.primary.testimonials[].card_color
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  card_color: prismic.SelectField<
-    "pink" | "green" | "purple" | "blue" | "orange",
-    "filled"
-  >;
-}
-
-/**
- * Primary content in *Testimonials → Default → Primary*
- */
-export interface TestimonialsSliceDefaultPrimary {
-  /**
-   * Theme field in *Testimonials → Default → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: Slide theme color
-   * - **Default Value**: slider theme
-   * - **API ID Path**: testimonials.default.primary.theme
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  theme: prismic.SelectField<
-    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
-    "filled"
-  >;
-
-  /**
-   * Testimonials field in *Testimonials → Default → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: testimonials.default.primary.testimonials[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  testimonials: prismic.GroupField<
-    Simplify<TestimonialsSliceDefaultPrimaryTestimonialsItem>
-  >;
-}
-
-/**
- * Default variation for Testimonials Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type TestimonialsSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<TestimonialsSliceDefaultPrimary>,
-  never
->;
-
-/**
  * Primary content in *Testimonials → Single Testimonial → Primary*
  */
 export interface TestimonialsSliceSingleTestimonialPrimary {
@@ -4382,9 +4279,7 @@ export type TestimonialsSliceSingleTestimonial = prismic.SharedSliceVariation<
 /**
  * Slice variation for *Testimonials*
  */
-type TestimonialsSliceVariation =
-  | TestimonialsSliceDefault
-  | TestimonialsSliceSingleTestimonial;
+type TestimonialsSliceVariation = TestimonialsSliceSingleTestimonial;
 
 /**
  * Testimonials Shared Slice
@@ -4837,11 +4732,8 @@ declare module "@prismicio/client" {
       SalesProcessSliceVariation,
       SalesProcessSliceDefault,
       TestimonialsSlice,
-      TestimonialsSliceDefaultPrimaryTestimonialsItem,
-      TestimonialsSliceDefaultPrimary,
       TestimonialsSliceSingleTestimonialPrimary,
       TestimonialsSliceVariation,
-      TestimonialsSliceDefault,
       TestimonialsSliceSingleTestimonial,
       ValuePropositionSlice,
       ValuePropositionSliceDefaultPrimary,

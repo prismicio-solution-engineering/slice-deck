@@ -5,84 +5,6 @@
   "description": "Testimonials",
   "variations": [
     {
-      "id": "default",
-      "name": "Default",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {
-        "theme": {
-          "type": "Select",
-          "config": {
-            "label": "Theme",
-            "placeholder": "Slide theme color",
-            "options": ["slider theme","white", "orange", "pink", "green", "purple", "blue"],
-            "default_value": "slider theme"
-          }
-        },
-        "testimonials": {
-          "type": "Group",
-          "config": {
-            "label": "Testimonials",
-            "repeat": true,
-            "fields": {
-              "author_picture": {
-                "type": "Image",
-                "config": {
-                  "label": "Author picture",
-                  "constraint": {
-                    "width": 100,
-                    "height": 100
-                  },
-                  "thumbnails": []
-                }
-              },
-              "author_name": {
-                "type": "Text",
-                "config": {
-                  "label": "Author Name",
-                  "placeholder": ""
-                }
-              },
-              "author_role_and_company": {
-                "type": "Text",
-                "config": {
-                  "label": "Author Role and Company",
-                  "placeholder": ""
-                }
-              },
-              "testimonial": {
-                "type": "StructuredText",
-                "config": {
-                  "label": "Testimonial",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "multi": "paragraph"
-                }
-              },
-              "card_color": {
-                "type": "Select",
-                "config": {
-                  "label": "Card color",
-                  "placeholder": "",
-                  "options": [
-                    "pink",
-                    "green",
-                    "purple",
-                    "blue",
-                    "orange"
-                  ],
-                  "default_value": "pink"
-                }
-              }
-            }
-          }
-        }
-      },
-      "items": {}
-    },
-    {
       "id": "singleTestimonial",
       "name": "Single Testimonial",
       "docURL": "...",
@@ -95,7 +17,15 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": ["slider theme","white", "orange", "pink", "green", "purple", "blue"],
+            "options": [
+              "slider theme",
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
             "default_value": "slider theme"
           }
         },
