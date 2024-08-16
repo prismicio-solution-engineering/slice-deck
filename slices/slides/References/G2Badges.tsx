@@ -83,7 +83,7 @@ const G2Badges = ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme}
+      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
     >
       <SlideFullWidth className="justify-center">
         <div className="sm:grid sm:grid-cols-12 gap-6 items-center">

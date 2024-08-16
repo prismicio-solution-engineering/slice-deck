@@ -17,7 +17,7 @@ const Cards = ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme}
+      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
     >
       <SlideFullWidth>
         <Headings
@@ -35,7 +35,7 @@ const Cards = ({
               <GlobalPrismicRichText field={item.title} classNames="w-full text-xl" />
               <GlobalPrismicRichText
                 field={item.description}
-                theme={slice.primary.theme}
+                theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
                 classNames="w-full text-xl"
               />
             </Card>

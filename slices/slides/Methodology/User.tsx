@@ -23,7 +23,7 @@ const Content = ({ slice }: { slice: MethodologySliceUser }) => {
       <GlobalPrismicRichText
         field={slice.primary.description}
         classNames="!text-5xl"
-        theme={slice.primary.theme}
+        theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
       />
     </div>
   );
@@ -40,7 +40,7 @@ const User = ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme}
+      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
     >
       {slice.primary.media_side ? (
         <SlideTwoCols overflowRight>

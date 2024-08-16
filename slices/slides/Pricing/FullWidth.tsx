@@ -19,7 +19,7 @@ const FullWidth = ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme}
+      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
     >
       <SlideTwoCols>
         <LeftCol className="justify-between">
@@ -32,7 +32,7 @@ const FullWidth = ({
           />
           <GlobalPrismicRichText
             field={slice.primary.content_left_column}
-            theme={slice.primary.theme}
+            theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
           />
         </LeftCol>
         <RightCol className="justify-between">
@@ -45,7 +45,7 @@ const FullWidth = ({
                 />
                 <GlobalPrismicRichText
                   field={item.description}
-                  theme={slice.primary.theme}
+                  theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
                   classNames="text-xl"
                 />
                 <div className="w-full flex flex-row gap-x-4 justify-around">
@@ -98,7 +98,7 @@ const FullWidth = ({
           <div>
             <GlobalPrismicRichText
               field={slice.primary.content_right_column}
-              theme={slice.primary.theme}
+              theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
             />
           </div>
         </RightCol>

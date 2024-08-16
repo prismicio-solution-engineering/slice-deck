@@ -17,7 +17,7 @@ const TwoCols = ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme}
+      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
     >
       <SlideTwoCols overflowRight>
         <LeftCol>
@@ -27,7 +27,7 @@ const TwoCols = ({
           <Content
             title={slice.primary.title}
             description={slice.primary.content}
-            theme={slice.primary.theme}
+            theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
           />
         </LeftCol>
         <RightCol>

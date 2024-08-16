@@ -48,7 +48,7 @@ const Resources = async ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme}
+      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
     >
       {slice.variation === "default" ? (
         <SlideFullWidth className="flex flex-col justify-center">
@@ -57,7 +57,7 @@ const Resources = async ({
           />
           <GlobalPrismicRichText
             field={slice.primary.content}
-            theme={slice.primary.theme}
+            theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
           />
         </SlideFullWidth>
       ) : (

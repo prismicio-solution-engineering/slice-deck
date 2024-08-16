@@ -21,7 +21,7 @@ const ThreeColsGrid = ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme}
+      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
     >
       <SlideFullWidth className="flex flex-row justify-center">
         <div className="font-headings text-3xl font-semibold text-primary-pink text-center">
@@ -60,7 +60,7 @@ const ThreeColsGrid = ({
                   />
                   <GlobalPrismicRichText
                     field={item.description}
-                    theme={slice.primary.theme}
+                    theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
                     classNames="!text-base"
                   />
                 </div>

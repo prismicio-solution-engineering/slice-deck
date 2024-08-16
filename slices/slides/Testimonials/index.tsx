@@ -27,7 +27,7 @@ const Testimonials = ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme}
+      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
     >
       <SlideFullWidth className="flex flex-col justify-center">
         {slice.variation === "default" ? (
@@ -56,7 +56,7 @@ const Testimonials = ({
                 </p>
                 <GlobalPrismicRichText
                   field={item.testimonial}
-                  theme={slice.primary.theme}
+                  theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
                 />
               </Card>
             ))}
@@ -72,7 +72,7 @@ const Testimonials = ({
             <Card className="w-1/2 rounded-xl bg-white justify-center gap-y-4">
               <GlobalPrismicRichText
                 field={slice.primary.testimonial}
-                theme={slice.primary.theme}
+                theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
                 classNames="text-left text-4xl"
               />
               <div className="w-full">

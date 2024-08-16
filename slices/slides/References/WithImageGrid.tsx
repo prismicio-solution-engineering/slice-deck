@@ -18,7 +18,7 @@ const WithImageGrid = ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme}
+      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
     >
       <SlideTwoCols larger="right" overflowRight className="mb-0">
         <LeftCol>
@@ -39,14 +39,14 @@ const WithImageGrid = ({
             <GlobalPrismicRichText
               field={slice.primary.description}
               classNames="!text-3xl"
-              theme={slice.primary.theme}
+              theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
             />
           </div>
           <div>
             <GlobalPrismicRichText
               field={slice.primary.bottom_content}
               classNames="text-lg"
-              theme={slice.primary.theme}
+              theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
             />
           </div>
         </LeftCol>

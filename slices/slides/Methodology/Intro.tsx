@@ -17,7 +17,7 @@ const Intro = ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme}
+      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
     >
       <SlideTwoCols>
         <LeftCol>
@@ -27,7 +27,7 @@ const Intro = ({
           <GlobalPrismicRichText field={slice.primary.title} />
           <GlobalPrismicRichText
             field={slice.primary.description}
-            theme={slice.primary.theme}
+            theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
           />
           <div className="flex flex-col gap-y-4 mt-4">
             {slice.primary.users.map((item, idx) => (

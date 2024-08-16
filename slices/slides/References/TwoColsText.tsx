@@ -18,7 +18,7 @@ const TwoColsText = ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme}
+      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
     >
       <SlideTwoCols>
         <LeftCol>
@@ -39,13 +39,13 @@ const TwoColsText = ({
           <GlobalPrismicRichText
             field={slice.primary.description}
             classNames="!text-3xl"
-            theme={slice.primary.theme}
+            theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
           />
         </LeftCol>
         <RightCol>
           <GlobalPrismicRichText
             field={slice.primary.right_side_content}
-            theme={slice.primary.theme}
+            theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
           />
         </RightCol>
       </SlideTwoCols>

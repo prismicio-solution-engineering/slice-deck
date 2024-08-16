@@ -22,7 +22,7 @@ const WithIllustration = ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme}
+      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
     >
       <SlideTwoCols
         className="items-center"
@@ -39,7 +39,7 @@ const WithIllustration = ({
           <GlobalPrismicRichText
             field={slice.primary.description}
             companyName={context.page?.company_name!}
-            theme={slice.primary.theme}
+            theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
             classNames="w-full"
           />
         </LeftCol>

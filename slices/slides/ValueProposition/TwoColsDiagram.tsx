@@ -17,7 +17,7 @@ const TwoColsDiagram = ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme}
+      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
     >
       <SlideTwoCols larger="left">
         <LeftCol>
@@ -27,7 +27,7 @@ const TwoColsDiagram = ({
           <Content
             title={slice.primary.title}
             description={slice.primary.description}
-            theme={slice.primary.theme}
+            theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
           />
         </LeftCol>
         <RightCol>
