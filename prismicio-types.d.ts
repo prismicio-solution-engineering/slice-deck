@@ -4511,79 +4511,6 @@ export type ValuePropositionSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *ValueProposition → Two Columns With Diagram → Primary*
- */
-export interface ValuePropositionSliceTwoColumnsWithDiagramPrimary {
-  /**
-   * Theme field in *ValueProposition → Two Columns With Diagram → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: Slide theme color
-   * - **Default Value**: slider theme
-   * - **API ID Path**: value_proposition.twoColumnsWithDiagram.primary.theme
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  theme: prismic.SelectField<
-    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
-    "filled"
-  >;
-
-  /**
-   * Eyebrow field in *ValueProposition → Two Columns With Diagram → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: value_proposition.twoColumnsWithDiagram.primary.eyebrow
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  eyebrow: prismic.KeyTextField;
-
-  /**
-   * Title field in *ValueProposition → Two Columns With Diagram → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: value_proposition.twoColumnsWithDiagram.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-
-  /**
-   * Description field in *ValueProposition → Two Columns With Diagram → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: value_proposition.twoColumnsWithDiagram.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
-   * Image field in *ValueProposition → Two Columns With Diagram → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: value_proposition.twoColumnsWithDiagram.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-}
-
-/**
- * Two Columns With Diagram variation for ValueProposition Slice
- *
- * - **API ID**: `twoColumnsWithDiagram`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ValuePropositionSliceTwoColumnsWithDiagram =
-  prismic.SharedSliceVariation<
-    "twoColumnsWithDiagram",
-    Simplify<ValuePropositionSliceTwoColumnsWithDiagramPrimary>,
-    never
-  >;
-
-/**
  * Primary content in *ValueProposition → Two Columns With Logos → Primary*
  */
 export interface ValuePropositionSliceTwoColumnsWithLogosPrimary {
@@ -4747,7 +4674,6 @@ export type ValuePropositionSliceWithList = prismic.SharedSliceVariation<
  */
 type ValuePropositionSliceVariation =
   | ValuePropositionSliceDefault
-  | ValuePropositionSliceTwoColumnsWithDiagram
   | ValuePropositionSliceTwoColumnsWithLogos
   | ValuePropositionSliceWithList;
 
@@ -4919,14 +4845,12 @@ declare module "@prismicio/client" {
       TestimonialsSliceSingleTestimonial,
       ValuePropositionSlice,
       ValuePropositionSliceDefaultPrimary,
-      ValuePropositionSliceTwoColumnsWithDiagramPrimary,
       ValuePropositionSliceTwoColumnsWithLogosPrimaryLogosItem,
       ValuePropositionSliceTwoColumnsWithLogosPrimary,
       ValuePropositionSliceWithListPrimaryListItem,
       ValuePropositionSliceWithListPrimary,
       ValuePropositionSliceVariation,
       ValuePropositionSliceDefault,
-      ValuePropositionSliceTwoColumnsWithDiagram,
       ValuePropositionSliceTwoColumnsWithLogos,
       ValuePropositionSliceWithList,
     };

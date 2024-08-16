@@ -17,7 +17,15 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": ["slider theme","white", "orange", "pink", "green", "purple", "blue"],
+            "options": [
+              "slider theme",
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
             "default_value": "slider theme"
           }
         },
@@ -69,70 +77,6 @@
       "items": {}
     },
     {
-      "id": "twoColumnsWithDiagram",
-      "name": "Two Columns With Diagram",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {
-        "theme": {
-          "type": "Select",
-          "config": {
-            "label": "Theme",
-            "placeholder": "Slide theme color",
-            "options": ["slider theme","white", "orange", "pink", "green", "purple", "blue"],
-            "default_value": "slider theme"
-          }
-        },
-        "eyebrow": {
-          "type": "Text",
-          "config": {
-            "label": "Eyebrow",
-            "placeholder": ""
-          }
-        },
-        "title": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Title",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "heading2,strong,em,hyperlink",
-            "labels": [
-              "highlight",
-              "Company Name"
-            ]
-          }
-        },
-        "description": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Description",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
-            "labels": [
-              "highlight",
-              "Company Name"
-            ]
-          }
-        },
-        "image": {
-          "type": "Image",
-          "config": {
-            "label": "Image",
-            "constraint": {
-              "width": 553,
-              "height": null
-            },
-            "thumbnails": []
-          }
-        }
-      },
-      "items": {}
-    },
-    {
       "id": "twoColumnsWithLogos",
       "name": "Two Columns With Logos",
       "docURL": "...",
@@ -145,7 +89,15 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": ["slider theme","white", "orange", "pink", "green", "purple", "blue"],
+            "options": [
+              "slider theme",
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
             "default_value": "slider theme"
           }
         },
@@ -228,7 +180,15 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": ["slider theme","white", "orange", "pink", "green", "purple", "blue"],
+            "options": [
+              "slider theme",
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
             "default_value": "slider theme"
           }
         },

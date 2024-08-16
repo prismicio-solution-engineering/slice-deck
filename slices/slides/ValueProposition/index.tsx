@@ -26,8 +26,6 @@ const ValueProposition = ({
   switch (slice.variation) {
     case "default":
       return <TwoCols slice={slice} context={context} />;
-    case "twoColumnsWithDiagram":
-      return <TwoColsDiagram slice={slice} context={context} />;
     case "twoColumnsWithLogos":
       return <TwoColsLogos slice={slice} context={context} />;
     case "withList":
