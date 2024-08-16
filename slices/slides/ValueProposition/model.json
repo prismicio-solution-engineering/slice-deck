@@ -17,15 +17,8 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": [
-              "white",
-              "orange",
-              "pink",
-              "green",
-              "purple",
-              "blue"
-            ],
-            "default_value": "orange"
+            "options": ["slider theme","white", "orange", "pink", "green", "purple", "blue"],
+            "default_value": "slider theme"
           }
         },
         "eyebrow": {
@@ -88,15 +81,8 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": [
-              "white",
-              "orange",
-              "pink",
-              "green",
-              "purple",
-              "blue"
-            ],
-            "default_value": "orange"
+            "options": ["slider theme","white", "orange", "pink", "green", "purple", "blue"],
+            "default_value": "slider theme"
           }
         },
         "eyebrow": {
@@ -159,15 +145,8 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": [
-              "white",
-              "orange",
-              "pink",
-              "green",
-              "purple",
-              "blue"
-            ],
-            "default_value": "orange"
+            "options": ["slider theme","white", "orange", "pink", "green", "purple", "blue"],
+            "default_value": "slider theme"
           }
         },
         "eyebrow": {
@@ -249,15 +228,8 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": [
-              "white",
-              "orange",
-              "pink",
-              "green",
-              "purple",
-              "blue"
-            ],
-            "default_value": "orange"
+            "options": ["slider theme","white", "orange", "pink", "green", "purple", "blue"],
+            "default_value": "slider theme"
           }
         },
         "eyebrow": {

@@ -116,21 +116,6 @@ type DeckDocumentDataSlicesSlice =
   | IntroSlideSlice;
 
 /**
- * Item in *Deck → Company domain*
- */
-export interface DeckDocumentDataCompanyDomainItem {
-  /**
-   * Domain field in *Deck → Company domain*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: example : prismic.io
-   * - **API ID Path**: deck.company_domain[].domain
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  domain: prismic.KeyTextField;
-}
-
-/**
  * Content for Deck documents
  */
 interface DeckDocumentData {
@@ -149,14 +134,14 @@ interface DeckDocumentData {
    * Theme field in *Deck*
    *
    * - **Field Type**: Select
-   * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Placeholder**: Slider theme color
+   * - **Default Value**: orange
    * - **API ID Path**: deck.theme
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "orange" | "white" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -192,19 +177,6 @@ interface DeckDocumentData {
   company_logo: prismic.ImageField<never>;
 
   /**
-   * Company domain field in *Deck*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: deck.company_domain[]
-   * - **Tab**: Config
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  company_domain: prismic.GroupField<
-    Simplify<DeckDocumentDataCompanyDomainItem>
-  >;
-
-  /**
    * Author field in *Deck*
    *
    * - **Field Type**: Content Relationship
@@ -214,37 +186,6 @@ interface DeckDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   author: prismic.ContentRelationshipField<"author"> /**
-   * Meta Description field in *Deck*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: deck.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
-  meta_description: prismic.KeyTextField;
-
-  /**
-   * Meta Image field in *Deck*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: deck.meta_image
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  meta_image: prismic.ImageField<never>;
-
-  /**
-   * Meta Title field in *Deck*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: deck.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_title: prismic.KeyTextField /**
    * Activate Password field in *Deck*
    *
    * - **Field Type**: Boolean
@@ -425,12 +366,12 @@ export interface AgendaSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: agenda.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -711,12 +652,12 @@ export interface CompanySliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: company.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -775,12 +716,12 @@ export interface CompanySliceHistoryPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: company.history.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -837,12 +778,12 @@ export interface CompanySliceKeyFiguresAndReferencesPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: company.keyFiguresAndReferences.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -989,12 +930,12 @@ export interface CompanySliceFullWidthKeyFiguresPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: company.fullWidthKeyFigures.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -1210,12 +1151,12 @@ export interface FeaturesSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: features.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -1282,12 +1223,12 @@ export interface FeaturesSliceThreeColsListPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: features.threeColsList.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -1346,12 +1287,12 @@ export interface FeaturesSliceThreeColsGridPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: features.threeColsGrid.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -1450,12 +1391,12 @@ export interface GenericImageSliceSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: white
+   * - **Default Value**: slider theme
    * - **API ID Path**: generic_image_slice.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -1619,12 +1560,12 @@ export interface IntroSlideSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: intro_slide.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -1681,12 +1622,12 @@ export interface IntroSlideSliceSingleGroupPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: intro_slide.singleGroup.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -1745,12 +1686,12 @@ export interface IntroSlideSliceSectionIntroPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: intro_slide.sectionIntro.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -1881,12 +1822,12 @@ export interface LeadsGoalsSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: leads_goals.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -1953,12 +1894,12 @@ export interface LeadsGoalsSliceWithImageGridPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: leads_goals.withImageGrid.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -2039,12 +1980,12 @@ export interface LeadsGoalsSliceWithImageAndIllustrationPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: leads_goals.withImageAndIllustration.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -2136,12 +2077,12 @@ export interface LeadsGoalsSliceWithIllustrationPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: leads_goals.withIllustration.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -2258,12 +2199,12 @@ export interface MethodologySliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: methodology.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -2330,12 +2271,12 @@ export interface MethodologySliceUserPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: methodology.user.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -2651,12 +2592,12 @@ export interface OfferSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: offer.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -2723,12 +2664,12 @@ export interface OfferSliceTwoTablesColumnsPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: offer.twoTablesColumns.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -2799,12 +2740,12 @@ export interface OfferSliceFullWidthTablesPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: offer.fullWidthTables.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -2863,12 +2804,12 @@ export interface OfferSliceTwoColsTablePrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: offer.twoColsTable.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -3088,12 +3029,12 @@ export interface PricingSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: pricing.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -3170,12 +3111,12 @@ export interface PricingSliceEnterpriseCardsPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: pricing.enterpriseCards.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -3234,12 +3175,12 @@ export interface PricingSliceEnterpriseGridPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: pricing.enterpriseGrid.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -3296,12 +3237,12 @@ export interface PricingSliceTableImagePrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: pricing.tableImage.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -3379,12 +3320,12 @@ export interface ProductSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: product.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -3593,12 +3534,12 @@ export interface ReferencesSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: references.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -3675,12 +3616,12 @@ export interface ReferencesSliceWithImagePrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: references.withImage.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -3781,12 +3722,12 @@ export interface ReferencesSliceShowcasedWebsitesPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: references.showcasedWebsites.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -3855,12 +3796,12 @@ export interface ReferencesSliceG2BadgesPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: references.g2Badges.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -3941,12 +3882,12 @@ export interface ReferencesSliceTwoColsImagePrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: references.twoColsImage.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -4045,12 +3986,12 @@ export interface ResourcesSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: resources.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -4097,12 +4038,12 @@ export interface ResourcesSliceContactPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: resources.contact.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -4191,12 +4132,12 @@ export interface SalesProcessSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: sales_process.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -4331,12 +4272,12 @@ export interface TestimonialsSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: testimonials.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -4375,12 +4316,12 @@ export interface TestimonialsSliceSingleTestimonialPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: testimonials.singleTestimonial.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -4506,12 +4447,12 @@ export interface ValuePropositionSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: value_proposition.default.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -4578,12 +4519,12 @@ export interface ValuePropositionSliceTwoColumnsWithDiagramPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: value_proposition.twoColumnsWithDiagram.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -4651,12 +4592,12 @@ export interface ValuePropositionSliceTwoColumnsWithLogosPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: value_proposition.twoColumnsWithLogos.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -4736,12 +4677,12 @@ export interface ValuePropositionSliceWithListPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: Slide theme color
-   * - **Default Value**: orange
+   * - **Default Value**: slider theme
    * - **API ID Path**: value_proposition.withList.primary.theme
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   theme: prismic.SelectField<
-    "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
     "filled"
   >;
 
@@ -4837,7 +4778,6 @@ declare module "@prismicio/client" {
       DeckDocument,
       DeckDocumentData,
       DeckDocumentDataSlicesSlice,
-      DeckDocumentDataCompanyDomainItem,
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,

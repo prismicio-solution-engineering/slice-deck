@@ -17,15 +17,8 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": [
-              "white",
-              "orange",
-              "pink",
-              "green",
-              "purple",
-              "blue"
-            ],
-            "default_value": "orange"
+            "options": ["slider theme","white", "orange", "pink", "green", "purple", "blue"],
+            "default_value": "slider theme"
           }
         },
         "testimonials": {
@@ -102,15 +95,8 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": [
-              "white",
-              "orange",
-              "pink",
-              "green",
-              "purple",
-              "blue"
-            ],
-            "default_value": "orange"
+            "options": ["slider theme","white", "orange", "pink", "green", "purple", "blue"],
+            "default_value": "slider theme"
           }
         },
         "author_picture": {

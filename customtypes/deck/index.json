@@ -25,9 +25,9 @@
         "type": "Select",
         "config": {
           "label": "Theme",
-          "placeholder": "Slide theme color",
-          "options": ["white", "orange", "pink", "green", "purple", "blue"],
-          "default_value": "white"
+          "placeholder": "Slider theme color",
+          "options": ["orange", "white", "pink", "green", "purple", "blue"],
+          "default_value": "orange"
         }
       },
       "slices": {
@@ -100,22 +100,6 @@
           "thumbnails": []
         }
       },
-      "company_domain": {
-        "type": "Group",
-        "config": {
-          "label": "Company domain",
-          "repeat": true,
-          "fields": {
-            "domain": {
-              "type": "Text",
-              "config": {
-                "label": "Domain",
-                "placeholder": "example : prismic.io"
-              }
-            }
-          }
-        }
-      },
       "author": {
         "type": "Link",
         "config": {
@@ -123,33 +107,6 @@
           "select": "document",
           "customtypes": ["author"]
         }
-      }
-    },
-    "SEO & Metadata": {
-      "meta_description": {
-        "config": {
-          "label": "Meta Description",
-          "placeholder": "A brief summary of the page"
-        },
-        "type": "Text"
-      },
-      "meta_image": {
-        "config": {
-          "constraint": {
-            "height": 1260,
-            "width": 2400
-          },
-          "label": "Meta Image",
-          "thumbnails": []
-        },
-        "type": "Image"
-      },
-      "meta_title": {
-        "config": {
-          "label": "Meta Title",
-          "placeholder": "A title of the page used for social media and search engines"
-        },
-        "type": "Text"
       }
     },
     "Access": {
