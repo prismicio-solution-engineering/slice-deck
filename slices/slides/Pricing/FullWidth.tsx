@@ -1,6 +1,6 @@
 import { PricingSliceDefault } from "@/prismicio-types";
 import { Container } from "@/components/Slides/Container";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 import { Headings } from "@/components/Slides/Headings";
 import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
 import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";

@@ -2,7 +2,7 @@ import { ValuePropositionSliceWithList } from "@/prismicio-types";
 import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
 import { PrismicNextImage } from "@prismicio/next";
 import { Container } from "@/components/Slides/Container";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
 import { Card } from "@/components/Card";
 

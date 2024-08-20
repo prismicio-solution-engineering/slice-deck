@@ -3,7 +3,7 @@ import { MethodologySliceUser } from "@/prismicio-types";
 import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
 import { LeftCol, RightCol } from "@/components/Slides/Columns";
 import { Container } from "@/components/Slides/Container";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 import { PrismicNextImage } from "@prismicio/next";
 
 const Content = ({ slice }: { slice: MethodologySliceUser }) => {

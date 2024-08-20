@@ -4,7 +4,7 @@ import TwoCols from "./TwoCols";
 import ThreeColsList from "./ThreeColsList";
 import ThreeColsGrid from "./ThreeColsGrid";
 import { FeaturesSlice } from "@/prismicio-types";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 
 /**
  * Props for `Features`.

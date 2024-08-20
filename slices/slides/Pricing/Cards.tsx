@@ -1,6 +1,6 @@
 import { PricingSliceEnterpriseCards } from "@/prismicio-types";
 import { Container } from "@/components/Slides/Container";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
 import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
 import { Card } from "@/components/Card";

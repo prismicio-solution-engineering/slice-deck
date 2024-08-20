@@ -1,7 +1,7 @@
 import { AuthorDocument, ResourcesSlice } from "@/prismicio-types";
 import { Content, asLink, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 import { Container } from "@/components/Slides/Container";
 import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
 import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";

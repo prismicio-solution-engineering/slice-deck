@@ -1,6 +1,6 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 import { Container } from "@/components/Slides/Container";
 import { Headings } from "@/components/Slides/Headings";
 import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";

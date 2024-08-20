@@ -1,7 +1,7 @@
 import { TestimonialsSlice } from "@/prismicio-types";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 import { Container } from "@/components/Slides/Container";
 import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
 import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";

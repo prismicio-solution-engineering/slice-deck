@@ -2,7 +2,7 @@ import { Container } from "@/components/Slides/Container";
 import { SalesProcessSlice } from "@/prismicio-types";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
 import Timeline from "@/components/Timeline";
 import { Headings } from "@/components/Slides/Headings";

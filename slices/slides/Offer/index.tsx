@@ -3,7 +3,7 @@ import { Container } from "@/components/Slides/Container";
 import { OfferSlice } from "@/prismicio-types";
 import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
 import { LeftCol, RightCol } from "@/components/Slides/Columns";
 import Table from "@/components/Table";

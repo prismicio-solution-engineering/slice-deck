@@ -3,7 +3,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import Intro from "./Intro";
 import { MethodologySlice } from "@/prismicio-types";
 import User from "./User";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 
 /**
  * Props for `Methodology`.

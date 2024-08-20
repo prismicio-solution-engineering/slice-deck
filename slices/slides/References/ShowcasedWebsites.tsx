@@ -3,7 +3,7 @@
 import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
 import { ReferencesSliceShowcasedWebsites } from "@/prismicio-types";
 import { Container } from "@/components/Slides/Container";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
 import { Button } from "@/components/Button";

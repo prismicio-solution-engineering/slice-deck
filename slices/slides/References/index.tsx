@@ -1,7 +1,7 @@
 import { ReferencesSlice } from "@/prismicio-types";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 import TwoColsText from "./TwoColsText";
 import WithImageGrid from "./WithImageGrid";
 import ShowcasedWebsites from "./ShowcasedWebsites";

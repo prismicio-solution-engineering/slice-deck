@@ -7,7 +7,7 @@ import { Container } from "@/components/Slides/Container";
 import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
 import { LeftCol, RightCol } from "@/components/Slides/Columns";
 import { PrismicNextImage } from "@prismicio/next";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 
 const WithIllustration = ({
   slice,

@@ -2,7 +2,7 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import WithImage from "./WithImage";
 import { LeadsGoalsSlice } from "@/prismicio-types";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 import WithImageGrid from "./WithImageGrid";
 import WithIllustration from "./WithIllustration";
 

@@ -1,6 +1,6 @@
 import { FeaturesSliceThreeColsList } from "@/prismicio-types";
 import { Container } from "@/components/Slides/Container";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
 import { Button } from "@/components/Button";
 import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";

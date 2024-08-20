@@ -1,13 +1,10 @@
 "use client";
-import {
-  DeckDocumentData,
-  IntroSlideSlice,
-  SettingsDocumentData,
-} from "@/prismicio-types";
+import { IntroSlideSlice } from "@/prismicio-types";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import SectionIntro from "./SectionIntro";
 import SliderIntro from "./SliderIntro";
+import { Context } from "@/utils/GlobalTypes";
 
 export const introComponents = {
   heading2: ({ children }: { children: React.ReactNode }) => (
@@ -23,11 +20,6 @@ export const introComponents = {
     </p>
     // <p className="font-copy text-2xl text-gray-base break-words font-normal">{children}</p>
   ),
-};
-
-export type Context = {
-  page: DeckDocumentData;
-  settings: SettingsDocumentData;
 };
 
 /**

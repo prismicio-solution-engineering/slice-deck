@@ -2,7 +2,7 @@ import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
 import { AgendaSlice } from "@/prismicio-types";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 import { Container } from "@/components/Slides/Container";
 import { LeftCol, RightCol } from "@/components/Slides/Columns";
 import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";

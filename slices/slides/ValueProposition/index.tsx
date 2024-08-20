@@ -5,7 +5,7 @@ import TwoCols from "./TwoCols";
 import TwoColsDiagram from "./TwoColsDiagram";
 import TwoColsLogos from "./TwoColsLogos";
 import List from "./List";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 
 /**
  * Props for `ValueProposition`.

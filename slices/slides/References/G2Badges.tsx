@@ -16,7 +16,7 @@ import { isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { Container } from "@/components/Slides/Container";
 import { ReferencesSliceG2Badges } from "@/prismicio-types";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 import { Headings } from "@/components/Slides/Headings";
 import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
 

@@ -1,7 +1,7 @@
 import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
 import { CompanySliceDefault } from "@/prismicio-types";
 import { Container } from "@/components/Slides/Container";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 import { PrismicNextImage } from "@prismicio/next";
 import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
 

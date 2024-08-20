@@ -1,7 +1,7 @@
 import { Container } from "@/components/Slides/Container";
 import { ProductSlice } from "@/prismicio-types";
 import { SliceComponentProps } from "@prismicio/react";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 import { PrismicNextImage } from "@prismicio/next";
 import { LeftCol, RightCol } from "@/components/Slides/Columns";
 import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";

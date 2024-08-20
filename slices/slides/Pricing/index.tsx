@@ -1,6 +1,6 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { Context } from "../IntroSlide";
+import { Context } from "@/utils/GlobalTypes";
 import { PricingSlice } from "@/prismicio-types";
 import FullWidth from "./FullWidth";
 import Grid from "./Grid";
