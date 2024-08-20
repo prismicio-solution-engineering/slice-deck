@@ -19,7 +19,7 @@ export function GlobalPrismicRichText({
   field: prismic.RichTextField;
   companyName?: string;
   classNames?: string;
-  theme?: "white" | "orange" | "pink" | "green" | "purple" | "blue";
+  theme?: "white" | "orange" | "pink" | "green" | "purple" | "blue" | "slider theme";
 }) {
   const textColor =
     // theme === "white"

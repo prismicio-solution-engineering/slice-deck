@@ -50,30 +50,41 @@ export type IconProps = {
  * <Icon src="/assets/svg/icon.svg" size="lg" color="purple" />
  */
 
-export const Icon = ({ className, src, size, color, fallback }: IconProps) => (
-  <SVG
-    className={cx(iconStyles({ size, color }), className)}
-    src={src}
-    preProcessor={(code) => code.replace(/fill=".*?"/g, 'fill="currentColor"')}
-  >
-    {fallback && (
-      <div
-        className={cx(
-          "relative rounded-xl overflow-hidden",
-          iconStyles({ size, color }),
-          className
-        )}
-      >
-        <PrismicNextImage
+export const Icon = ({ className, src, size, color, fallback }: IconProps) => {
+  const processSVG = (code: string) => {
+    return code
+      .replace(/fill=".*?"/g, 'fill="currentColor"')
+      .replace(/style=".*?"/g, (style) =>
+        style.includes("fill:") ? style.replace(/fill:.*?;/g, "") : style
+      );
+  };
+
+  return (
+    <SVG
+      className={cx(iconStyles({ size, color }), className)}
+      src={src}
+      // preProcessor={(code) => code.replace(/fill=".*?"/g, 'fill="currentColor"')}
+      preProcessor={processSVG}
+    >
+      {fallback && (
+        <div
           className={cx(
-            "z-10 relative",
+            "relative rounded-xl overflow-hidden",
             iconStyles({ size, color }),
             className
           )}
-          field={fallback}
-          fallbackAlt=""
-        />
-      </div>
-    )}
-  </SVG>
-);
+        >
+          <PrismicNextImage
+            className={cx(
+              "z-10 relative",
+              iconStyles({ size, color }),
+              className
+            )}
+            field={fallback}
+            fallbackAlt=""
+          />
+        </div>
+      )}
+    </SVG>
+  );
+};
