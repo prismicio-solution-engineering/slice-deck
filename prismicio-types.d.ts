@@ -2890,16 +2890,6 @@ export type OfferSlice = prismic.SharedSlice<"offer", OfferSliceVariation>;
  */
 export interface PricingSliceDefaultPrimaryCardItem {
   /**
-   * Title field in *Pricing → Default → Primary → Card*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: pricing.default.primary.card[].title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-
-  /**
    * Description field in *Pricing → Default → Primary → Card*
    *
    * - **Field Type**: Rich Text
@@ -3067,16 +3057,6 @@ export interface PricingSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content_left_column: prismic.RichTextField;
-
-  /**
-   * Content right column field in *Pricing → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: pricing.default.primary.content_right_column
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  content_right_column: prismic.RichTextField;
 
   /**
    * Card field in *Pricing → Default → Primary*

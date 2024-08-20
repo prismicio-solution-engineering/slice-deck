@@ -19,10 +19,14 @@ const FullWidth = ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
+      theme={
+        slice.primary.theme === "slider theme"
+          ? context.page.theme
+          : slice.primary.theme
+      }
     >
       <SlideTwoCols>
-        <LeftCol className="justify-between">
+        <LeftCol>
           <Headings
             eyebrow={slice.primary.eyebrow}
             title={slice.primary.title}
@@ -30,25 +34,31 @@ const FullWidth = ({
             alignLeft
             titleSize="!text-5xl"
           />
-          <GlobalPrismicRichText
-            field={slice.primary.content_left_column}
-            theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
-          />
+          <div>
+            <GlobalPrismicRichText
+              field={slice.primary.content_left_column}
+              theme={
+                slice.primary.theme === "slider theme"
+                  ? context.page.theme
+                  : slice.primary.theme
+              }
+            />
+          </div>
         </LeftCol>
         <RightCol className="justify-between">
           <Card className="bg-white h-fit border-4 border-gray-darker">
             {slice.primary.card.map((item, idx) => (
-              <div key={idx} className="flex flex-col gap-y-4">
-                <GlobalPrismicRichText
-                  field={item.title}
-                  classNames="text-xl"
-                />
+              <div key={idx} className="flex flex-col">
                 <GlobalPrismicRichText
                   field={item.description}
-                  theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
+                  theme={
+                    slice.primary.theme === "slider theme"
+                      ? context.page.theme
+                      : slice.primary.theme
+                  }
                   classNames="text-xl"
                 />
-                <div className="w-full flex flex-row gap-x-4 justify-around">
+                <div className="w-full mt-4 flex flex-row gap-x-4 justify-around">
                   <PrismicNextImage
                     field={item.logo_1}
                     imgixParams={{
@@ -95,12 +105,6 @@ const FullWidth = ({
               </div>
             ))}
           </Card>
-          <div>
-            <GlobalPrismicRichText
-              field={slice.primary.content_right_column}
-              theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
-            />
-          </div>
         </RightCol>
       </SlideTwoCols>
     </Container>

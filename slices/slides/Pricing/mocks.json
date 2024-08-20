@@ -30,37 +30,12 @@
 					}
 				]
 			},
-			"content_right_column": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Aliqua quis esse magna qui ut esse adipisicing in laborum esse minim Lorem eiusmod voluptate. Nisi culpa aute Lorem. Laboris aliquip eu ea ex occaecat."
-						}
-					}
-				]
-			},
 			"card": {
 				"__TYPE__": "GroupContentType",
 				"value": [
 					{
 						"__TYPE__": "GroupItemContent",
 						"value": [
-							[
-								"title",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "heading3",
-											"content": {
-												"text": "Hidden"
-											}
-										}
-									]
-								}
-							],
 							[
 								"description",
 								{
@@ -261,7 +236,6 @@
 				]
 			},
 			"table": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea",
@@ -279,6 +253,9 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			}
 		},
