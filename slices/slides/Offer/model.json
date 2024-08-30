@@ -17,7 +17,15 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": ["slider theme","white", "orange", "pink", "green", "purple", "blue"],
+            "options": [
+              "slider theme",
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
             "default_value": "slider theme"
           }
         },
@@ -46,30 +54,12 @@
             "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item,heading3"
           }
         },
-        "tables": {
-          "type": "Group",
+        "table_image": {
+          "type": "Image",
           "config": {
-            "label": "Tables",
-            "repeat": false,
-            "fields": {
-              "table_has_header": {
-                "type": "Boolean",
-                "config": {
-                  "label": "table_has_header",
-                  "placeholder_false": "false",
-                  "placeholder_true": "true",
-                  "default_value": true
-                }
-              },
-              "table_csv": {
-                "type": "Link",
-                "config": {
-                  "label": "table_csv",
-                  "placeholder": "",
-                  "select": "media"
-                }
-              }
-            }
+            "label": "Table image",
+            "constraint": {},
+            "thumbnails": []
           }
         }
       },
@@ -88,7 +78,15 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": ["slider theme","white", "orange", "pink", "green", "purple", "blue"],
+            "options": [
+              "slider theme",
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
             "default_value": "slider theme"
           }
         },
@@ -132,21 +130,12 @@
                   "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
                 }
               },
-              "table_has_header": {
-                "type": "Boolean",
+              "table_image": {
+                "type": "Image",
                 "config": {
-                  "label": "Table has header",
-                  "placeholder_false": "false",
-                  "placeholder_true": "true",
-                  "default_value": true
-                }
-              },
-              "table_csv": {
-                "type": "Link",
-                "config": {
-                  "label": "Table Csv",
-                  "placeholder": "",
-                  "select": "media"
+                  "label": "Table image",
+                  "constraint": {},
+                  "thumbnails": []
                 }
               }
             }
@@ -176,21 +165,12 @@
                   "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
                 }
               },
-              "table_has_header": {
-                "type": "Boolean",
+              "table_image": {
+                "type": "Image",
                 "config": {
-                  "label": "Table has header",
-                  "default_value": false,
-                  "placeholder_true": "true",
-                  "placeholder_false": "false"
-                }
-              },
-              "table_csv": {
-                "type": "Link",
-                "config": {
-                  "label": "Table CSV",
-                  "placeholder": "",
-                  "select": "media"
+                  "label": "Table image",
+                  "constraint": {},
+                  "thumbnails": []
                 }
               }
             }
@@ -212,7 +192,15 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": ["slider theme","white", "orange", "pink", "green", "purple", "blue"],
+            "options": [
+              "slider theme",
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
             "default_value": "slider theme"
           }
         },
@@ -247,113 +235,12 @@
                   "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
                 }
               },
-              "table_has_header": {
-                "type": "Boolean",
+              "table_image": {
+                "type": "Image",
                 "config": {
-                  "label": "Table has header",
-                  "placeholder_false": "false",
-                  "placeholder_true": "true",
-                  "default_value": true
-                }
-              },
-              "table_csv": {
-                "type": "Link",
-                "config": {
-                  "label": "Table Csv",
-                  "placeholder": "",
-                  "select": "media"
-                }
-              }
-            }
-          }
-        }
-      },
-      "items": {}
-    },
-    {
-      "id": "twoColsTable",
-      "name": "Two Cols Table",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {
-        "theme": {
-          "type": "Select",
-          "config": {
-            "label": "Theme",
-            "placeholder": "Slide theme color",
-            "options": ["slider theme","white", "orange", "pink", "green", "purple", "blue"],
-            "default_value": "slider theme"
-          }
-        },
-        "eyebrow": {
-          "type": "Text",
-          "config": {
-            "label": "Eyebrow",
-            "placeholder": ""
-          }
-        },
-        "title": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Title",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "heading2,strong,em"
-          }
-        },
-        "description": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Description",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item,heading3"
-          }
-        },
-        "table": {
-          "type": "Group",
-          "config": {
-            "label": "Table",
-            "repeat": false,
-            "fields": {
-              "plan": {
-                "type": "Text",
-                "config": {
-                  "label": "Plan",
-                  "placeholder": ""
-                }
-              },
-              "engagement_time": {
-                "type": "Text",
-                "config": {
-                  "label": "Engagement time",
-                  "placeholder": ""
-                }
-              },
-              "currency": {
-                "type": "Text",
-                "config": {
-                  "label": "Currency",
-                  "placeholder": ""
-                }
-              },
-              "table_has_header": {
-                "type": "Boolean",
-                "config": {
-                  "label": "table_has_header",
-                  "placeholder_false": "false",
-                  "placeholder_true": "true",
-                  "default_value": true
-                }
-              },
-              "table_csv": {
-                "type": "Link",
-                "config": {
-                  "label": "table_csv",
-                  "placeholder": "",
-                  "select": "media"
+                  "label": "Table image",
+                  "constraint": {},
+                  "thumbnails": []
                 }
               }
             }

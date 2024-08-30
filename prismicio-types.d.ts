@@ -2374,32 +2374,6 @@ export type MethodologySlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *Offer → Two Cols Content and Table → Primary → Tables*
- */
-export interface OfferSliceDefaultPrimaryTablesItem {
-  /**
-   * table_has_header field in *Offer → Two Cols Content and Table → Primary → Tables*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: true
-   * - **API ID Path**: offer.default.primary.tables[].table_has_header
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  table_has_header: prismic.BooleanField;
-
-  /**
-   * table_csv field in *Offer → Two Cols Content and Table → Primary → Tables*
-   *
-   * - **Field Type**: Link to Media
-   * - **Placeholder**: *None*
-   * - **API ID Path**: offer.default.primary.tables[].table_csv
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  table_csv: prismic.LinkToMediaField;
-}
-
-/**
  * Item in *Offer → Two Tables Columns → Primary → Content left column*
  */
 export interface OfferSliceTwoTablesColumnsPrimaryContentLeftColumnItem {
@@ -2424,25 +2398,14 @@ export interface OfferSliceTwoTablesColumnsPrimaryContentLeftColumnItem {
   description: prismic.RichTextField;
 
   /**
-   * Table has header field in *Offer → Two Tables Columns → Primary → Content left column*
+   * Table image field in *Offer → Two Tables Columns → Primary → Content left column*
    *
-   * - **Field Type**: Boolean
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **Default Value**: true
-   * - **API ID Path**: offer.twoTablesColumns.primary.content_left_column[].table_has_header
-   * - **Documentation**: https://prismic.io/docs/field#boolean
+   * - **API ID Path**: offer.twoTablesColumns.primary.content_left_column[].table_image
+   * - **Documentation**: https://prismic.io/docs/field#image
    */
-  table_has_header: prismic.BooleanField;
-
-  /**
-   * Table Csv field in *Offer → Two Tables Columns → Primary → Content left column*
-   *
-   * - **Field Type**: Link to Media
-   * - **Placeholder**: *None*
-   * - **API ID Path**: offer.twoTablesColumns.primary.content_left_column[].table_csv
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  table_csv: prismic.LinkToMediaField;
+  table_image: prismic.ImageField<never>;
 }
 
 /**
@@ -2470,25 +2433,14 @@ export interface OfferSliceTwoTablesColumnsPrimaryContentRightColumnItem {
   description: prismic.RichTextField;
 
   /**
-   * Table has header field in *Offer → Two Tables Columns → Primary → Content right column*
+   * Table image field in *Offer → Two Tables Columns → Primary → Content right column*
    *
-   * - **Field Type**: Boolean
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: offer.twoTablesColumns.primary.content_right_column[].table_has_header
-   * - **Documentation**: https://prismic.io/docs/field#boolean
+   * - **API ID Path**: offer.twoTablesColumns.primary.content_right_column[].table_image
+   * - **Documentation**: https://prismic.io/docs/field#image
    */
-  table_has_header: prismic.BooleanField;
-
-  /**
-   * Table CSV field in *Offer → Two Tables Columns → Primary → Content right column*
-   *
-   * - **Field Type**: Link to Media
-   * - **Placeholder**: *None*
-   * - **API ID Path**: offer.twoTablesColumns.primary.content_right_column[].table_csv
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  table_csv: prismic.LinkToMediaField;
+  table_image: prismic.ImageField<never>;
 }
 
 /**
@@ -2506,81 +2458,14 @@ export interface OfferSliceFullWidthTablesPrimaryTablesItem {
   title: prismic.RichTextField;
 
   /**
-   * Table has header field in *Offer → Full Width Tables → Primary → Tables*
+   * Table image field in *Offer → Full Width Tables → Primary → Tables*
    *
-   * - **Field Type**: Boolean
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **Default Value**: true
-   * - **API ID Path**: offer.fullWidthTables.primary.tables[].table_has_header
-   * - **Documentation**: https://prismic.io/docs/field#boolean
+   * - **API ID Path**: offer.fullWidthTables.primary.tables[].table_image
+   * - **Documentation**: https://prismic.io/docs/field#image
    */
-  table_has_header: prismic.BooleanField;
-
-  /**
-   * Table Csv field in *Offer → Full Width Tables → Primary → Tables*
-   *
-   * - **Field Type**: Link to Media
-   * - **Placeholder**: *None*
-   * - **API ID Path**: offer.fullWidthTables.primary.tables[].table_csv
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  table_csv: prismic.LinkToMediaField;
-}
-
-/**
- * Item in *Offer → Two Cols Table → Primary → Table*
- */
-export interface OfferSliceTwoColsTablePrimaryTableItem {
-  /**
-   * Plan field in *Offer → Two Cols Table → Primary → Table*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: offer.twoColsTable.primary.table[].plan
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  plan: prismic.KeyTextField;
-
-  /**
-   * Engagement time field in *Offer → Two Cols Table → Primary → Table*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: offer.twoColsTable.primary.table[].engagement_time
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  engagement_time: prismic.KeyTextField;
-
-  /**
-   * Currency field in *Offer → Two Cols Table → Primary → Table*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: offer.twoColsTable.primary.table[].currency
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  currency: prismic.KeyTextField;
-
-  /**
-   * table_has_header field in *Offer → Two Cols Table → Primary → Table*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: true
-   * - **API ID Path**: offer.twoColsTable.primary.table[].table_has_header
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  table_has_header: prismic.BooleanField;
-
-  /**
-   * table_csv field in *Offer → Two Cols Table → Primary → Table*
-   *
-   * - **Field Type**: Link to Media
-   * - **Placeholder**: *None*
-   * - **API ID Path**: offer.twoColsTable.primary.table[].table_csv
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  table_csv: prismic.LinkToMediaField;
+  table_image: prismic.ImageField<never>;
 }
 
 /**
@@ -2632,14 +2517,14 @@ export interface OfferSliceDefaultPrimary {
   description: prismic.RichTextField;
 
   /**
-   * Tables field in *Offer → Two Cols Content and Table → Primary*
+   * Table image field in *Offer → Two Cols Content and Table → Primary*
    *
-   * - **Field Type**: Group
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: offer.default.primary.tables[]
-   * - **Documentation**: https://prismic.io/docs/field#group
+   * - **API ID Path**: offer.default.primary.table_image
+   * - **Documentation**: https://prismic.io/docs/field#image
    */
-  tables: prismic.GroupField<Simplify<OfferSliceDefaultPrimaryTablesItem>>;
+  table_image: prismic.ImageField<never>;
 }
 
 /**
@@ -2796,85 +2681,12 @@ export type OfferSliceFullWidthTables = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *Offer → Two Cols Table → Primary*
- */
-export interface OfferSliceTwoColsTablePrimary {
-  /**
-   * Theme field in *Offer → Two Cols Table → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: Slide theme color
-   * - **Default Value**: slider theme
-   * - **API ID Path**: offer.twoColsTable.primary.theme
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  theme: prismic.SelectField<
-    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
-    "filled"
-  >;
-
-  /**
-   * Eyebrow field in *Offer → Two Cols Table → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: offer.twoColsTable.primary.eyebrow
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  eyebrow: prismic.KeyTextField;
-
-  /**
-   * Title field in *Offer → Two Cols Table → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: offer.twoColsTable.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-
-  /**
-   * Description field in *Offer → Two Cols Table → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: offer.twoColsTable.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
-   * Table field in *Offer → Two Cols Table → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: offer.twoColsTable.primary.table[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  table: prismic.GroupField<Simplify<OfferSliceTwoColsTablePrimaryTableItem>>;
-}
-
-/**
- * Two Cols Table variation for Offer Slice
- *
- * - **API ID**: `twoColsTable`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type OfferSliceTwoColsTable = prismic.SharedSliceVariation<
-  "twoColsTable",
-  Simplify<OfferSliceTwoColsTablePrimary>,
-  never
->;
-
-/**
  * Slice variation for *Offer*
  */
 type OfferSliceVariation =
   | OfferSliceDefault
   | OfferSliceTwoTablesColumns
-  | OfferSliceFullWidthTables
-  | OfferSliceTwoColsTable;
+  | OfferSliceFullWidthTables;
 
 /**
  * Offer Shared Slice
@@ -4652,20 +4464,16 @@ declare module "@prismicio/client" {
       MethodologySliceDefault,
       MethodologySliceUser,
       OfferSlice,
-      OfferSliceDefaultPrimaryTablesItem,
       OfferSliceDefaultPrimary,
       OfferSliceTwoTablesColumnsPrimaryContentLeftColumnItem,
       OfferSliceTwoTablesColumnsPrimaryContentRightColumnItem,
       OfferSliceTwoTablesColumnsPrimary,
       OfferSliceFullWidthTablesPrimaryTablesItem,
       OfferSliceFullWidthTablesPrimary,
-      OfferSliceTwoColsTablePrimaryTableItem,
-      OfferSliceTwoColsTablePrimary,
       OfferSliceVariation,
       OfferSliceDefault,
       OfferSliceTwoTablesColumns,
       OfferSliceFullWidthTables,
-      OfferSliceTwoColsTable,
       PricingSlice,
       PricingSliceDefaultPrimaryCardItem,
       PricingSliceDefaultPrimary,
