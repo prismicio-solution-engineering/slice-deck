@@ -6,7 +6,13 @@ import { Container } from "@/components/Slides/Container";
 import { Context } from "@/utils/GlobalTypes";
 import { PrismicNextImage } from "@prismicio/next";
 
-const Content = ({ slice }: { slice: MethodologySliceUser }) => {
+const Content = ({
+  slice,
+  context,
+}: {
+  slice: MethodologySliceUser;
+  context: Context;
+}) => {
   return (
     <div className="flex flex-col gap-y-4">
       {slice.primary.user_number && (
@@ -23,7 +29,11 @@ const Content = ({ slice }: { slice: MethodologySliceUser }) => {
       <GlobalPrismicRichText
         field={slice.primary.description}
         classNames="!text-5xl"
-        theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
+        theme={
+          slice.primary.theme === "slider theme"
+            ? context.page.theme
+            : slice.primary.theme
+        }
       />
     </div>
   );
@@ -40,12 +50,16 @@ const User = ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
+      theme={
+        slice.primary.theme === "slider theme"
+          ? context.page.theme
+          : slice.primary.theme
+      }
     >
       {slice.primary.media_side ? (
         <SlideTwoCols overflowRight>
           <LeftCol className="gap-y-4">
-            <Content slice={slice} />
+            <Content slice={slice} context={context} />
           </LeftCol>
           <RightCol>
             <PrismicNextImage field={slice.primary.image} />
@@ -60,7 +74,7 @@ const User = ({
             />
           </LeftCol>
           <RightCol>
-            <Content slice={slice} />
+            <Content slice={slice} context={context} />
           </RightCol>
         </SlideTwoCols>
       )}

@@ -1,14 +1,10 @@
 import { IntroSlideSliceSectionIntro } from "@/prismicio-types";
 import { Container } from "@/components/Slides/Container";
-import { Context } from ".";
 import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
-import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
-
-import ThreeGroups from "./ThreeGroups";
-import SingleGroup from "./SingleGroup";
 import { LeftCol, RightCol } from "@/components/Slides/Columns";
 import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
 import { PrismicNextImage } from "@prismicio/next";
+import { Context } from "@/utils/GlobalTypes";
 
 const SectionIntro = ({
   slice,
@@ -21,7 +17,11 @@ const SectionIntro = ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
+      theme={
+        slice.primary.theme === "slider theme"
+          ? context.page.theme
+          : slice.primary.theme
+      }
     >
       <SlideTwoCols className="items-center">
         <LeftCol>
@@ -35,7 +35,11 @@ const SectionIntro = ({
           <GlobalPrismicRichText
             field={slice.primary.description}
             companyName={context.page?.company_name!}
-            theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
+            theme={
+              slice.primary.theme === "slider theme"
+                ? context.page.theme
+                : slice.primary.theme
+            }
             classNames="w-full"
           />
         </LeftCol>
