@@ -12,7 +12,14 @@ export const Container = ({
   settings: SettingsDocumentData;
   children: React.ReactNode;
   type?: "default" | "company";
-  theme?: "white" | "orange" | "pink" | "green" | "purple" | "blue" | "slider theme";
+  theme?:
+    | "white"
+    | "orange"
+    | "pink"
+    | "green"
+    | "purple"
+    | "blue"
+    | "slider theme";
 }) => {
   const themeColor = theme === "white" ? "bg-white" : `bg-quaternary-${theme}`;
 
