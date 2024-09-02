@@ -19,6 +19,7 @@ import { ReferencesSliceG2Badges } from "@/prismicio-types";
 import { Context } from "@/utils/GlobalTypes";
 import { Headings } from "@/components/Slides/Headings";
 import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
+import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
 
 const BadgeRow = ({
   children,
@@ -83,7 +84,11 @@ const G2Badges = ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
+      theme={
+        slice.primary.theme === "slider theme"
+          ? context.page.theme
+          : slice.primary.theme
+      }
     >
       <SlideFullWidth className="justify-center">
         <div className="sm:grid sm:grid-cols-12 gap-6 items-center">
@@ -92,7 +97,17 @@ const G2Badges = ({
               eyebrow={slice.primary.eyebrow}
               title={slice.primary.title}
               alignTop
+              alignLeft
               titleSize="!text-4xl"
+            />
+            <GlobalPrismicRichText
+              field={slice.primary.description}
+              classNames="!text-3xl"
+              theme={
+                slice.primary.theme === "slider theme"
+                  ? context.page.theme
+                  : slice.primary.theme
+              }
             />
             {isFilled.group(slice.primary.numbers) && (
               <>
