@@ -28,6 +28,13 @@ const WithImage = ({
             alignLeft
             alignTop
           />
+          <PrismicNextImage
+            field={slice.primary.company_logo}
+            imgixParams={{
+              monochrome: "AAAAAA",
+            }}
+            className="max-h-52 w-52 object-contain my-4"
+          />
           <GlobalPrismicRichText
             field={slice.primary.description}
             companyName={context.page?.company_name!}
