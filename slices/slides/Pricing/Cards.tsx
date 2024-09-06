@@ -28,7 +28,7 @@ const Cards = ({
       <div className="absolute inset-0 top-3/4 overflow-hidden">
         <StarIllustration />
       </div>
-      <div className="absolute inset-0 top-32 left-3/4 overflow-hidden">
+      <div className="absolute inset-0 top-40 left-[85%] overflow-hidden">
         <PuzzleIllustration />
       </div>
       <SlideFullWidth className="relative">
