@@ -403,6 +403,17 @@
 				"__TYPE__": "FieldContent",
 				"type": "Text",
 				"value": "References"
+			},
+			"bottom_content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Tempor voluptate enim irure eu velit do nisi. Exercitation ea et non velit elit nostrud deserunt consectetur quis magna proident ex magna incididunt mollit."
+						}
+					}
+				]
 			}
 		},
 		"items": [

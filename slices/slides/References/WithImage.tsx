@@ -40,6 +40,12 @@ const WithImage = ({
             companyName={context.page?.company_name!}
             theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
           />
+          <GlobalPrismicRichText
+            field={slice.primary.bottom_content}
+            companyName={context.page?.company_name!}
+            theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
+            classNames="text-xl mt-8"
+          />
         </LeftCol>
         <RightCol>
           <PrismicNextImage
