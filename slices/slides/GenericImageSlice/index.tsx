@@ -6,6 +6,7 @@ import { Headings } from "@/components/Slides/Headings";
 import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
 import { PrismicNextImage } from "@prismicio/next";
 import { GenericImageSliceSliceDefault } from "@/prismicio-types";
+import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
 
 /**
  * Props for `GenericImageSlice`.
@@ -27,7 +28,11 @@ const GenericImageSlice = ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
+      theme={
+        slice.primary.theme === "slider theme"
+          ? context.page.theme
+          : slice.primary.theme
+      }
     >
       <SlideFullWidth>
         <Headings
@@ -40,7 +45,15 @@ const GenericImageSlice = ({
           field={slice.primary.image}
           width={1500}
           height={660}
-          className="border-2 border-gray-darker object-contain"
+          className={`${slice.primary.image_border && "border-2 border-gray-darker"} object-contain`}
+        />
+        <GlobalPrismicRichText
+          field={slice.primary.description}
+          theme={
+            slice.primary.theme === "slider theme"
+              ? context.page.theme
+              : slice.primary.theme
+          }
         />
       </SlideFullWidth>
     </Container>

@@ -39,6 +39,21 @@
 				"__TYPE__": "FieldContent",
 				"value": "white",
 				"type": "Select"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sint excepteur aliqua exercitation consequat officia aliqua occaecat laborum aliquip nostrud reprehenderit ad. Minim commodo dolore esse et qui esse enim. Enim aliqua voluptate duis sint elit cupidatat non non nulla ullamco."
+						}
+					}
+				]
+			},
+			"image_border": {
+				"__TYPE__": "BooleanContent",
+				"value": true
 			}
 		},
 		"items": []

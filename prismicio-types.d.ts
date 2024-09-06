@@ -1429,6 +1429,27 @@ export interface GenericImageSliceSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Image border field in *GenericImageSlice → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: generic_image_slice.default.primary.image_border
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  image_border: prismic.BooleanField;
+
+  /**
+   * Description field in *GenericImageSlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: generic_image_slice.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
 }
 
 /**

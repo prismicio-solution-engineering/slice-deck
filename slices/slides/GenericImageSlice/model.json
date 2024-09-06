@@ -17,7 +17,15 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": ["slider theme","white", "orange", "pink", "green", "purple", "blue"],
+            "options": [
+              "slider theme",
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
             "default_value": "slider theme"
           }
         },
@@ -46,6 +54,24 @@
               "height": null
             },
             "thumbnails": []
+          }
+        },
+        "image_border": {
+          "type": "Boolean",
+          "config": {
+            "label": "Image border",
+            "placeholder_false": "no border",
+            "placeholder_true": "border",
+            "default_value": true
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,strong,em,hyperlink"
           }
         }
       },
