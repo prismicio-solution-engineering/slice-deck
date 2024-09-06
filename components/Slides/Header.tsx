@@ -45,7 +45,6 @@ const WithCompanyLogo = ({
         height={40}
         className="h-full object-contain rounded-xl"
       />
-      <GlobalPrismicRichText field={page.title} classNames="text-xl" />
       {copyright && (
         <p className="text-center text-silver-darker text-xl">
           Copyright Prismic · All Rights Reserved
