@@ -7,6 +7,7 @@ import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
 import { LeftCol, RightCol } from "@/components/Slides/Columns";
 import { Card } from "@/components/Card";
 import { PrismicNextImage } from "@prismicio/next";
+import StarIllustration from "@/assets/illustrations/star";
 
 const FullWidth = ({
   slice,
@@ -25,7 +26,10 @@ const FullWidth = ({
           : slice.primary.theme
       }
     >
-      <SlideTwoCols>
+      <div className="absolute inset-0 left-[90%] top-24 overflow-hidden">
+        <StarIllustration />
+      </div>
+      <SlideTwoCols className="relative">
         <LeftCol>
           <Headings
             eyebrow={slice.primary.eyebrow}
@@ -46,7 +50,7 @@ const FullWidth = ({
           </div>
         </LeftCol>
         <RightCol className="justify-between">
-          <Card className="bg-white h-fit border-4 border-gray-darker">
+          <Card className="bg-white h-fit border-4 mt-16 border-gray-darker">
             {slice.primary.card.map((item, idx) => (
               <div key={idx} className="flex flex-col">
                 <GlobalPrismicRichText
@@ -64,42 +68,42 @@ const FullWidth = ({
                     imgixParams={{
                       monochrome: "AAAAAA",
                     }}
-                    height={16}
+                    height={20}
                   />
                   <PrismicNextImage
                     field={item.logo_2}
                     imgixParams={{
                       monochrome: "AAAAAA",
                     }}
-                    height={16}
+                    height={20}
                   />
                   <PrismicNextImage
                     field={item.logo_3}
                     imgixParams={{
                       monochrome: "AAAAAA",
                     }}
-                    height={16}
+                    height={20}
                   />
                   <PrismicNextImage
                     field={item.logo_4}
                     imgixParams={{
                       monochrome: "AAAAAA",
                     }}
-                    height={16}
+                    height={20}
                   />
                   <PrismicNextImage
                     field={item.logo_5}
                     imgixParams={{
                       monochrome: "AAAAAA",
                     }}
-                    height={16}
+                    height={20}
                   />
                   <PrismicNextImage
                     field={item.logo_6}
                     imgixParams={{
                       monochrome: "AAAAAA",
                     }}
-                    height={16}
+                    height={20}
                   />
                 </div>
               </div>
