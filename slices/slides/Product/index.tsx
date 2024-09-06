@@ -26,7 +26,11 @@ const Product = ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
+      theme={
+        slice.primary.theme === "slider theme"
+          ? context.page.theme
+          : slice.primary.theme
+      }
     >
       <SlideTwoCols overflowRight className="items-center">
         <LeftCol>
@@ -36,7 +40,21 @@ const Product = ({
           <GlobalPrismicRichText field={slice.primary.title} />
           <GlobalPrismicRichText
             field={slice.primary.description}
-            theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
+            theme={
+              slice.primary.theme === "slider theme"
+                ? context.page.theme
+                : slice.primary.theme
+            }
+          />
+          <GlobalPrismicRichText
+            field={slice.primary.bottom_content}
+            companyName={context.page?.company_name!}
+            theme={
+              slice.primary.theme === "slider theme"
+                ? context.page.theme
+                : slice.primary.theme
+            }
+            classNames="text-xl mt-4"
           />
         </LeftCol>
         <RightCol className="flex flex-col justify-center items-end object-contain">

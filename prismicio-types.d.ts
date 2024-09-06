@@ -3183,6 +3183,16 @@ export interface ProductSliceDefaultPrimary {
   description: prismic.RichTextField;
 
   /**
+   * Bottom Content field in *Product → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: product.default.primary.bottom_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  bottom_content: prismic.RichTextField;
+
+  /**
    * Image field in *Product → Default → Primary*
    *
    * - **Field Type**: Image

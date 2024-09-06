@@ -41,6 +41,17 @@
 				"__TYPE__": "FieldContent",
 				"value": "one",
 				"type": "Text"
+			},
+			"bottom_content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ea in ex ea. Enim ullamco adipisicing duis incididunt elit aliquip minim Lorem magna anim commodo ipsum enim aliquip. Voluptate laboris magna est adipisicing cupidatat in do."
+						}
+					}
+				]
 			}
 		},
 		"items": []
