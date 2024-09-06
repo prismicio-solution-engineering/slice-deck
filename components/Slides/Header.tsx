@@ -5,9 +5,11 @@ import { GlobalPrismicRichText } from "../GlobalPrismicRichText";
 const Default = ({
   page,
   settings,
+  copyright,
 }: {
   page: DeckDocumentData;
   settings: SettingsDocumentData;
+  copyright?: boolean;
 }) => {
   return (
     <div className="flex justify-between items-center h-fit">
@@ -19,18 +21,22 @@ const Default = ({
         />
         <GlobalPrismicRichText field={page.title} classNames="!text-2xl" />
       </div>
-      <p className="text-center text-silver-darker text-lg">
-        Copyright Prismic · All Rights Reserved
-      </p>
+      {copyright && (
+        <p className="text-center text-silver-darker text-lg">
+          Copyright Prismic · All Rights Reserved
+        </p>
+      )}
     </div>
   );
 };
 const WithCompanyLogo = ({
   page,
   settings,
+  copyright,
 }: {
   page: DeckDocumentData;
   settings: SettingsDocumentData;
+  copyright?: boolean;
 }) => {
   return (
     <div className="flex justify-between items-center h-fit">
@@ -40,9 +46,11 @@ const WithCompanyLogo = ({
         className="h-full object-contain rounded-xl"
       />
       <GlobalPrismicRichText field={page.title} classNames="text-xl" />
-      <p className="text-center text-silver-darker text-xl">
-        Copyright Prismic · All Rights Reserved
-      </p>
+      {copyright && (
+        <p className="text-center text-silver-darker text-xl">
+          Copyright Prismic · All Rights Reserved
+        </p>
+      )}
       <PrismicNextImage
         field={page.company_logo}
         height={40}
@@ -56,19 +64,25 @@ export const Header = ({
   page,
   settings,
   type,
+  copyright,
 }: {
   page: DeckDocumentData;
   settings: SettingsDocumentData;
   type?: "default" | "company";
+  copyright?: boolean;
 }) => {
   return (
     <div className="w-full h-20 p-8">
       {type === "company" ? (
-        <WithCompanyLogo page={page} settings={settings} />
+        <WithCompanyLogo
+          page={page}
+          settings={settings}
+          copyright={copyright}
+        />
       ) : type === "default" ? (
-        <Default page={page} settings={settings} />
+        <Default page={page} settings={settings} copyright={copyright} />
       ) : (
-        <Default page={page} settings={settings} />
+        <Default page={page} settings={settings} copyright={copyright} />
       )}
     </div>
   );

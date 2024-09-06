@@ -7,6 +7,7 @@ export const Container = ({
   children,
   type,
   theme,
+  copyright = true,
 }: {
   page: DeckDocumentData;
   settings: SettingsDocumentData;
@@ -20,6 +21,7 @@ export const Container = ({
     | "purple"
     | "blue"
     | "slider theme";
+  copyright?: boolean;
 }) => {
   const themeColor = theme === "white" ? "bg-white" : `bg-quaternary-${theme}`;
 
@@ -28,7 +30,12 @@ export const Container = ({
       className={`w-[1520px] h-[855px] relative rounded-2xl border border-1 border-silver-base flex flex-col overflow-clip ${themeColor}`}
     >
       {page && settings && (
-        <Header page={page} settings={settings} type={type} />
+        <Header
+          page={page}
+          settings={settings}
+          type={type}
+          copyright={copyright}
+        />
       )}
       {children}
     </section>
