@@ -1,12 +1,9 @@
-import { PricingSliceEnterpriseGrid, PricingSliceTableImage } from "@/prismicio-types";
+import { PricingSliceTableImage } from "@/prismicio-types";
 import { Container } from "@/components/Slides/Container";
 import { Context } from "@/utils/GlobalTypes";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
 import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
-import { isFilled } from "@prismicio/client";
-import { Icon } from "@/components/Icon";
-import { Card } from "@/components/Card";
 import { Headings } from "@/components/Slides/Headings";
 
 const Table = ({
@@ -32,6 +29,12 @@ const Table = ({
         <div className="max-h-[636px]">
 
         <PrismicNextImage field={slice.primary.table} className="h-full object-contain border-2 border-gray-darker" />
+        <GlobalPrismicRichText
+            field={slice.primary.bottom_content}
+            companyName={context.page?.company_name!}
+            theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
+            classNames="text-xl mt-4"
+          />
         </div>
       </SlideFullWidth>
     </Container>

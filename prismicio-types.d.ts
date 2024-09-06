@@ -3088,6 +3088,16 @@ export interface PricingSliceTableImagePrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   table: prismic.ImageField<never>;
+
+  /**
+   * Bottom Content field in *Pricing → Table Image → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.tableImage.primary.bottom_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  bottom_content: prismic.RichTextField;
 }
 
 /**
