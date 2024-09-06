@@ -1,6 +1,7 @@
 "use client";
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
+
 export const SliderControls = ({ children }: { children: React.ReactNode }) => {
   const sliderContainerRef = React.useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -79,9 +80,11 @@ export const SliderControls = ({ children }: { children: React.ReactNode }) => {
         {Array.from({ length: totalSlides }).map((_, index) => (
           <button
             key={index}
-            className={`h-3 w-3 mx-1 rounded-full ${index === currentSlide ? "bg-silver-darker" : "bg-silver-base"} focus:outline-none`}
+            className={`h-8 w-8 mx-2 rounded-full ${index === currentSlide ? "bg-silver-darker" : "bg-silver-base"} focus:outline-none text-sm`}
             onClick={() => goToSlide(index)}
-          ></button>
+          >
+            {index + 1}
+          </button>
         ))}
       </div>
     </div>
