@@ -17,7 +17,11 @@ const Table = ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
+      theme={
+        slice.primary.theme === "slider theme"
+          ? context.page.theme
+          : slice.primary.theme
+      }
     >
       <SlideFullWidth className="">
         <Headings
@@ -27,12 +31,18 @@ const Table = ({
           titleSize="text-xl"
         />
         <div className="max-h-[636px]">
-
-        <PrismicNextImage field={slice.primary.table} className="h-full object-contain border-2 border-gray-darker" />
-        <GlobalPrismicRichText
+          <PrismicNextImage
+            field={slice.primary.table}
+            className={`${slice.primary.image_border && "border-2 border-gray-darker"} h-full object-contain`}
+          />
+          <GlobalPrismicRichText
             field={slice.primary.bottom_content}
             companyName={context.page?.company_name!}
-            theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
+            theme={
+              slice.primary.theme === "slider theme"
+                ? context.page.theme
+                : slice.primary.theme
+            }
             classNames="text-xl mt-4"
           />
         </div>
