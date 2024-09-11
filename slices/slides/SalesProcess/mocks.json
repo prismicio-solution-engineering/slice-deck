@@ -50,7 +50,6 @@
 							[
 								"milestone_icon",
 								{
-									"__TYPE__": "ImageContent",
 									"origin": {
 										"id": "main",
 										"url": "https://images.unsplash.com/photo-1593642633279-1796119d5482",
@@ -68,6 +67,9 @@
 										},
 										"background": "transparent"
 									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
 									"thumbnails": {}
 								}
 							]
@@ -77,5 +79,96 @@
 			}
 		},
 		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "timeline",
+		"primary": {
+			"theme": {
+				"__TYPE__": "FieldContent",
+				"value": "pink",
+				"type": "Select"
+			},
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "stream",
+				"type": "Text"
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Fighting"
+						}
+					}
+				]
+			},
+			"planning": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"milestone_name",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "pick",
+									"type": "Text"
+								}
+							],
+							[
+								"milestone_description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Incididunt pariatur ex enim velit quis sint excepteur deserunt excepteur tempor veniam laborum duis nulla ad. Cillum ad adipisicing veniam consequat irure ullamco dolore excepteur amet ipsum."
+											}
+										}
+									]
+								}
+							],
+							[
+								"milestone_icon",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
+										"width": 3648,
+										"height": 4560
+									},
+									"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
+									"width": 3648,
+									"height": 4560,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]

@@ -3090,6 +3090,17 @@ export interface PricingSliceTableImagePrimary {
   table: prismic.ImageField<never>;
 
   /**
+   * Image border field in *Pricing → Table Image → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: pricing.tableImage.primary.image_border
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  image_border: prismic.BooleanField;
+
+  /**
    * Bottom Content field in *Pricing → Table Image → Primary*
    *
    * - **Field Type**: Rich Text
@@ -3967,6 +3978,41 @@ export interface SalesProcessSliceDefaultPrimaryPlanningItem {
 }
 
 /**
+ * Item in *SalesProcess → Timeline → Primary → Planning*
+ */
+export interface SalesProcessSliceTimelinePrimaryPlanningItem {
+  /**
+   * Milestone name field in *SalesProcess → Timeline → Primary → Planning*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sales_process.timeline.primary.planning[].milestone_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  milestone_name: prismic.KeyTextField;
+
+  /**
+   * Milestone description field in *SalesProcess → Timeline → Primary → Planning*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sales_process.timeline.primary.planning[].milestone_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  milestone_description: prismic.RichTextField;
+
+  /**
+   * Milestone Icon field in *SalesProcess → Timeline → Primary → Planning*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sales_process.timeline.primary.planning[].milestone_icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  milestone_icon: prismic.ImageField<never>;
+}
+
+/**
  * Primary content in *SalesProcess → Default → Primary*
  */
 export interface SalesProcessSliceDefaultPrimary {
@@ -4031,9 +4077,75 @@ export type SalesProcessSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *SalesProcess → Timeline → Primary*
+ */
+export interface SalesProcessSliceTimelinePrimary {
+  /**
+   * Theme field in *SalesProcess → Timeline → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide theme color
+   * - **Default Value**: slider theme
+   * - **API ID Path**: sales_process.timeline.primary.theme
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  theme: prismic.SelectField<
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
+   * Eyebrow field in *SalesProcess → Timeline → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sales_process.timeline.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *SalesProcess → Timeline → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sales_process.timeline.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Planning field in *SalesProcess → Timeline → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sales_process.timeline.primary.planning[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  planning: prismic.GroupField<
+    Simplify<SalesProcessSliceTimelinePrimaryPlanningItem>
+  >;
+}
+
+/**
+ * Timeline variation for SalesProcess Slice
+ *
+ * - **API ID**: `timeline`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SalesProcessSliceTimeline = prismic.SharedSliceVariation<
+  "timeline",
+  Simplify<SalesProcessSliceTimelinePrimary>,
+  never
+>;
+
+/**
  * Slice variation for *SalesProcess*
  */
-type SalesProcessSliceVariation = SalesProcessSliceDefault;
+type SalesProcessSliceVariation =
+  | SalesProcessSliceDefault
+  | SalesProcessSliceTimeline;
 
 /**
  * SalesProcess Shared Slice
@@ -4568,8 +4680,11 @@ declare module "@prismicio/client" {
       SalesProcessSlice,
       SalesProcessSliceDefaultPrimaryPlanningItem,
       SalesProcessSliceDefaultPrimary,
+      SalesProcessSliceTimelinePrimaryPlanningItem,
+      SalesProcessSliceTimelinePrimary,
       SalesProcessSliceVariation,
       SalesProcessSliceDefault,
+      SalesProcessSliceTimeline,
       TestimonialsSlice,
       TestimonialsSliceSingleTestimonialPrimary,
       TestimonialsSliceVariation,
