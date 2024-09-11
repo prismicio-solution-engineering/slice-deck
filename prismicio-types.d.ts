@@ -2719,78 +2719,18 @@ type OfferSliceVariation =
 export type OfferSlice = prismic.SharedSlice<"offer", OfferSliceVariation>;
 
 /**
- * Item in *Pricing → Default → Primary → Card*
+ * Item in *Pricing → Default → Primary → Logos*
  */
 export interface PricingSliceDefaultPrimaryCardItem {
   /**
-   * Description field in *Pricing → Default → Primary → Card*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: pricing.default.primary.card[].description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
-   * Logo 1 field in *Pricing → Default → Primary → Card*
+   * Logo field in *Pricing → Default → Primary → Logos*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: pricing.default.primary.card[].logo_1
+   * - **API ID Path**: pricing.default.primary.card[].logo
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  logo_1: prismic.ImageField<never>;
-
-  /**
-   * Logo 2 field in *Pricing → Default → Primary → Card*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: pricing.default.primary.card[].logo_2
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  logo_2: prismic.ImageField<never>;
-
-  /**
-   * Logo 3 field in *Pricing → Default → Primary → Card*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: pricing.default.primary.card[].logo_3
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  logo_3: prismic.ImageField<never>;
-
-  /**
-   * Logo 4 field in *Pricing → Default → Primary → Card*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: pricing.default.primary.card[].logo_4
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  logo_4: prismic.ImageField<never>;
-
-  /**
-   * Logo 5 field in *Pricing → Default → Primary → Card*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: pricing.default.primary.card[].logo_5
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  logo_5: prismic.ImageField<never>;
-
-  /**
-   * Logo 6 field in *Pricing → Default → Primary → Card*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: pricing.default.primary.card[].logo_6
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  logo_6: prismic.ImageField<never>;
+  logo: prismic.ImageField<never>;
 }
 
 /**
@@ -2892,7 +2832,17 @@ export interface PricingSliceDefaultPrimary {
   content_left_column: prismic.RichTextField;
 
   /**
-   * Card field in *Pricing → Default → Primary*
+   * Card description field in *Pricing → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.card_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  card_description: prismic.RichTextField;
+
+  /**
+   * Logos field in *Pricing → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*

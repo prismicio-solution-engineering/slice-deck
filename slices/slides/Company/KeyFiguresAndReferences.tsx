@@ -215,7 +215,7 @@ export default KeyFiguresAndReferences;
 //                       <Icon
 //                         src={item.logo.url}
 //                         size="md"
-//                         color={""gray""}
+//                         color="gray"
 //                         className="w-full h-full object-left object-contain max-w-36 col-span-1"
 //                         fallback={item.logo}
 //                       />
@@ -248,7 +248,7 @@ export default KeyFiguresAndReferences;
 //                       <Icon
 //                         src={item.logo.url}
 //                         size="md"
-//                         color={""gray""}
+//                         color="gray"
 //                         className="w-full h-full object-left object-contain max-w-36 col-span-1"
 //                         fallback={item.logo}
 //                       />
@@ -281,7 +281,7 @@ export default KeyFiguresAndReferences;
 //                       <Icon
 //                         src={item.logo.url}
 //                         size="md"
-//                         color={""gray""}
+//                         color="gray"
 //                         className="w-full h-full object-left object-contain max-w-36 col-span-1"
 //                         fallback={item.logo}
 //                       />
@@ -314,7 +314,7 @@ export default KeyFiguresAndReferences;
 //                       <Icon
 //                         src={item.logo.url}
 //                         size="md"
-//                         color={""gray""}
+//                         color="gray"
 //                         className="w-full h-full object-left object-contain max-w-36 col-span-1"
 //                         fallback={item.logo}
 //                       />

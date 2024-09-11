@@ -14,6 +14,7 @@ const iconStyles = cva("", {
       sm: "w-8 h-8",
       md: "w-12 h-12",
       lg: "w-16 h-16",
+      auto: "w-auto"
     },
     color: {
       orange: "text-primary-orange",
@@ -21,7 +22,7 @@ const iconStyles = cva("", {
       green: "text-primary-green",
       purple: "text-primary-purple",
       blue: "text-primary-blue",
-      gray: "text-gray-50",
+      gray: "text-gray-darker",
     },
   },
   defaultVariants: {

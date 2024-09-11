@@ -8,6 +8,7 @@ import { LeftCol, RightCol } from "@/components/Slides/Columns";
 import { Card } from "@/components/Card";
 import { PrismicNextImage } from "@prismicio/next";
 import StarIllustration from "@/assets/illustrations/star";
+import { Icon } from "@/components/Icon";
 
 const FullWidth = ({
   slice,
@@ -51,63 +52,40 @@ const FullWidth = ({
         </LeftCol>
         <RightCol className="justify-between">
           <Card className="bg-white h-fit border-4 mt-16 border-gray-darker">
-            {slice.primary.card.map((item, idx) => (
-              <div key={idx} className="flex flex-col">
-                <GlobalPrismicRichText
-                  field={item.description}
-                  theme={
-                    slice.primary.theme === "slider theme"
-                      ? context.page.theme
-                      : slice.primary.theme
-                  }
-                  classNames="text-xl"
-                />
-                <div className="w-full mt-4 flex flex-row gap-x-4 justify-around">
-                  <PrismicNextImage
-                    field={item.logo_1}
-                    imgixParams={{
-                      monochrome: "AAAAAA",
-                    }}
-                    height={20}
-                  />
-                  <PrismicNextImage
-                    field={item.logo_2}
-                    imgixParams={{
-                      monochrome: "AAAAAA",
-                    }}
-                    height={20}
-                  />
-                  <PrismicNextImage
-                    field={item.logo_3}
-                    imgixParams={{
-                      monochrome: "AAAAAA",
-                    }}
-                    height={20}
-                  />
-                  <PrismicNextImage
-                    field={item.logo_4}
-                    imgixParams={{
-                      monochrome: "AAAAAA",
-                    }}
-                    height={20}
-                  />
-                  <PrismicNextImage
-                    field={item.logo_5}
-                    imgixParams={{
-                      monochrome: "AAAAAA",
-                    }}
-                    height={20}
-                  />
-                  <PrismicNextImage
-                    field={item.logo_6}
-                    imgixParams={{
-                      monochrome: "AAAAAA",
-                    }}
-                    height={20}
-                  />
-                </div>
+            <div className="w-full flex flex-col">
+              <GlobalPrismicRichText
+                field={slice.primary.card_description}
+                theme={
+                  slice.primary.theme === "slider theme"
+                    ? context.page.theme
+                    : slice.primary.theme
+                }
+                classNames="text-xl"
+              />
+              <div className="w-full mt-4 flex flex-row gap-x-4 justify-evenly overflow-clip">
+                {slice.primary.card.map((item, idx) => {
+                  return item.logo.url?.includes(".svg") ? (
+                    <Icon
+                      key={idx}
+                      src={item.logo.url}
+                      size="auto"
+                      color="gray"
+                      className="h-5"
+                      fallback={item.logo}
+                    />
+                  ) : (
+                    <PrismicNextImage
+                      key={idx}
+                      field={item.logo}
+                      imgixParams={{
+                        monochrome: "AAAAAA",
+                      }}
+                      height={20}
+                    />
+                  );
+                })}
               </div>
-            ))}
+            </div>
           </Card>
         </RightCol>
       </SlideTwoCols>

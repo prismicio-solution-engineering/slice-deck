@@ -54,75 +54,25 @@
             "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
           }
         },
+        "card_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Card description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,list-item,o-list-item,hyperlink"
+          }
+        },
         "card": {
           "type": "Group",
           "config": {
-            "label": "Card",
-            "repeat": false,
+            "label": "Logos",
+            "repeat": true,
             "fields": {
-              "description": {
-                "type": "StructuredText",
-                "config": {
-                  "label": "Description",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "multi": "paragraph,strong,em,list-item,o-list-item,hyperlink"
-                }
-              },
-              "logo_1": {
+              "logo": {
                 "type": "Image",
                 "config": {
-                  "label": "Logo 1",
-                  "constraint": {
-                    "height": 16
-                  },
-                  "thumbnails": []
-                }
-              },
-              "logo_2": {
-                "type": "Image",
-                "config": {
-                  "label": "Logo 2",
-                  "constraint": {
-                    "height": 16
-                  },
-                  "thumbnails": []
-                }
-              },
-              "logo_3": {
-                "type": "Image",
-                "config": {
-                  "label": "Logo 3",
-                  "constraint": {
-                    "height": 16
-                  },
-                  "thumbnails": []
-                }
-              },
-              "logo_4": {
-                "type": "Image",
-                "config": {
-                  "label": "Logo 4",
-                  "constraint": {
-                    "height": 16
-                  },
-                  "thumbnails": []
-                }
-              },
-              "logo_5": {
-                "type": "Image",
-                "config": {
-                  "label": "Logo 5",
-                  "constraint": {
-                    "height": 16
-                  },
-                  "thumbnails": []
-                }
-              },
-              "logo_6": {
-                "type": "Image",
-                "config": {
-                  "label": "Logo 6",
+                  "label": "Logo",
                   "constraint": {
                     "height": 16
                   },
