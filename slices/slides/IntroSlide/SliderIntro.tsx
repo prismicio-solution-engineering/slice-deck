@@ -23,9 +23,11 @@ const SliderIntro = ({
       settings={context.settings}
       type={"company"}
       theme={
-        slice.primary.theme === "slider theme"
+        slice.primary.theme === "slider theme" && context?.page?.theme
           ? context.page.theme
-          : slice.primary.theme
+          : slice.primary.theme === "slider theme" && !context?.page?.theme
+            ? "white"
+            : slice.primary.theme
       }
       copyright={false}
     >

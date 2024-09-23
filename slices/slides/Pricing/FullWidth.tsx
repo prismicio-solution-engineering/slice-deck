@@ -22,9 +22,11 @@ const FullWidth = ({
       page={context.page}
       settings={context.settings}
       theme={
-        slice.primary.theme === "slider theme"
+        slice.primary.theme === "slider theme" && context?.page?.theme
           ? context.page.theme
-          : slice.primary.theme
+          : slice.primary.theme === "slider theme" && !context?.page?.theme
+            ? "white"
+            : slice.primary.theme
       }
     >
       <div className="absolute inset-0 left-[90%] top-24 overflow-hidden">

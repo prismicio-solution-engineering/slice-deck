@@ -1199,6 +1199,17 @@ export interface FeaturesSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Image border field in *Features → TwoCols → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: features.default.primary.image_border
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  image_border: prismic.BooleanField;
 }
 
 /**
@@ -1891,6 +1902,17 @@ export interface LeadsGoalsSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Image border field in *LeadsGoals → With image → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: leads_goals.default.primary.image_border
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  image_border: prismic.BooleanField;
 }
 
 /**

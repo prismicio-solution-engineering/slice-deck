@@ -24,7 +24,17 @@ const Agenda = ({
   context: Context;
 }): JSX.Element => {
   return (
-    <Container page={context.page} settings={context.settings} theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}>
+    <Container
+      page={context.page}
+      settings={context.settings}
+      theme={
+        slice.primary.theme === "slider theme" && context?.page?.theme
+          ? context.page.theme
+          : slice.primary.theme === "slider theme" && !context?.page?.theme
+            ? "white"
+            : slice.primary.theme
+      }
+    >
       <SlideTwoCols className="items-center">
         <LeftCol>
           <GlobalPrismicRichText field={slice.primary.title} />

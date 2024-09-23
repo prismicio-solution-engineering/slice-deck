@@ -29,9 +29,11 @@ const GenericImageSlice = ({
       page={context.page}
       settings={context.settings}
       theme={
-        slice.primary.theme === "slider theme"
+        slice.primary.theme === "slider theme" && context?.page?.theme
           ? context.page.theme
-          : slice.primary.theme
+          : slice.primary.theme === "slider theme" && !context?.page?.theme
+            ? "white"
+            : slice.primary.theme
       }
     >
       <SlideFullWidth>

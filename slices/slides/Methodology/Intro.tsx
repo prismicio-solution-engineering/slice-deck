@@ -17,7 +17,13 @@ const Intro = ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
+      theme={
+        slice.primary.theme === "slider theme" && context?.page?.theme
+          ? context.page.theme
+          : slice.primary.theme === "slider theme" && !context?.page?.theme
+            ? "white"
+            : slice.primary.theme
+      }
     >
       <SlideTwoCols>
         <LeftCol>

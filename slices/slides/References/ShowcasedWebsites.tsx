@@ -28,7 +28,13 @@ const ShowcasedWebsites = ({
     <Container
       page={context.page}
       settings={context.settings}
-      theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
+      theme={
+        slice.primary.theme === "slider theme" && context?.page?.theme
+          ? context.page.theme
+          : slice.primary.theme === "slider theme" && !context?.page?.theme
+            ? "white"
+            : slice.primary.theme
+      }
     >
       <SlideFullWidth className="flex flex-row justify-center items-center">
         <div className="font-headings text-3xl font-semibold text-primary-pink">

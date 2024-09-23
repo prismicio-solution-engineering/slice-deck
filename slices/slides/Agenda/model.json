@@ -17,7 +17,15 @@
           "config": {
             "label": "Theme",
             "placeholder": "Slide theme color",
-            "options": ["slider theme", "white", "orange", "pink", "green", "purple", "blue"],
+            "options": [
+              "slider theme",
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
             "default_value": "slider theme"
           }
         },
@@ -28,7 +36,10 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "heading2,strong,em",
-            "labels": ["highlight", "Company Name"]
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "image": {
@@ -54,7 +65,10 @@
                   "placeholder": "",
                   "allowTargetBlank": true,
                   "single": "paragraph,strong,em,hyperlink",
-                  "labels": ["highlight", "Company Name"]
+                  "labels": [
+                    "highlight",
+                    "Company Name"
+                  ]
                 }
               }
             }

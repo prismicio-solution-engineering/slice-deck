@@ -129,8 +129,8 @@
 			},
 			"user_number": {
 				"__TYPE__": "FieldContent",
-				"value": "struggle",
-				"type": "Text"
+				"type": "Text",
+				"value": "1"
 			}
 		},
 		"items": [
