@@ -6,6 +6,7 @@ import { LeftCol, RightCol } from "@/components/Slides/Columns";
 import { PrismicNextImage } from "@prismicio/next";
 import { Context } from "@/utils/GlobalTypes";
 import { Headings } from "@/components/Slides/Headings";
+import { SlideImage } from "@/components/Slides/SlideImage";
 
 const WithImage = ({
   slice,
@@ -28,12 +29,6 @@ const WithImage = ({
     >
       <SlideTwoCols className="items-center" larger="right">
         <LeftCol>
-          <Headings
-            eyebrow={slice.primary.eyebrow}
-            title={slice.primary.title}
-            alignLeft
-            alignTop
-          />
           <PrismicNextImage
             field={slice.primary.company_logo}
             imgixParams={{
@@ -41,22 +36,39 @@ const WithImage = ({
             }}
             className="max-h-52 w-52 object-contain my-4"
           />
+          <Headings
+            eyebrow={slice.primary.eyebrow}
+            title={slice.primary.title}
+            alignLeft
+            alignTop
+          />
           <GlobalPrismicRichText
             field={slice.primary.description}
             companyName={context.page?.company_name!}
-            theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
+            theme={
+              slice.primary.theme === "slider theme"
+                ? context.page.theme
+                : slice.primary.theme
+            }
           />
           <GlobalPrismicRichText
             field={slice.primary.bottom_content}
             companyName={context.page?.company_name!}
-            theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
+            theme={
+              slice.primary.theme === "slider theme"
+                ? context.page.theme
+                : slice.primary.theme
+            }
             classNames="text-xl mt-8"
           />
         </LeftCol>
         <RightCol>
-          <PrismicNextImage
+          <SlideImage
             field={slice.primary.image}
-            className="border-2 border-gray-darker shadow-xl"
+            className="shadow-xl"
+            cover
+            larger="right"
+            border={slice.primary.image_border}
           />
         </RightCol>
       </SlideTwoCols>

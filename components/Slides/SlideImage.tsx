@@ -31,6 +31,7 @@ export function SlideImage({
   contain?: boolean;
   cover?: boolean;
 }) {
+  // TODO : if border, object-cover ?
   className = clsx(
     baseClassNames,
     className,
@@ -68,7 +69,7 @@ export function SlideImage({
         field={field}
         width={695}
         height={705}
-        className="w-full h-full object-contain shadow-xl"
+        className={className}
         {...props}
       />
     );

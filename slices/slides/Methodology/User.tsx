@@ -4,7 +4,7 @@ import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
 import { LeftCol, RightCol } from "@/components/Slides/Columns";
 import { Container } from "@/components/Slides/Container";
 import { Context } from "@/utils/GlobalTypes";
-import { PrismicNextImage } from "@prismicio/next";
+import { SlideImage } from "@/components/Slides/SlideImage";
 
 const Content = ({
   slice,
@@ -64,15 +64,24 @@ const User = ({
             <Content slice={slice} context={context} />
           </LeftCol>
           <RightCol>
-            <PrismicNextImage field={slice.primary.image} />
+            <SlideImage
+              field={slice.primary.image}
+              className="w-full h-full shadow-xl"
+              cover
+              overflowRight
+              border={slice.primary.image_border}
+            />
           </RightCol>
         </SlideTwoCols>
       ) : (
         <SlideTwoCols overflowLeft>
           <LeftCol className="gap-y-4">
-            <PrismicNextImage
+            <SlideImage
               field={slice.primary.image}
-              className="w-full h-full object-contain shadow-xl"
+              className="w-full h-full shadow-xl"
+              cover
+              overflowLeft
+              border={slice.primary.image_border}
             />
           </LeftCol>
           <RightCol>

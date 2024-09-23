@@ -328,8 +328,8 @@
 		"primary": {
 			"theme": {
 				"__TYPE__": "FieldContent",
-				"value": "pink",
-				"type": "Select"
+				"type": "Select",
+				"value": "white"
 			},
 			"company_logo": {
 				"origin": {
@@ -414,6 +414,10 @@
 						}
 					}
 				]
+			},
+			"image_border": {
+				"__TYPE__": "BooleanContent",
+				"value": true
 			}
 		},
 		"items": [

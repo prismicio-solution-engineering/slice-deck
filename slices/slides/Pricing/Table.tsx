@@ -1,10 +1,10 @@
 import { PricingSliceTableImage } from "@/prismicio-types";
 import { Container } from "@/components/Slides/Container";
 import { Context } from "@/utils/GlobalTypes";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
 import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
 import { Headings } from "@/components/Slides/Headings";
+import { SlideImage } from "@/components/Slides/SlideImage";
 
 const Table = ({
   slice,
@@ -33,9 +33,12 @@ const Table = ({
           titleSize="text-xl"
         />
         <div className="max-h-[636px]">
-          <PrismicNextImage
+          <SlideImage
             field={slice.primary.table}
-            className={`${slice.primary.image_border && "border-2 border-gray-darker"} h-full object-contain`}
+            cover
+            fullWidth
+            border={slice.primary.image_border}
+            className="h-full"
           />
           <GlobalPrismicRichText
             field={slice.primary.bottom_content}

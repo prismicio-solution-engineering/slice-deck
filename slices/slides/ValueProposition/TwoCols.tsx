@@ -2,9 +2,9 @@ import { ValuePropositionSliceDefault } from "@/prismicio-types";
 import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
 import { LeftCol, RightCol } from "@/components/Slides/Columns";
 import { Container } from "@/components/Slides/Container";
-import { PrismicNextImage } from "@prismicio/next";
 import { Context } from "@/utils/GlobalTypes";
 import { Content } from "./Content";
+import { SlideImage } from "@/components/Slides/SlideImage";
 
 const TwoCols = ({
   slice,
@@ -36,9 +36,12 @@ const TwoCols = ({
           />
         </LeftCol>
         <RightCol>
-          <PrismicNextImage
+          <SlideImage
             field={slice.primary.image}
-            className="w-full h-full object-contain"
+            className="shadow-xl"
+            contain
+            overflowRight
+            border={slice.primary.image_border}
           />
         </RightCol>
       </SlideTwoCols>

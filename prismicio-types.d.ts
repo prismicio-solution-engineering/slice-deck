@@ -2375,6 +2375,17 @@ export interface MethodologySliceUserPrimary {
   image: prismic.ImageField<never>;
 
   /**
+   * Image border field in *Methodology → User → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: methodology.user.primary.image_border
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  image_border: prismic.BooleanField;
+
+  /**
    * Media side field in *Methodology → User → Primary*
    *
    * - **Field Type**: Boolean
@@ -3184,6 +3195,17 @@ export interface ProductSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Image border field in *Product → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: product.default.primary.image_border
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  image_border: prismic.BooleanField;
 }
 
 /**
@@ -3758,6 +3780,17 @@ export interface ReferencesSliceTwoColsImagePrimary {
   image: prismic.ImageField<never>;
 
   /**
+   * Image border field in *References → Two Cols Image → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: references.twoColsImage.primary.image_border
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  image_border: prismic.BooleanField;
+
+  /**
    * Bottom Content field in *References → Two Cols Image → Primary*
    *
    * - **Field Type**: Rich Text
@@ -4317,6 +4350,17 @@ export interface ValuePropositionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Image border field in *ValueProposition → TwoColumns → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: value_proposition.default.primary.image_border
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  image_border: prismic.BooleanField;
 }
 
 /**
@@ -4389,6 +4433,17 @@ export interface ValuePropositionSliceTwoColumnsWithLogosPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Image border field in *ValueProposition → Two Columns With Logos → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: value_proposition.twoColumnsWithLogos.primary.image_border
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  image_border: prismic.BooleanField;
 
   /**
    * Logos field in *ValueProposition → Two Columns With Logos → Primary*

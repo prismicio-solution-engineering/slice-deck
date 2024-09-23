@@ -2,10 +2,10 @@ import { Container } from "@/components/Slides/Container";
 import { ProductSlice } from "@/prismicio-types";
 import { SliceComponentProps } from "@prismicio/react";
 import { Context } from "@/utils/GlobalTypes";
-import { PrismicNextImage } from "@prismicio/next";
 import { LeftCol, RightCol } from "@/components/Slides/Columns";
 import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
 import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
+import { SlideImage } from "@/components/Slides/SlideImage";
 
 /**
  * Props for `Product`.
@@ -60,7 +60,13 @@ const Product = ({
           />
         </LeftCol>
         <RightCol className="flex flex-col justify-center items-end object-contain">
-          <PrismicNextImage field={slice.primary.image} />
+          <SlideImage
+            field={slice.primary.image}
+            className="shadow-xl" // not in the original
+            cover
+            overflowRight
+            border={slice.primary.image_border}
+          />
         </RightCol>
       </SlideTwoCols>
     </Container>

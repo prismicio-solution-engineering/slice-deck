@@ -72,6 +72,15 @@
             },
             "thumbnails": []
           }
+        },
+        "image_border": {
+          "type": "Boolean",
+          "config": {
+            "label": "Image border",
+            "placeholder_false": "no border",
+            "placeholder_true": "border",
+            "default_value": true
+          }
         }
       },
       "items": {}
@@ -140,9 +149,18 @@
             "label": "Image",
             "constraint": {
               "width": 664,
-              "height": null
+              "height": 705
             },
             "thumbnails": []
+          }
+        },
+        "image_border": {
+          "type": "Boolean",
+          "config": {
+            "label": "Image border",
+            "placeholder_false": "no border",
+            "placeholder_true": "border",
+            "default_value": true
           }
         },
         "logos": {

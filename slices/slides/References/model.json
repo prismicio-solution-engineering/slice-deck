@@ -495,6 +495,15 @@
             "thumbnails": []
           }
         },
+        "image_border": {
+          "type": "Boolean",
+          "config": {
+            "label": "Image border",
+            "placeholder_false": "no border",
+            "placeholder_true": "border",
+            "default_value": true
+          }
+        },
         "bottom_content": {
           "type": "StructuredText",
           "config": {
