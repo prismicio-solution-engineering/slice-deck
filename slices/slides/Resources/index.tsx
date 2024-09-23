@@ -33,7 +33,7 @@ const Resources = ({
             : slice.primary.theme
       }
     >
-      {slice.variation === "default" ? (
+      {/* {slice.variation === "default" ? (
         <SlideFullWidth className="flex flex-col justify-center">
           <GlobalPrismicRichText field={slice.primary.title} />
           <GlobalPrismicRichText
@@ -45,9 +45,9 @@ const Resources = ({
             }
           />
         </SlideFullWidth>
-      ) : (
+      ) : ( */}
         <Contact slice={slice} context={context} />
-      )}
+      {/* )} */}
     </Container>
   );
 };
