@@ -45,7 +45,7 @@ const GenericImageSlice = ({
           field={slice.primary.image}
           width={1500}
           height={660}
-          className={`${slice.primary.image_border && "border-2 border-gray-darker"} object-contain`}
+          className={`${slice.primary.image_border && "border-2 border-gray-darker"} object-cover`}
         />
         <GlobalPrismicRichText
           field={slice.primary.description}
