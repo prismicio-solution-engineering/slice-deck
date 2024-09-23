@@ -56,7 +56,16 @@ const Agenda = ({
           ))}
         </LeftCol>
         <RightCol>
-          <PrismicNextImage field={slice.primary.image} />
+          {/* <PrismicNextImage field={slice.primary.image} /> */}
+          <div className="relative w-full h-full">
+            <PrismicNextImage
+              field={slice.primary.image}
+              className={`w-[500px] absolute inset-0 top-1/4 z-10`}
+            />
+            <div
+              className={`w-3/4 h-5/6 ml-auto bg-silver-light border-2 border-gray-darker`}
+            />
+          </div>
         </RightCol>
       </SlideTwoCols>
     </Container>
