@@ -43,60 +43,65 @@ const Offer = ({
         alignTop
         titleSize="!text-4xl"
       />
-      {slice.variation === "default" ? (
-        <SlideTwoCols larger="right" className="mb-0">
-          <LeftCol>
-            <GlobalPrismicRichText field={slice.primary.description} />
-          </LeftCol>
-          <RightCol>
-            <PrismicNextImage field={slice.primary.table_image} />
-          </RightCol>
-        </SlideTwoCols>
-      ) : slice.variation === "fullWidthTables" ? (
-        <SlideFullWidth className="mb-0">
-          {slice.primary.tables.map((table, index) => {
-            return (
-              <div key={index}>
-                <GlobalPrismicRichText field={table.title} />
-                <PrismicNextImage field={table.table_image} />
-              </div>
-            );
-          })}
-        </SlideFullWidth>
-      ) : (
-        slice.variation === "twoTablesColumns" && (
-          <SlideTwoCols className="mb-0">
+      {
+        slice.variation === "default" ? (
+          <SlideTwoCols larger="right" className="mb-0">
             <LeftCol>
-              {slice.primary.content_left_column.map((table, index) => {
-                return (
-                  <div key={index}>
-                    <GlobalPrismicRichText
-                      field={table.title}
-                      classNames="!text-3xl"
-                    />
-                    <GlobalPrismicRichText field={table.description} />
-                    <PrismicNextImage field={table.table_image} />
-                  </div>
-                );
-              })}
+              <GlobalPrismicRichText field={slice.primary.description} />
             </LeftCol>
             <RightCol>
-              {slice.primary.content_right_column.map((table, index) => {
+              <PrismicNextImage field={slice.primary.table_image} />
+            </RightCol>
+          </SlideTwoCols>
+        ) : (
+          slice.variation === "fullWidthTables" && (
+            <SlideFullWidth className="mb-0">
+              {slice.primary.tables.map((table, index) => {
                 return (
                   <div key={index}>
-                    <GlobalPrismicRichText
-                      field={table.title}
-                      classNames="!text-3xl"
-                    />
-                    <GlobalPrismicRichText field={table.description} />
+                    <GlobalPrismicRichText field={table.title} />
                     <PrismicNextImage field={table.table_image} />
                   </div>
                 );
               })}
-            </RightCol>
-          </SlideTwoCols>
+            </SlideFullWidth>
+          )
         )
-      )}
+        // : (
+        //   slice.variation === "twoTablesColumns" && (
+        //     <SlideTwoCols className="mb-0">
+        //       <LeftCol>
+        //         {slice.primary.content_left_column.map((table, index) => {
+        //           return (
+        //             <div key={index}>
+        //               <GlobalPrismicRichText
+        //                 field={table.title}
+        //                 classNames="!text-3xl"
+        //               />
+        //               <GlobalPrismicRichText field={table.description} />
+        //               <PrismicNextImage field={table.table_image} />
+        //             </div>
+        //           );
+        //         })}
+        //       </LeftCol>
+        //       <RightCol>
+        //         {slice.primary.content_right_column.map((table, index) => {
+        //           return (
+        //             <div key={index}>
+        //               <GlobalPrismicRichText
+        //                 field={table.title}
+        //                 classNames="!text-3xl"
+        //               />
+        //               <GlobalPrismicRichText field={table.description} />
+        //               <PrismicNextImage field={table.table_image} />
+        //             </div>
+        //           );
+        //         })}
+        //       </RightCol>
+        //     </SlideTwoCols>
+        //   )
+        // )
+      }
     </Container>
   );
 };

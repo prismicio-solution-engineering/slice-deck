@@ -42,7 +42,11 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading2,strong,em"
+            "single": "heading2,strong,em",
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "description": {
@@ -51,7 +55,11 @@
             "label": "Description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item,heading3"
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item,heading3",
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "table_image": {
@@ -60,120 +68,6 @@
             "label": "Table image",
             "constraint": {},
             "thumbnails": []
-          }
-        }
-      },
-      "items": {}
-    },
-    {
-      "id": "twoTablesColumns",
-      "name": "Two Tables Columns",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {
-        "theme": {
-          "type": "Select",
-          "config": {
-            "label": "Theme",
-            "placeholder": "Slide theme color",
-            "options": [
-              "slider theme",
-              "white",
-              "orange",
-              "pink",
-              "green",
-              "purple",
-              "blue"
-            ],
-            "default_value": "slider theme"
-          }
-        },
-        "eyebrow": {
-          "type": "Text",
-          "config": {
-            "label": "Eyebrow",
-            "placeholder": ""
-          }
-        },
-        "title": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Title",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "heading2,strong,em"
-          }
-        },
-        "content_left_column": {
-          "type": "Group",
-          "config": {
-            "label": "Content left column",
-            "repeat": false,
-            "fields": {
-              "title": {
-                "type": "StructuredText",
-                "config": {
-                  "label": "Title",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "single": "heading3,em,strong"
-                }
-              },
-              "description": {
-                "type": "StructuredText",
-                "config": {
-                  "label": "Description",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
-                }
-              },
-              "table_image": {
-                "type": "Image",
-                "config": {
-                  "label": "Table image",
-                  "constraint": {},
-                  "thumbnails": []
-                }
-              }
-            }
-          }
-        },
-        "content_right_column": {
-          "type": "Group",
-          "config": {
-            "label": "Content right column",
-            "repeat": false,
-            "fields": {
-              "title": {
-                "type": "StructuredText",
-                "config": {
-                  "label": "Title",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "single": "heading3,em,strong"
-                }
-              },
-              "description": {
-                "type": "StructuredText",
-                "config": {
-                  "label": "Description",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
-                }
-              },
-              "table_image": {
-                "type": "Image",
-                "config": {
-                  "label": "Table image",
-                  "constraint": {},
-                  "thumbnails": []
-                }
-              }
-            }
           }
         }
       },
@@ -217,7 +111,11 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading2,strong,em"
+            "single": "heading2,strong,em",
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "tables": {
@@ -232,7 +130,11 @@
                   "label": "Title",
                   "placeholder": "",
                   "allowTargetBlank": true,
-                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "labels": [
+                    "highlight",
+                    "Company Name"
+                  ]
                 }
               },
               "table_image": {
