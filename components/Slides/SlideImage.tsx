@@ -2,7 +2,7 @@ import { ImageField } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import clsx from "clsx";
 
-const baseClassNames = "";
+const baseClassNames = "rounded-md";
 
 // Full width image - 1500x660
 //     Half - 664x705 or overflow 695x705
@@ -31,7 +31,7 @@ export function SlideImage({
   contain?: boolean;
   cover?: boolean;
 }) {
-  // TODO : if border, object-cover ?
+  // TODO : if border, object-cover ? shadows everywhere ?
   className = clsx(
     baseClassNames,
     className,
