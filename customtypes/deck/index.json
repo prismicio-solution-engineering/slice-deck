@@ -41,9 +41,6 @@
             "company": {
               "type": "SharedSlice"
             },
-            "sales_process": {
-              "type": "SharedSlice"
-            },
             "pricing": {
               "type": "SharedSlice"
             },
