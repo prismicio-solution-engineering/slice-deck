@@ -15,7 +15,6 @@ export const components = {
   product: dynamic(() => import("./Product")),
   references: dynamic(() => import("./References")),
   resources: dynamic(() => import("./Resources")),
-  sales_process: dynamic(() => import("./SalesProcess")),
   testimonials: dynamic(() => import("./Testimonials")),
   value_proposition: dynamic(() => import("./ValueProposition")),
 };

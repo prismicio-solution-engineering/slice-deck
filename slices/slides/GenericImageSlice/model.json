@@ -42,7 +42,11 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading2,strong,em"
+            "multi": "heading2,strong,em",
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "image": {
@@ -71,7 +75,11 @@
             "label": "Description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph,strong,em,hyperlink"
+            "single": "paragraph,strong,em,hyperlink",
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         }
       },

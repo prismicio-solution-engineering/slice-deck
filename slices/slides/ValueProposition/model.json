@@ -236,7 +236,11 @@
             "label": "Description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,em,strong"
+            "multi": "paragraph,em,strong",
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "list": {

@@ -68,7 +68,11 @@
             "label": "Bottom Content",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph,strong,em,hyperlink"
+            "single": "paragraph,strong,em,hyperlink",
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         },
         "image": {

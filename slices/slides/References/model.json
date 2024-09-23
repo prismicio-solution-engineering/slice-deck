@@ -510,7 +510,11 @@
             "label": "Bottom Content",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,strong,em"
+            "multi": "paragraph,strong,em",
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
           }
         }
       },
