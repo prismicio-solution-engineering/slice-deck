@@ -2,7 +2,7 @@ import { ImageField } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import clsx from "clsx";
 
-const baseClassNames = "h-full w-full";
+const baseClassNames = "";
 
 // Full width image - 1500x660
 //     Half - 664x705 or overflow 695x705
@@ -55,7 +55,7 @@ export function SlideImage({
     return (
       <PrismicNextImage
         field={field}
-        width={larger === "right" ? 579 : larger === "left" ? 811 : 695}
+        width={larger === "right" ? 811 : larger === "left" ? 579 : 695}
         height={705}
         className={className}
         {...props}
@@ -76,7 +76,7 @@ export function SlideImage({
     return (
       <PrismicNextImage
         field={field}
-        width={larger === "right" ? 553 : larger === "left" ? 774 : 664}
+        width={larger === "right" ? 774 : larger === "left" ? 553 : 664}
         height={705}
         className={className}
         {...props}
