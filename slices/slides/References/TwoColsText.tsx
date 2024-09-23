@@ -40,7 +40,7 @@ const TwoColsText = ({
             imgixParams={{
               monochrome: "AAAAAA",
             }}
-            className="max-h-52 w-52 object-contain"
+            className="max-h-20 max-w-32 object-contain"
           />
           <GlobalPrismicRichText
             field={slice.primary.description}

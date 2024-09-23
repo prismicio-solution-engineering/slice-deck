@@ -39,7 +39,7 @@ const WithImageGrid = ({
             imgixParams={{
               monochrome: "AAAAAA",
             }}
-            className="max-h-52 w-52 object-contain my-4"
+            className="max-h-20 max-w-32 object-contain my-4"
           />
           <div className="mb-16">
             <GlobalPrismicRichText
