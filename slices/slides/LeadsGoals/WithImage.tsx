@@ -5,6 +5,7 @@ import { SlideTwoCols } from "@/components/Slides/SlideTwoCols";
 import { LeftCol, RightCol } from "@/components/Slides/Columns";
 import { PrismicNextImage } from "@prismicio/next";
 import { Context } from "@/utils/GlobalTypes";
+import { SlideImage } from "@/components/Slides/SlideImage";
 
 const WithImage = ({
   slice,
@@ -45,9 +46,16 @@ const WithImage = ({
           />
         </LeftCol>
         <RightCol>
-          <PrismicNextImage
+          {/* <PrismicNextImage
             field={slice.primary.image}
             className={`${slice.primary.image_border && "border-2 border-gray-darker"} shadow-xl object-cover`}
+          /> */}
+          <SlideImage
+            field={slice.primary.image}
+            className="shadow-xl"
+            cover
+            larger="right"
+            border={slice.primary.image_border}
           />
         </RightCol>
       </SlideTwoCols>
