@@ -26,7 +26,7 @@ const Resources = ({
       page={context.page}
       settings={context.settings}
       theme={
-        slice.primary.theme === "slider theme" && context?.page?.theme
+        context?.page?.theme && slice.primary.theme === "slider theme"
           ? context.page.theme
           : slice.primary.theme === "slider theme" && !context?.page?.theme
             ? "white"
@@ -45,9 +45,14 @@ const Resources = ({
             }
           />
         </SlideFullWidth>
-      ) : ( */}
+      ) : (
+      <Contact slice={slice} context={context} />
+      )} */}
+      {context?.page?.theme ? (
         <Contact slice={slice} context={context} />
-      {/* )} */}
+      ) : (
+        <h2 className="text-8xl"> Placeholder for Contact</h2>
+      )}
     </Container>
   );
 };
