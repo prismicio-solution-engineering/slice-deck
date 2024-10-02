@@ -58,7 +58,7 @@ export function SlideImage({
         field={field}
         width={larger === "right" ? 811 : larger === "left" ? 579 : 695}
         height={705}
-        className={className}
+        className={clsx(className, "border-r-0")}
         {...props}
       />
     );
@@ -69,7 +69,7 @@ export function SlideImage({
         field={field}
         width={695}
         height={705}
-        className={className}
+        className={clsx(className, "border-l-0")}
         {...props}
       />
     );
@@ -84,28 +84,4 @@ export function SlideImage({
       />
     );
   }
-
-  // return (
-  //   <div className="w-full h-full">
-  //     {fullWidth ? (
-  //       <PrismicNextImage
-  //         field={field}
-  //         width={1500}
-  //         height={660}
-  //       />
-  //     ) : overflowRight ? (
-  //       <PrismicNextImage
-  //         field={field}
-  //         width={larger === "right" ? 579 : larger === "left" ? 811 : 695}
-  //         height={705}
-  //       />
-  //     ) : (
-  //       <PrismicNextImage
-  //         field={field}
-  //         width={larger === "right" ? 553 : larger === "left" ? 774 : 664}
-  //         height={705}
-  //       />
-  //     )}
-  //   </div>
-  // );
 }
