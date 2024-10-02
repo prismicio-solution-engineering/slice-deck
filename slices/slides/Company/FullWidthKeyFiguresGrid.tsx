@@ -59,13 +59,14 @@ const FullWidthKeyFiguresGrid = ({
         <div className="w-full flex flex-row justify-around gap-x-8">
           {slice.primary.logos.map((item, idx) => (
             <PrismicNextImage
-              key={idx}
-              field={item.logo}
-              imgixParams={{
-                monochrome: "AAAAAA",
-              }}
-              className="object-contain h-10"
-            />
+          key={idx}
+          field={item.logo}
+          height={40}
+          imgixParams={{
+            monochrome: "AAAAAA",
+          }}
+          className="object-contain"
+        />
           ))}
         </div>
       </SlideFullWidth>
