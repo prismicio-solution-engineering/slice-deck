@@ -28,30 +28,37 @@ const TwoColsText = ({
     >
       <SlideTwoCols>
         <LeftCol>
+          <PrismicNextImage
+            field={slice.primary.company_logo}
+            imgixParams={{
+              monochrome: "AAAAAA",
+            }}
+            className="max-h-20 max-w-32  object-contain my-4"
+          />
           <Headings
             eyebrow={slice.primary.eyebrow}
             title={slice.primary.title}
             alignLeft
             alignTop
           />
-
-          <PrismicNextImage
-            field={slice.primary.company_logo}
-            imgixParams={{
-              monochrome: "AAAAAA",
-            }}
-            className="max-h-20 max-w-32 object-contain"
-          />
           <GlobalPrismicRichText
             field={slice.primary.description}
             classNames="!text-3xl"
-            theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
+            theme={
+              slice.primary.theme === "slider theme"
+                ? context.page.theme
+                : slice.primary.theme
+            }
           />
         </LeftCol>
         <RightCol>
           <GlobalPrismicRichText
             field={slice.primary.right_side_content}
-            theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
+            theme={
+              slice.primary.theme === "slider theme"
+                ? context.page.theme
+                : slice.primary.theme
+            }
           />
         </RightCol>
       </SlideTwoCols>

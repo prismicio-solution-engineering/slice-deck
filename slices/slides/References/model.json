@@ -70,7 +70,7 @@
               "highlight",
               "Company Name"
             ],
-            "multi": "paragraph,strong,em,hyperlink"
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
           }
         },
         "right_side_content": {
@@ -155,7 +155,7 @@
               "highlight",
               "Company Name"
             ],
-            "multi": "paragraph,strong,em,hyperlink"
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
           }
         },
         "grid_left_column": {
@@ -202,7 +202,7 @@
               "highlight",
               "Company Name"
             ],
-            "single": "paragraph,strong,em,hyperlink"
+            "multi": "paragraph,strong,em,hyperlink"
           }
         }
       },
@@ -482,7 +482,7 @@
               "highlight",
               "Company Name"
             ],
-            "multi": "paragraph,strong,em,hyperlink"
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
           }
         },
         "image": {
@@ -510,7 +510,7 @@
             "label": "Bottom Content",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,strong,em",
+            "multi": "paragraph,strong,em,hyperlink",
             "labels": [
               "highlight",
               "Company Name"
