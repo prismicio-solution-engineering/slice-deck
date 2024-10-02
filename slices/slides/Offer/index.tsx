@@ -37,25 +37,21 @@ const Offer = ({
             : slice.primary.theme
       }
     >
-      {/* <Headings
+      <Headings
         eyebrow={slice.primary.eyebrow}
         title={slice.primary.title}
         alignTop
         titleSize="!text-4xl"
-      /> */}
+      />
       {
         slice.variation === "default" ? (
           <SlideTwoCols larger="right" className="mb-0">
             <LeftCol>
-              <div className="font-headings text-3xl font-semibold text-primary-pink">
+              {/* <div className="font-headings text-3xl font-semibold text-primary-pink">
                 {slice.primary.eyebrow}
               </div>
-              <GlobalPrismicRichText field={slice.primary.title} />
-              <GlobalPrismicRichText
-                field={slice.primary.description}
-                // theme={slice.primary.theme}
-              />
-              {/* <GlobalPrismicRichText field={slice.primary.description} /> */}
+              <GlobalPrismicRichText field={slice.primary.title} /> */}
+              <GlobalPrismicRichText field={slice.primary.description} />
             </LeftCol>
             <RightCol>
               <PrismicNextImage field={slice.primary.table_image} />
