@@ -38,7 +38,6 @@ const Table = ({
             cover
             fullWidth
             border={slice.primary.image_border}
-            className="h-full"
           />
           <GlobalPrismicRichText
             field={slice.primary.bottom_content}
