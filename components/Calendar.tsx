@@ -1,3 +1,5 @@
+"use client";
+
 import { AuthorDocumentData } from "@/prismicio-types";
 import { asLink } from "@prismicio/client";
 
