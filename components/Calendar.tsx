@@ -2,20 +2,19 @@
 
 import { AuthorDocumentData } from "@/prismicio-types";
 import { asLink } from "@prismicio/client";
+import Script from "next/script";
 
 export const Calendar = ({ author }: { author: AuthorDocumentData }) => {
   return (
     <>
-      {/* Start of Meetings Embed Script */}
-      <iframe
-        title={"hubspot"}
-        style={{
-          width: "100%",
-          height: "690px",
-        }}
-        src={`${asLink(author.calendar_link)}?embed=true`}
+      <div
+        className="meetings-iframe-container"
+        data-src={`${asLink(author.calendar_link)}?embed=true`}
       />
-      {/* End of Meetings Embed Script */}
+      <Script
+        type="text/javascript"
+        src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"
+      />
     </>
   );
 };

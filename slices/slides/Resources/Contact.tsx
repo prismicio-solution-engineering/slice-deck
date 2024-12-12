@@ -77,7 +77,7 @@ export const Contact = async ({
         </div>
       </LeftCol>
       <RightCol>
-        <Calendar author={author.data} />
+        {author.data.calendar_link && <Calendar author={author.data} />}
       </RightCol>
     </SlideTwoCols>
   );
