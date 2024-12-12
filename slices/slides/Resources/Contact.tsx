@@ -10,6 +10,7 @@ import { Calendar } from "@/components/Calendar";
 import LinkedInIcon from "@/assets/icons/linkedin";
 import { AuthorDocument } from "@/prismicio-types";
 import { asLink, isFilled } from "@prismicio/client";
+import { CalendarDaysIcon } from "@heroicons/react/24/outline";
 
 export const Contact = async ({
   slice,
@@ -65,6 +66,12 @@ export const Contact = async ({
           {isFilled.keyText(author.data.phone_number) && (
             <a href={`tel:${author.data.phone_number}`}>
               <PhoneIcon width={32} />
+            </a>
+          )}
+
+          {isFilled.link(author.data.calendar_link) && (
+            <a href={`${asLink(author.data.calendar_link)}`} target="_blank">
+              <CalendarDaysIcon width={32} />
             </a>
           )}
         </div>
