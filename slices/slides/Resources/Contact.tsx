@@ -1,3 +1,5 @@
+"use client";
+
 import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
 import { ResourcesSliceContact } from "@/prismicio-types";
 import { Context } from "@/utils/GlobalTypes";
@@ -11,6 +13,7 @@ import LinkedInIcon from "@/assets/icons/linkedin";
 import { AuthorDocument } from "@/prismicio-types";
 import { asLink, isFilled } from "@prismicio/client";
 import { CalendarDaysIcon } from "@heroicons/react/24/outline";
+import Script from "next/script";
 
 export const Contact = async ({
   slice,
@@ -77,7 +80,18 @@ export const Contact = async ({
         </div>
       </LeftCol>
       <RightCol>
-        {author.data.calendar_link && <Calendar author={author.data} />}
+        {author.data.calendar_link && (
+          <>
+            <div
+              className="meetings-iframe-container"
+              data-src={`${asLink(author.data.calendar_link)}?embed=true`}
+            />
+            <Script
+              type="text/javascript"
+              src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"
+            />
+          </>
+        )}
       </RightCol>
     </SlideTwoCols>
   );
