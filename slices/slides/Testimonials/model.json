@@ -65,6 +65,44 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "linkedTestimonial",
+      "name": "Linked testimonial",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "theme": {
+          "type": "Select",
+          "config": {
+            "label": "Theme",
+            "placeholder": "Slide theme color",
+            "options": [
+              "slider theme",
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
+            "default_value": "slider theme"
+          }
+        },
+        "testimonial": {
+          "type": "Link",
+          "config": {
+            "label": "Testimonial",
+            "select": "document",
+            "customtypes": [
+              "testimonial"
+            ]
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

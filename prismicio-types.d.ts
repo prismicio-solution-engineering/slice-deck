@@ -335,11 +335,77 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Content for Testimonial documents
+ */
+interface TestimonialDocumentData {
+  /**
+   * Author picture field in *Testimonial*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonial.author_picture
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  author_picture: prismic.ImageField<never>;
+
+  /**
+   * Author Name field in *Testimonial*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonial.author_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  author_name: prismic.KeyTextField;
+
+  /**
+   * Author Role and Company field in *Testimonial*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonial.author_role_and_company
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  author_role_and_company: prismic.KeyTextField;
+
+  /**
+   * Testimonial field in *Testimonial*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonial.testimonial
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  testimonial: prismic.RichTextField;
+}
+
+/**
+ * Testimonial document from Prismic
+ *
+ * - **API ID**: `testimonial`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TestimonialDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<TestimonialDocumentData>,
+    "testimonial",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | AuthorDocument
   | DeckDocument
   | HomeDocument
-  | SettingsDocument;
+  | SettingsDocument
+  | TestimonialDocument;
 
 /**
  * Item in *Agenda → Default → Primary → Summary items*
@@ -3818,9 +3884,53 @@ export type TestimonialsSliceSingleTestimonial = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Testimonials → Linked testimonial → Primary*
+ */
+export interface TestimonialsSliceLinkedTestimonialPrimary {
+  /**
+   * Theme field in *Testimonials → Linked testimonial → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide theme color
+   * - **Default Value**: slider theme
+   * - **API ID Path**: testimonials.linkedTestimonial.primary.theme
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  theme: prismic.SelectField<
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
+   * Testimonial field in *Testimonials → Linked testimonial → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.linkedTestimonial.primary.testimonial
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  testimonial: prismic.ContentRelationshipField<"testimonial">;
+}
+
+/**
+ * Linked testimonial variation for Testimonials Slice
+ *
+ * - **API ID**: `linkedTestimonial`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestimonialsSliceLinkedTestimonial = prismic.SharedSliceVariation<
+  "linkedTestimonial",
+  Simplify<TestimonialsSliceLinkedTestimonialPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Testimonials*
  */
-type TestimonialsSliceVariation = TestimonialsSliceSingleTestimonial;
+type TestimonialsSliceVariation =
+  | TestimonialsSliceSingleTestimonial
+  | TestimonialsSliceLinkedTestimonial;
 
 /**
  * Testimonials Shared Slice
@@ -4155,6 +4265,17 @@ declare module "@prismicio/client" {
     ): prismic.Client<AllDocumentTypes>;
   }
 
+  interface CreateWriteClient {
+    (
+      repositoryNameOrEndpoint: string,
+      options: prismic.WriteClientConfig,
+    ): prismic.WriteClient<AllDocumentTypes>;
+  }
+
+  interface CreateMigration {
+    (): prismic.Migration<AllDocumentTypes>;
+  }
+
   namespace Content {
     export type {
       AuthorDocument,
@@ -4167,6 +4288,8 @@ declare module "@prismicio/client" {
       HomeDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
+      TestimonialDocument,
+      TestimonialDocumentData,
       AllDocumentTypes,
       AgendaSlice,
       AgendaSliceDefaultPrimarySummaryItemsItem,
@@ -4281,8 +4404,10 @@ declare module "@prismicio/client" {
       ResourcesSliceContact,
       TestimonialsSlice,
       TestimonialsSliceSingleTestimonialPrimary,
+      TestimonialsSliceLinkedTestimonialPrimary,
       TestimonialsSliceVariation,
       TestimonialsSliceSingleTestimonial,
+      TestimonialsSliceLinkedTestimonial,
       ValuePropositionSlice,
       ValuePropositionSliceDefaultPrimary,
       ValuePropositionSliceTwoColumnsWithLogosPrimaryLogosItem,
