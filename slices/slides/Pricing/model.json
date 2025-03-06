@@ -314,7 +314,7 @@
             "label": "Table",
             "constraint": {
               "width": 1500,
-              "height": 636
+              "height": null
             },
             "thumbnails": []
           }
