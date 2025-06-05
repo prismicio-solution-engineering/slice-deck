@@ -52,16 +52,18 @@ const ThreeColsList = ({
                   <GlobalPrismicRichText field={item.title} />
                   <GlobalPrismicRichText
                     field={item.description}
-                    theme={slice.primary.theme === "slider theme" ? context.page.theme : slice.primary.theme}
+                    theme={
+                      slice.primary.theme === "slider theme"
+                        ? context.page.theme
+                        : slice.primary.theme
+                    }
                   />
                 </div>
                 <Button
                   variant="link"
                   field={item.cta_link}
                   className="text-primary-pink"
-                >
-                  {item.cta_label}
-                </Button>
+                />
               </Card>
             </div>
           ))}

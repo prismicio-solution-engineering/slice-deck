@@ -62,9 +62,11 @@ const ShowcasedWebsites = ({
                   </PrismicNextLink>
                 )}
               </Card>
-              <Button variant="link" field={item.link} className="text-center">
-                {item.label}
-              </Button>
+              <Button
+                variant="link"
+                field={item.link}
+                className="text-center"
+              />
             </div>
           ))}
         </div>

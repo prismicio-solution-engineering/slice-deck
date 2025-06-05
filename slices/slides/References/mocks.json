@@ -222,20 +222,14 @@
 								}
 							],
 							[
-								"label",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "track",
-									"type": "Text"
-								}
-							],
-							[
 								"link",
 								{
+									"key": "d23b3976-aee5-4333-91d0-e174f4335735",
 									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
-										"url": "http://google.com"
+										"url": "http://google.com",
+										"text": "gulf"
 									}
 								}
 							],

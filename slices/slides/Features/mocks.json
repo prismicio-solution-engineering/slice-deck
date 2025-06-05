@@ -106,20 +106,14 @@
 								}
 							],
 							[
-								"cta_label",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "morning",
-									"type": "Text"
-								}
-							],
-							[
 								"cta_link",
 								{
+									"key": "3b6097b0-3d6b-4cec-a8c0-6800080ee9e7",
 									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
-										"url": "https://slicemachine.dev"
+										"url": "http://twitter.com",
+										"text": "under"
 									}
 								}
 							],
@@ -226,6 +220,7 @@
 							[
 								"feature_link",
 								{
+									"key": "d2a80fb6-6710-423d-952f-fdd037eeb646",
 									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
@@ -236,18 +231,6 @@
 						]
 					}
 				]
-			},
-			"cta_label": {
-				"__TYPE__": "FieldContent",
-				"value": "summer",
-				"type": "Text"
-			},
-			"cta_link": {
-				"__TYPE__": "LinkContent",
-				"value": {
-					"__TYPE__": "ExternalLink",
-					"url": "https://slicemachine.dev"
-				}
 			},
 			"eyebrow": {
 				"__TYPE__": "FieldContent",

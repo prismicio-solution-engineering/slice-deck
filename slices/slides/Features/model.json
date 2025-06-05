@@ -184,19 +184,13 @@
                   ]
                 }
               },
-              "cta_label": {
-                "type": "Text",
-                "config": {
-                  "label": "Cta Label",
-                  "placeholder": ""
-                }
-              },
               "cta_link": {
                 "type": "Link",
                 "config": {
                   "label": "Cta Link",
                   "placeholder": "",
-                  "select": null
+                  "select": null,
+                  "allowText": true
                 }
               }
             }
@@ -313,21 +307,6 @@
                 }
               }
             }
-          }
-        },
-        "cta_label": {
-          "type": "Text",
-          "config": {
-            "label": "Cta Label",
-            "placeholder": ""
-          }
-        },
-        "cta_link": {
-          "type": "Link",
-          "config": {
-            "label": "Cta Link",
-            "placeholder": "",
-            "select": null
           }
         }
       },

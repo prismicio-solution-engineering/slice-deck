@@ -72,7 +72,13 @@ interface AuthorDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  calendar_link: prismic.LinkField;
+  calendar_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
 
   /**
    * LinkedIn field in *Author*
@@ -83,7 +89,13 @@ interface AuthorDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  linkedin: prismic.LinkField;
+  linkedin: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
 }
 
 /**
@@ -1130,16 +1142,6 @@ export interface FeaturesSliceThreeColsListPrimaryFeaturesItem {
   description: prismic.RichTextField;
 
   /**
-   * Cta Label field in *Features → Three Cols List → Primary → Features*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: features.threeColsList.primary.features[].cta_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  cta_label: prismic.KeyTextField;
-
-  /**
    * Cta Link field in *Features → Three Cols List → Primary → Features*
    *
    * - **Field Type**: Link
@@ -1147,7 +1149,13 @@ export interface FeaturesSliceThreeColsListPrimaryFeaturesItem {
    * - **API ID Path**: features.threeColsList.primary.features[].cta_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  cta_link: prismic.LinkField;
+  cta_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
 }
 
 /**
@@ -1204,7 +1212,13 @@ export interface FeaturesSliceThreeColsGridPrimaryFeaturesItem {
    * - **API ID Path**: features.threeColsGrid.primary.features[].feature_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  feature_link: prismic.LinkField;
+  feature_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
 }
 
 /**
@@ -1403,26 +1417,6 @@ export interface FeaturesSliceThreeColsGridPrimary {
   features: prismic.GroupField<
     Simplify<FeaturesSliceThreeColsGridPrimaryFeaturesItem>
   >;
-
-  /**
-   * Cta Label field in *Features → Three Cols Grid → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: features.threeColsGrid.primary.cta_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  cta_label: prismic.KeyTextField;
-
-  /**
-   * Cta Link field in *Features → Three Cols Grid → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: features.threeColsGrid.primary.cta_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  cta_link: prismic.LinkField;
 }
 
 /**
@@ -3199,16 +3193,6 @@ export interface ReferencesSliceShowcasedWebsitesPrimaryStoriesItem {
   website_screenshot: prismic.ImageField<never>;
 
   /**
-   * Label field in *References → Showcased Websites → Primary → Stories*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: references.showcasedWebsites.primary.stories[].label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  label: prismic.KeyTextField;
-
-  /**
    * Link field in *References → Showcased Websites → Primary → Stories*
    *
    * - **Field Type**: Link
@@ -3216,7 +3200,7 @@ export interface ReferencesSliceShowcasedWebsitesPrimaryStoriesItem {
    * - **API ID Path**: references.showcasedWebsites.primary.stories[].link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  link: prismic.LinkField;
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 
   /**
    * Use name field in *References → Showcased Websites → Primary → Stories*

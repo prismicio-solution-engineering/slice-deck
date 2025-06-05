@@ -1,7 +1,7 @@
 import clsx from "clsx";
-import { PrismicLink } from "@prismicio/react";
 import type * as prismic from "@prismicio/client";
 import type * as clsxT from "clsx";
+import { PrismicNextLink } from "@prismicio/next";
 
 const baseStyles: clsxT.ClassDictionary = {
   primary:
@@ -70,12 +70,12 @@ export function Button({
   }
 
   if (field) {
-    return <PrismicLink className={className} {...props} field={field} />;
+    return <PrismicNextLink className={className} {...props} field={field} />;
   }
 
   return document ? (
-    <PrismicLink className={className} {...props} document={document} />
+    <PrismicNextLink className={className} {...props} document={document} />
   ) : (
-    <PrismicLink className={className} {...props} href={href} />
+    <PrismicNextLink className={className} {...props} href={href} />
   );
 }
