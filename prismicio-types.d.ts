@@ -3018,13 +3018,86 @@ export type PricingSliceTableImage = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Pricing → Table → Primary*
+ */
+export interface PricingSliceTablePrimary {
+  /**
+   * Theme field in *Pricing → Table → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Slide theme color
+   * - **Default Value**: slider theme
+   * - **API ID Path**: pricing.table.primary.theme
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  theme: prismic.SelectField<
+    "slider theme" | "white" | "orange" | "pink" | "green" | "purple" | "blue",
+    "filled"
+  >;
+
+  /**
+   * Eyebrow field in *Pricing → Table → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.table.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *Pricing → Table → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.table.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Table field in *Pricing → Table → Primary*
+   *
+   * - **Field Type**: Table
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.table.primary.table
+   * - **Documentation**: https://prismic.io/docs/field#table
+   */
+  table: prismic.TableField;
+
+  /**
+   * Bottom Content field in *Pricing → Table → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.table.primary.bottom_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  bottom_content: prismic.RichTextField;
+}
+
+/**
+ * Table variation for Pricing Slice
+ *
+ * - **API ID**: `table`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PricingSliceTable = prismic.SharedSliceVariation<
+  "table",
+  Simplify<PricingSliceTablePrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Pricing*
  */
 type PricingSliceVariation =
   | PricingSliceDefault
   | PricingSliceEnterpriseCards
   | PricingSliceEnterpriseGrid
-  | PricingSliceTableImage;
+  | PricingSliceTableImage
+  | PricingSliceTable;
 
 /**
  * Pricing Shared Slice
@@ -4356,11 +4429,13 @@ declare module "@prismicio/client" {
       PricingSliceEnterpriseGridPrimaryCardItem,
       PricingSliceEnterpriseGridPrimary,
       PricingSliceTableImagePrimary,
+      PricingSliceTablePrimary,
       PricingSliceVariation,
       PricingSliceDefault,
       PricingSliceEnterpriseCards,
       PricingSliceEnterpriseGrid,
       PricingSliceTableImage,
+      PricingSliceTable,
       ProductSlice,
       ProductSliceDefaultPrimary,
       ProductSliceVariation,

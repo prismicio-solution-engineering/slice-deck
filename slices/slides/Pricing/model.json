@@ -343,6 +343,73 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "table",
+      "name": "Table",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "theme": {
+          "type": "Select",
+          "config": {
+            "label": "Theme",
+            "placeholder": "Slide theme color",
+            "options": [
+              "slider theme",
+              "white",
+              "orange",
+              "pink",
+              "green",
+              "purple",
+              "blue"
+            ],
+            "default_value": "slider theme"
+          }
+        },
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2,strong,em",
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
+          }
+        },
+        "table": {
+          "type": "Table",
+          "config": {
+            "label": "Table"
+          }
+        },
+        "bottom_content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Bottom Content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,strong,em,hyperlink",
+            "labels": [
+              "highlight",
+              "Company Name"
+            ]
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

@@ -446,7 +446,6 @@
 				]
 			},
 			"table": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
@@ -464,6 +463,9 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
 			"bottom_content": {
@@ -474,6 +476,127 @@
 						"content": {
 							"text": "Elit ad excepteur eu eiusmod deserunt tempor. Esse consectetur laboris aliqua sunt labore consectetur minim sunt aliquip eu."
 						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "table",
+		"primary": {
+			"theme": {
+				"__TYPE__": "FieldContent",
+				"value": "blue",
+				"type": "Select"
+			},
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "guard",
+				"type": "Text"
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Chain"
+						}
+					}
+				]
+			},
+			"bottom_content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Do exercitation tempor dolor sunt eu culpa velit commodo. Cillum consequat exercitation adipisicing laborum dolor ut reprehenderit consequat culpa consectetur."
+						}
+					}
+				]
+			},
+			"table": {
+				"__TYPE__": "TableContent",
+				"content": [
+					{
+						"key": "9b57dfb5-6484-4366-870c-08d80cf5c106",
+						"type": "tableRow",
+						"content": [
+							{
+								"key": "ea34b540-2ea5-4e42-a20f-0a7b6d3faa17",
+								"type": "tableHeader",
+								"content": {
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Excepteur labore."
+											}
+										}
+									]
+								}
+							},
+							{
+								"key": "22bc5eaf-0de1-465e-868d-b061fbc67738",
+								"type": "tableHeader",
+								"content": {
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Aliquip."
+											}
+										}
+									]
+								}
+							}
+						]
+					},
+					{
+						"key": "168991b4-a504-4151-8f32-4a5b1da88acb",
+						"type": "tableRow",
+						"content": [
+							{
+								"key": "ca862c97-1a32-40b2-aac4-4a10af375b2f",
+								"type": "tableCell",
+								"content": {
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Laboris laborum culpa excepteur."
+											}
+										}
+									]
+								}
+							},
+							{
+								"key": "f915269a-627f-4a2f-832f-1d8f42dc9ebb",
+								"type": "tableCell",
+								"content": {
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Et incididunt enim eiusmod ea consectetur."
+											}
+										}
+									]
+								}
+							}
+						]
 					}
 				]
 			}

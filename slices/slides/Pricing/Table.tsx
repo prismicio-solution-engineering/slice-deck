@@ -1,16 +1,16 @@
-import { PricingSliceTableImage } from "@/prismicio-types";
+import { PricingSliceTable } from "@/prismicio-types";
 import { Container } from "@/components/Slides/Container";
 import { Context } from "@/utils/GlobalTypes";
 import { GlobalPrismicRichText } from "@/components/GlobalPrismicRichText";
 import { SlideFullWidth } from "@/components/Slides/SlideFullWidth";
 import { Headings } from "@/components/Slides/Headings";
-import { SlideImage } from "@/components/Slides/SlideImage";
+import { PrismicTable } from "@prismicio/react";
 
 const Table = ({
   slice,
   context,
 }: {
-  slice: PricingSliceTableImage;
+  slice: PricingSliceTable;
   context: Context;
 }): JSX.Element => {
   return (
@@ -33,12 +33,43 @@ const Table = ({
           titleSize="text-xl"
         />
         <div className="max-h-[636px]">
-          <SlideImage
-            field={slice.primary.table}
-            cover
-            fullWidth
-            border={slice.primary.image_border}
-          />
+          {slice.primary.table && (
+            <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
+              {(() => {
+                return (
+                  <PrismicTable
+                    field={slice.primary.table}
+                    components={{
+                      table: ({ children }: { children: React.ReactNode }) => (
+                        <table className="min-w-full text-left text-base text-gray-700">
+                          {children}
+                        </table>
+                      ),
+                      thead: ({ children }: { children: React.ReactNode }) => (
+                        <thead className="bg-gray-50 border-b border-gray-200">
+                          {children}
+                        </thead>
+                      ),
+                      tbody: ({ children }: { children: React.ReactNode }) => (
+                        <tbody className="divide-y divide-gray-100">
+                          {children}
+                        </tbody>
+                      ),
+                      tr: ({ children }: { children: React.ReactNode }) => (
+                        <tr className="hover:bg-gray-50">{children}</tr>
+                      ),
+                      th: ({ children }: { children: React.ReactNode }) => (
+                        <th className="px-4 py-3 font-semibold">{children}</th>
+                      ),
+                      td: ({ children }: { children: React.ReactNode }) => (
+                        <td className="px-4 py-3">{children}</td>
+                      ),
+                    }}
+                  />
+                );
+              })()}
+            </div>
+          )}
           <GlobalPrismicRichText
             field={slice.primary.bottom_content}
             companyName={context.page?.company_name!}

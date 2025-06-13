@@ -4,8 +4,9 @@ import { Context } from "@/utils/GlobalTypes";
 import { PricingSlice } from "@/prismicio-types";
 import FullWidth from "./FullWidth";
 import Grid from "./Grid";
-import Table from "./Table";
 import Cards from "./Cards";
+import TableImage from "./TableImage";
+import Table from "./Table";
 
 /**
  * Props for `Pricing`.
@@ -28,6 +29,8 @@ const Pricing = ({
     case "enterpriseCards":
       return <Cards slice={slice} context={context} />;
     case "tableImage":
+      return <TableImage slice={slice} context={context} />;
+    case "table":
       return <Table slice={slice} context={context} />;
     case "enterpriseGrid":
       return <Grid slice={slice} context={context} />;
